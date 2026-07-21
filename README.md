@@ -1,15 +1,17 @@
 # czech_accounting
 
-A Frappe app that extends **ERPNext** with Czech accounting behavior (statutory chart of
-accounts, financial statements, VAT/DPH exports, ISDOC, ARES, and agent-assisted data
-entry). It is an **extension, not a fork**: official `frappe` and `erpnext` are used
-unmodified, and all Czech-specific behavior lives here.
+A Frappe app that extends **ERPNext** with Czech accounting behavior: statutory chart of
+accounts, financial statements, VAT/DPH exports, ISDOC, ARES lookup, and assisted data
+entry.
+
+It is an **extension, not a fork**. Official `frappe` and `erpnext` are used unmodified;
+all Czech-specific behavior lives in this app.
 
 Status: initial scaffold. No accounting content yet.
 
 ## Dependency
 
-Installs only on a site that already has ERPNext (`required_apps = ["erpnext"]`).
+Installs only on a site that already has ERPNext:
 
 ```
 frappe
@@ -17,25 +19,41 @@ frappe
         └── czech_accounting
 ```
 
-## Where it runs
+This is enforced by `required_apps = ["erpnext"]`.
 
-One personal, single-user Frappe **development bench** in Docker on a private VPS,
-reachable only over an SSH tunnel (nothing public). See [ARCHITECTURE.md](ARCHITECTURE.md).
+## Install
 
-## Development loop
+On a Frappe bench that already has ERPNext:
 
-1. Bring up the dev bench (frappe_docker `.devcontainer`), `developer_mode = 1`.
-2. Author DocTypes for the `Czech Accounting` module in Desk. With developer mode on,
-   they serialize straight into this repo under
-   `czech_accounting/czech_accounting/doctype/...`.
-3. Custom Fields / Property Setters on ERPNext doctypes are snapshotted with:
-   ```bash
-   bench --site <site> export-fixtures --app czech_accounting
-   ```
-4. Commit and push from this repo.
+```bash
+bench get-app https://github.com/hlebtkachenko/czech_accounting
+bench --site <your-site> install-app czech_accounting
+```
+
+## Develop
+
+Run a Frappe development bench with developer mode on:
+
+```bash
+bench --site <your-site> set-config developer_mode 1
+```
+
+- DocTypes created for the **Czech Accounting** module (with *Custom* unchecked)
+  serialize automatically to `czech_accounting/czech_accounting/doctype/...`.
+- Custom Fields or Property Setters on ERPNext/Frappe doctypes are database records;
+  snapshot them to source with:
+  ```bash
+  bench --site <your-site> export-fixtures --app czech_accounting
+  ```
+- Apply schema changes with `bench --site <your-site> migrate`.
+
+Then commit and push.
 
 ## Safety
 
-This repository is **public**. It contains code and configuration only. Never commit
-secrets, `.env` files, keys, backups, or any accounting/customer data. Real credentials
-live on the VPS (`~/frappe/frappe.env`, chmod 600) and in a password manager.
+This repository is public and contains source only. Never commit credentials, `.env`
+files, keys, backups, or any accounting or customer data.
+
+## License
+
+MIT. See [license.txt](license.txt).

@@ -2,43 +2,37 @@
 
 ## Model
 
-ERPNext is the accounting engine (double-entry posting, GL, invoices, payments,
-statements). `czech_accounting` is a thin Frappe extension app installed on the same
-site that adds Czech statutory behavior. ERPNext and Frappe are never modified.
+ERPNext is the accounting engine: double-entry posting, general ledger, invoices,
+payments, and financial statements. `czech_accounting` is a thin Frappe extension app,
+installed on the same site, that adds Czech statutory behavior on top. Frappe and ERPNext
+are never modified.
 
 ```
-Mac  --ssh -L 8000:127.0.0.1:8000-->  VPS (all project files under ~/frappe/)
-                                        Docker project "czech-dev":
-                                          mariadb 11.8, redis-cache, redis-queue, frappe
-                                        bench: ~/frappe/frappe_docker/development/frappe-bench
-                                        site: erpnext.localhost (developer_mode = 1)
-                                        apps: frappe, erpnext, czech_accounting
-                                        served by `bench start` on 127.0.0.1:8000
+frappe  ->  erpnext  ->  czech_accounting   (installed apps on one site)
 ```
 
-## Decisions
+## Principles
 
-- **Extension, not fork.** Extend via hooks, Custom DocTypes, Custom Fields, fixtures,
-  patches, and reports. Fork only if a confirmed requirement cannot be met through
-  supported extension points.
-- **One developable bench** during the build phase: it is both the running system and the
-  development environment. A locked, baked production image is a later milestone, for when
-  real books go live.
-- **Localhost-only.** The dev bench binds to `127.0.0.1`; the Mac reaches it via an SSH
-  tunnel. No public port, no TLS, no domain yet.
-- **Containment.** Everything for this project lives under `~/frappe/` on the VPS and
-  `~/Developer/frappe/` on the Mac. Nothing else on either machine is touched.
+- **Extension, not fork.** Extend through supported points only: hooks, Custom DocTypes,
+  Custom Fields, fixtures, patches, and reports. Fork only if a confirmed requirement
+  cannot be met through an extension point, and record the reason.
+- **Effective-dated rules.** Statutory behavior (VAT rates, statement layouts, required
+  fields) carries an effective date. Rules are versioned, never hardcoded as timeless.
+- **Traceability.** Every reported figure must trace back to its source voucher and
+  attachment.
+- **Assisted entry is draft-only.** Automated or agent-created documents are created as
+  drafts; submission stays a human action. See [AGENTS.md](AGENTS.md).
 
-## Data and secrets
+## How schema is authored
 
-- Site data and backups live under the bench `sites/` directory and `~/frappe/backups/`.
-  MariaDB data is bind-mounted to `~/frappe/data/mariadb`.
-- Secrets (DB root password, admin password, site `encryption_key`) never enter this
-  repo. They live on the VPS (`~/frappe/frappe.env`, site_config.json) and in a password
-  manager.
+With developer mode enabled on a development bench:
 
-## Deferred milestones
+- DocTypes owned by the **Czech Accounting** module serialize to source automatically.
+- Custom Fields and Property Setters on ERPNext/Frappe doctypes are exported to fixtures
+  with `bench export-fixtures --app czech_accounting`, re-imported on `bench migrate`.
 
-Czech chart of accounts, statements, VAT XML (DPHDP3/DPHKH1/DPHSHV), ISDOC, ARES,
-scoped agent API access (dedicated `Accounting Assistant` role, draft-only), Tailscale,
-CI, baked production image, full restore rehearsal.
+## Scope roadmap
+
+Chart of accounts template, Czech balance sheet and profit-and-loss layouts, accounting
+books, VAT/DPH classification and XML exports (DPHDP3, DPHKH1, DPHSHV), ISDOC import and
+export, ARES lookup, and scoped API access for assisted data entry.
