@@ -13,27 +13,33 @@
      "root_type": "Asset",
      "010 - Dlouhodobý nehmotný majetek": {
       "account_number": "010",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-b-i"
      },
      "012 - Nehmotné výsledky výzkumu a vývoje": {
       "account_number": "012",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-b-i-1"
      },
      "013 - Software": {
       "account_number": "013",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-b-i-2-1"
      },
      "014 - Ostatní ocenitelná práva": {
       "account_number": "014",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-b-i-2-2"
      },
      "015 - Goodwill": {
       "account_number": "015",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-b-i-3"
      },
      "019 - Ostatní dlouhodobý nehmotný majetek": {
       "account_number": "019",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-b-i-4"
      }
     },
     "02 - Dlouhodobý hmotný majetek odpisovaný": {
@@ -41,27 +47,33 @@
      "root_type": "Asset",
      "020 - Dlouhodobý hmotný majetek odpisovaný": {
       "account_number": "020",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-b-ii"
      },
      "021 - Stavby": {
       "account_number": "021",
-      "account_type": "Fixed Asset"
+      "account_type": "Fixed Asset",
+      "account_category": "CZ-rozvaha-aktiva-b-ii-1-2"
      },
      "022 - Hmotné movité věci a jejich soubory": {
       "account_number": "022",
-      "account_type": "Fixed Asset"
+      "account_type": "Fixed Asset",
+      "account_category": "CZ-rozvaha-aktiva-b-ii-2"
      },
      "025 - Pěstitelské celky trvalých porostů": {
       "account_number": "025",
-      "account_type": "Fixed Asset"
+      "account_type": "Fixed Asset",
+      "account_category": "CZ-rozvaha-aktiva-b-ii-4-1"
      },
      "026 - Dospělá zvířata a jejich skupiny": {
       "account_number": "026",
-      "account_type": "Fixed Asset"
+      "account_type": "Fixed Asset",
+      "account_category": "CZ-rozvaha-aktiva-b-ii-4-2"
      },
      "029 - Jiný dlouhodobý hmotný majetek": {
       "account_number": "029",
-      "account_type": "Fixed Asset"
+      "account_type": "Fixed Asset",
+      "account_category": "CZ-rozvaha-aktiva-b-ii-4-3"
      }
     },
     "03 - Dlouhodobý hmotný majetek neodpisovaný": {
@@ -69,15 +81,18 @@
      "root_type": "Asset",
      "030 - Dlouhodobý hmotný majetek neodpisovaný": {
       "account_number": "030",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-b-ii"
      },
      "031 - Pozemky": {
       "account_number": "031",
-      "account_type": "Fixed Asset"
+      "account_type": "Fixed Asset",
+      "account_category": "CZ-rozvaha-aktiva-b-ii-1-1"
      },
      "032 - Umělecká díla a sbírky": {
       "account_number": "032",
-      "account_type": "Fixed Asset"
+      "account_type": "Fixed Asset",
+      "account_category": "CZ-rozvaha-aktiva-b-ii-4-3"
      }
     },
     "04 - Nedokončený dlouhodobý nehmotný a hmotný majetek": {
@@ -85,19 +100,23 @@
      "root_type": "Asset",
      "040 - Nedokončený dlouhodobý nehmotný a hmotný majetek": {
       "account_number": "040",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-b-ii"
      },
      "041 - Nedokončený dlouhodobý nehmotný majetek": {
       "account_number": "041",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-b-i-5-2"
      },
      "042 - Nedokončený dlouhodobý hmotný majetek": {
       "account_number": "042",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-b-ii-5-2"
      },
      "043 - Pořízení dlouhodobého finančního majetku": {
       "account_number": "043",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-b-iii-7-1"
      }
     },
     "05 - Poskytnuté zálohy na dlouhodobý majetek": {
@@ -105,19 +124,23 @@
      "root_type": "Asset",
      "050 - Poskytnuté zálohy na dlouhodobý majetek": {
       "account_number": "050",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-b-ii-5-1"
      },
      "051 - Poskytnuté zálohy a závdavky na dlouhodobý nehmotný majetek": {
       "account_number": "051",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-b-i-5-1"
      },
      "052 - Poskytnuté zálohy a závdavky na dlouhodobý hmotný majetek": {
       "account_number": "052",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-b-ii-5-1"
      },
      "053 - Poskytnuté zálohy a závdavky na dlouhodobý finanční majetek": {
       "account_number": "053",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-b-iii-7-2"
      }
     },
     "06 - Dlouhodobý finanční majetek": {
@@ -125,39 +148,48 @@
      "root_type": "Asset",
      "060 - Dlouhodobý finanční majetek": {
       "account_number": "060",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-b-iii"
      },
      "061 - Podíly - ovládaná nebo ovládající osoba": {
       "account_number": "061",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-b-iii-1"
      },
      "062 - Podíly - podstatný vliv": {
       "account_number": "062",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-b-iii-3"
      },
      "063 - Ostatní dlouhodobé cenné papíry a podíly": {
       "account_number": "063",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-b-iii-5"
      },
      "065 - Dluhové cenné papíry držené do splatnosti": {
       "account_number": "065",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-b-iii-5"
      },
      "066 - Zápůjčky a úvěry - ovládaná nebo ovládající osoba": {
       "account_number": "066",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-b-iii-2"
      },
      "067 - Zápůjčky a úvěry - podstatný vliv": {
       "account_number": "067",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-b-iii-4"
      },
      "068 - Zápůjčky a úvěry - ostatní": {
       "account_number": "068",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-b-iii-6"
      },
      "069 - Jiný dlouhodobý finanční majetek": {
       "account_number": "069",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-b-iii-7-1"
      }
     },
     "07 - Oprávky k dlouhodobému nehmotnému majetku": {
@@ -165,27 +197,33 @@
      "root_type": "Asset",
      "070 - Oprávky k dlouhodobému nehmotnému majetku": {
       "account_number": "070",
-      "account_type": "Accumulated Depreciation"
+      "account_type": "Accumulated Depreciation",
+      "account_category": "CZ-rozvaha-aktiva-b-i"
      },
      "072 - Oprávky k nehmot.výsledkům výzkumu a vývoje": {
       "account_number": "072",
-      "account_type": "Accumulated Depreciation"
+      "account_type": "Accumulated Depreciation",
+      "account_category": "CZ-rozvaha-aktiva-b-i-1"
      },
      "073 - Oprávky k softwaru": {
       "account_number": "073",
-      "account_type": "Accumulated Depreciation"
+      "account_type": "Accumulated Depreciation",
+      "account_category": "CZ-rozvaha-aktiva-b-i-2-1"
      },
      "074 - Oprávky k ostatním ocenitelným právům": {
       "account_number": "074",
-      "account_type": "Accumulated Depreciation"
+      "account_type": "Accumulated Depreciation",
+      "account_category": "CZ-rozvaha-aktiva-b-i-2-2"
      },
      "075 - Oprávky ke goodwillu": {
       "account_number": "075",
-      "account_type": "Accumulated Depreciation"
+      "account_type": "Accumulated Depreciation",
+      "account_category": "CZ-rozvaha-aktiva-b-i-3"
      },
      "079 - Oprávky k ostatnímu dlouhodobému nehmotnému majetku": {
       "account_number": "079",
-      "account_type": "Accumulated Depreciation"
+      "account_type": "Accumulated Depreciation",
+      "account_category": "CZ-rozvaha-aktiva-b-i-4"
      }
     },
     "08 - Oprávky k dlouhodobému hmotnému majetku": {
@@ -193,27 +231,33 @@
      "root_type": "Asset",
      "080 - Oprávky k dlouhodobému hmotnému majetku": {
       "account_number": "080",
-      "account_type": "Accumulated Depreciation"
+      "account_type": "Accumulated Depreciation",
+      "account_category": "CZ-rozvaha-aktiva-b-ii"
      },
      "081 - Oprávky ke stavbám": {
       "account_number": "081",
-      "account_type": "Accumulated Depreciation"
+      "account_type": "Accumulated Depreciation",
+      "account_category": "CZ-rozvaha-aktiva-b-ii-1-2"
      },
      "082 - Oprávky k hmotným movitým věcem a jejich souborům": {
       "account_number": "082",
-      "account_type": "Accumulated Depreciation"
+      "account_type": "Accumulated Depreciation",
+      "account_category": "CZ-rozvaha-aktiva-b-ii-2"
      },
      "085 - Oprávky k pěstitelským celkům trvalých porostů": {
       "account_number": "085",
-      "account_type": "Accumulated Depreciation"
+      "account_type": "Accumulated Depreciation",
+      "account_category": "CZ-rozvaha-aktiva-b-ii-4-1"
      },
      "086 - Oprávky k dospělým zvířatům a jejich skupinám": {
       "account_number": "086",
-      "account_type": "Accumulated Depreciation"
+      "account_type": "Accumulated Depreciation",
+      "account_category": "CZ-rozvaha-aktiva-b-ii-4-2"
      },
      "089 - Oprávky k jinému dlouhodobému hmotnému majetku": {
       "account_number": "089",
-      "account_type": "Accumulated Depreciation"
+      "account_type": "Accumulated Depreciation",
+      "account_category": "CZ-rozvaha-aktiva-b-ii-4-3"
      }
     },
     "09 - Opravné položky k dlouhodobému majetku": {
@@ -221,39 +265,48 @@
      "root_type": "Asset",
      "090 - Opravné položky k dlouhodobému majetku": {
       "account_number": "090",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-b-ii"
      },
      "091 - Opravná položka k dlouhodobému nehmotnému majetku": {
       "account_number": "091",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-b-i"
      },
      "092 - Opravná položka k dlouhodobému hmotnému majetku": {
       "account_number": "092",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-b-ii"
      },
      "093 - Opravná položka k dlouhodobému nedokončenému nehmotnému majetku": {
       "account_number": "093",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-b-i-5-2"
      },
      "094 - Opravná položka k dlouhodobému nedokončenému hmotnému majetku": {
       "account_number": "094",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-b-ii-5-2"
      },
      "095 - Opravná položka k poskytnutým zálohám a závdavkům na dlouhodobý majetek": {
       "account_number": "095",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-b-ii-5-1"
      },
      "096 - Opravná položka k dlouhodobému finančnímu majetku": {
       "account_number": "096",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-b-iii"
      },
      "097 - Oceňovací rozdíl k nabytému majetku": {
       "account_number": "097",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-b-ii-3"
      },
      "098 - Oprávky k oceňovacímu rozdílu k nabytému majetku": {
       "account_number": "098",
-      "account_type": "Accumulated Depreciation"
+      "account_type": "Accumulated Depreciation",
+      "account_category": "CZ-rozvaha-aktiva-b-ii-3"
      }
     }
    },
@@ -265,19 +318,23 @@
      "root_type": "Asset",
      "110 - Materiál": {
       "account_number": "110",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-i-1"
      },
      "111 - Pořízení materiálu": {
       "account_number": "111",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-i-1"
      },
      "112 - Materiál na skladě": {
       "account_number": "112",
-      "account_type": "Stock"
+      "account_type": "Stock",
+      "account_category": "CZ-rozvaha-aktiva-c-i-1"
      },
      "119 - Materiál na cestě": {
       "account_number": "119",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-i-1"
      }
     },
     "12 - Zásoby vlastní činnosti": {
@@ -285,23 +342,28 @@
      "root_type": "Asset",
      "120 - Zásoby vlastní činnosti": {
       "account_number": "120",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-i"
      },
      "121 - Nedokončená výroba": {
       "account_number": "121",
-      "account_type": "Stock"
+      "account_type": "Stock",
+      "account_category": "CZ-rozvaha-aktiva-c-i-2"
      },
      "122 - Polotovary vlastní výroby": {
       "account_number": "122",
-      "account_type": "Stock"
+      "account_type": "Stock",
+      "account_category": "CZ-rozvaha-aktiva-c-i-2"
      },
      "123 - Výrobky": {
       "account_number": "123",
-      "account_type": "Stock"
+      "account_type": "Stock",
+      "account_category": "CZ-rozvaha-aktiva-c-i-3-1"
      },
      "124 - Mladá a ostatní zvířata a jejich skupiny": {
       "account_number": "124",
-      "account_type": "Stock"
+      "account_type": "Stock",
+      "account_category": "CZ-rozvaha-aktiva-c-i-4"
      }
     },
     "13 - Zboží": {
@@ -309,19 +371,23 @@
      "root_type": "Asset",
      "130 - Zboží": {
       "account_number": "130",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-i-3-2"
      },
      "131 - Pořízení zboží": {
       "account_number": "131",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-i-3-2"
      },
      "132 - Zboží na skladě a v prodejnách": {
       "account_number": "132",
-      "account_type": "Stock"
+      "account_type": "Stock",
+      "account_category": "CZ-rozvaha-aktiva-c-i-3-2"
      },
      "139 - Zboží na cestě": {
       "account_number": "139",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-i-3-2"
      }
     },
     "15 - Poskytnuté zálohy na zásoby": {
@@ -329,19 +395,23 @@
      "root_type": "Asset",
      "150 - Poskytnuté zálohy na zásoby": {
       "account_number": "150",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-i-5"
      },
      "151 - Poskytnuté zálohy a závdavky na materiál": {
       "account_number": "151",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-i-5"
      },
      "152 - Poskytnuté zálohy a závdavky na zvířata": {
       "account_number": "152",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-i-5"
      },
      "153 - Poskytnuté zálohy a závdavky na zboží": {
       "account_number": "153",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-i-5"
      }
     },
     "19 - Opravné položky z zásobám": {
@@ -349,43 +419,53 @@
      "root_type": "Asset",
      "190 - Opravné položky z zásobám": {
       "account_number": "190",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-i"
      },
      "191 - Opravná položka k materiálu": {
       "account_number": "191",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-i-1"
      },
      "192 - Opravná položka k nedokončené výrobě": {
       "account_number": "192",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-i-2"
      },
      "193 - Opravná položka k polotovarům vlastní výroby": {
       "account_number": "193",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-i-2"
      },
      "194 - Opravná položka k výrobkům": {
       "account_number": "194",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-i-3-1"
      },
      "195 - Opravná položka k mladým a ostatním zvířatům a jejich skupinám": {
       "account_number": "195",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-i-4"
      },
      "196 - Opravná položka ke zboží": {
       "account_number": "196",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-i-3-2"
      },
      "197 - Opravná položka k zálohám a závdavkům na materiál": {
       "account_number": "197",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-i-5"
      },
      "198 - Opravná položka k zálohám a závdavkům na zboží": {
       "account_number": "198",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-i-5"
      },
      "199 - Opravná položka k zálohám a závdavkům na zvířata": {
       "account_number": "199",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-i-5"
      }
     }
    },
@@ -397,15 +477,18 @@
      "root_type": "Asset",
      "210 - Peněžní prostředky v pokladně": {
       "account_number": "210",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-iv-1"
      },
      "211 - Pokladna": {
       "account_number": "211",
-      "account_type": "Cash"
+      "account_type": "Cash",
+      "account_category": "CZ-rozvaha-aktiva-c-iv-1"
      },
      "213 - Ceniny": {
       "account_number": "213",
-      "account_type": "Cash"
+      "account_type": "Cash",
+      "account_category": "CZ-rozvaha-aktiva-c-iv-1"
      }
     },
     "22 - Peněžní prostředky na účtech": {
@@ -413,7 +496,8 @@
      "root_type": "Asset",
      "220 - Peněžní prostředky na účtech": {
       "account_number": "220",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-iv-2"
      },
      "221 - Peněžní prostředky na účtech": {
       "is_group": 1,
@@ -421,7 +505,8 @@
       "account_number": "221",
       "221001 - Bankovní účet CZK": {
        "account_number": "221001",
-       "account_type": "Bank"
+       "account_type": "Bank",
+       "account_category": "CZ-rozvaha-aktiva-c-iv-2"
       }
      }
     },
@@ -430,39 +515,48 @@
      "root_type": "Asset",
      "250 - Krátkodobý finanční majetek": {
       "account_number": "250",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-iii"
      },
      "251 - Majetkové cenné papíry k obchodování": {
       "account_number": "251",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-iii-2"
      },
      "252 - Vlastní podíly": {
       "account_number": "252",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-a-i-2"
      },
      "253 - Dluhové cenné papíry k obchodování": {
       "account_number": "253",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-iii-2"
      },
      "254 - Podíly - ovládaná nebo ovládající osoba": {
       "account_number": "254",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-iii-1"
      },
      "255 - Vlastní dluhopisy": {
       "account_number": "255",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-iii-2"
      },
      "256 - Dluhové cenné papíry se splatností do jednoho roku držené do splatnosti": {
       "account_number": "256",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-iii-2"
      },
      "257 - Ostatní cenné papíry": {
       "account_number": "257",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-iii-2"
      },
      "259 - Pořizování krátkodobého finančního majetku": {
       "account_number": "259",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-iii-2"
      }
     },
     "26 - Převody mezi finančními účty": {
@@ -470,11 +564,13 @@
      "root_type": "Asset",
      "260 - Převody mezi finančními účty": {
       "account_number": "260",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-iv-2"
      },
      "261 - Peníze na cestě": {
       "account_number": "261",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-iv-2"
      }
     },
     "29 - Opravné položky ke krátkodobému finančnímu majetku": {
@@ -482,11 +578,13 @@
      "root_type": "Asset",
      "290 - Opravné položky ke krátkodobému finančnímu majetku": {
       "account_number": "290",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-iii"
      },
      "291 - Opravná položka ke krátkodobému finančnímu majetku": {
       "account_number": "291",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-iii-2"
      }
     }
    },
@@ -498,27 +596,33 @@
      "root_type": "Asset",
      "310 - Pohledávky (krátkodobé i dlouhodobé)": {
       "account_number": "310",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-ii"
      },
      "311 - Pohledávky z obchodních vztahů": {
       "account_number": "311",
-      "account_type": "Receivable"
+      "account_type": "Receivable",
+      "account_category": "CZ-rozvaha-aktiva-c-ii-2-1"
      },
      "312 - Směnky k inkasu": {
       "account_number": "312",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-ii-2-1"
      },
      "313 - Pohledávky za eskontované cenné papíry": {
       "account_number": "313",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-ii-2-4-6"
      },
      "314 - Poskytnuté zálohy a závdavky - dlouhodobé a krátkodobé": {
       "account_number": "314",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-ii-2-4-4"
      },
      "315 - Ostatní pohledávky": {
       "account_number": "315",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-ii-2-4-6"
      }
     },
     "33 - Zúčtování se zaměstnanci a institucemi": {
@@ -526,7 +630,8 @@
      "root_type": "Asset",
      "335 - Pohledávky za zaměstnanci": {
       "account_number": "335",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-ii-2-4-6"
      }
     },
     "35 - Pohledávky za společníky": {
@@ -534,31 +639,38 @@
      "root_type": "Asset",
      "350 - Pohledávky za společníky": {
       "account_number": "350",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-ii"
      },
      "351 - Pohledávky - ovládaná nebo ovládající osoba": {
       "account_number": "351",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-ii-2-2"
      },
      "352 - Pohledávky - podstatný vliv": {
       "account_number": "352",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-ii-2-3"
      },
      "353 - Pohledávky za upsaný základní kapitál": {
       "account_number": "353",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-a"
      },
      "354 - Pohledávky za společníky při úhradě ztráty obchodní korporace": {
       "account_number": "354",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-ii-2-4-1"
      },
      "355 - Ostatní pohledávky za společníky obchodní korporace": {
       "account_number": "355",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-ii-2-4-1"
      },
      "358 - Pohledávky za společníky sdruženými ve společnosti": {
       "account_number": "358",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-ii-2-4-1"
      }
     },
     "37 - Jiné pohledávky a závazky": {
@@ -566,31 +678,38 @@
      "root_type": "Asset",
      "370 - Jiné pohledávky a závazky": {
       "account_number": "370",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-ii-2-4-6"
      },
      "371 - Pohledávky z prodeje obchodního závodu": {
       "account_number": "371",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-ii-2-4-6"
      },
      "373 - Pohledávky a dluhy z pevných termínových operací": {
       "account_number": "373",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-ii-2-4-6"
      },
      "374 - Pohledávky z pachtu obchodního závodu": {
       "account_number": "374",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-ii-2-4-6"
      },
      "375 - Pohledávky z emitovaných dluhopisů": {
       "account_number": "375",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-ii-2-4-6"
      },
      "376 - Nakoupené opce": {
       "account_number": "376",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-iii-2"
      },
      "378 - Jiné pohledávky": {
       "account_number": "378",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-ii-2-4-6"
      }
     },
     "38 - Přechodné účty aktiv a pasiv": {
@@ -598,23 +717,28 @@
      "root_type": "Asset",
      "380 - Přechodné účty aktiv a pasiv": {
       "account_number": "380",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-d"
      },
      "381 - Náklady příštích období": {
       "account_number": "381",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-d-1"
      },
      "382 - Komplexní náklady příštích období": {
       "account_number": "382",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-d-2"
      },
      "385 - Příjmy příštích období": {
       "account_number": "385",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-d-3"
      },
      "388 - Dohadné účty aktivní": {
       "account_number": "388",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-ii-2-4-5"
      }
     },
     "39 - Opravná položka k zúčtovacím vztahům a vnitřní zúčtování": {
@@ -622,19 +746,23 @@
      "root_type": "Asset",
      "390 - Opravná položka k zúčtovacím vztahům a vnitřní zúčtování": {
       "account_number": "390",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-ii"
      },
      "391 - Opravná položka k pohledávkám": {
       "account_number": "391",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-aktiva-c-ii-2-1"
      },
      "395 - Vnitřní zúčtování": {
       "account_number": "395",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-off-interni"
      },
      "398 - Spojovací účet při společnosti": {
       "account_number": "398",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-off-interni"
      }
     }
    }
@@ -650,19 +778,23 @@
      "root_type": "Liability",
      "230 - Krátkodobé úvěry": {
       "account_number": "230",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-ii-2"
      },
      "231 - Krátkodobé závazky k úvěrovým institucím": {
       "account_number": "231",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-ii-2"
      },
      "232 - Eskontní úvěry": {
       "account_number": "232",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-ii-2"
      },
      "233 - Krátkodobé úvěry od nebankovních institucí": {
       "account_number": "233",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-ii-8-2"
      }
     },
     "24 - Krátkodobé finanční výpomoci": {
@@ -670,15 +802,18 @@
      "root_type": "Liability",
      "240 - Krátkodobé finanční výpomoci": {
       "account_number": "240",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-ii-8-2"
      },
      "241 - Emitované krátkodobé dluhopisy": {
       "account_number": "241",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-ii-1"
      },
      "249 - Ostatní krátkodobé finanční výpomoci": {
       "account_number": "249",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-ii-8-2"
      }
     }
    },
@@ -690,23 +825,28 @@
      "root_type": "Liability",
      "320 - Závazky (krátkodobé)": {
       "account_number": "320",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-ii"
      },
      "321 - Dluhy z obchodních vztahů": {
       "account_number": "321",
-      "account_type": "Payable"
+      "account_type": "Payable",
+      "account_category": "CZ-rozvaha-pasiva-c-ii-4"
      },
      "322 - Směnky k úhradě": {
       "account_number": "322",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-ii-5"
      },
      "324 - Přijaté provozní zálohy a závdavky": {
       "account_number": "324",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-ii-3"
      },
      "325 - Ostatní dluhy": {
       "account_number": "325",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-ii-8-7"
      }
     },
     "33 - Zúčtování se zaměstnanci a institucemi": {
@@ -714,19 +854,23 @@
      "root_type": "Liability",
      "330 - Zúčtování se zaměstnanci a institucemi": {
       "account_number": "330",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-ii-8-3"
      },
      "331 - Zaměstnanci": {
       "account_number": "331",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-ii-8-3"
      },
      "333 - Ostatní dluhy vůči zaměstnancům": {
       "account_number": "333",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-ii-8-3"
      },
      "336 - Zúčtování s institucemi soc. zabezpečení a zdrav. pojištění": {
       "account_number": "336",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-ii-8-4"
      }
     },
     "34 - Zúčtování daní a dotací": {
@@ -734,15 +878,18 @@
      "root_type": "Liability",
      "340 - Zúčtování daní a dotací": {
       "account_number": "340",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-ii-8-5"
      },
      "341 - Daň z příjmů": {
       "account_number": "341",
-      "account_type": "Tax"
+      "account_type": "Tax",
+      "account_category": "CZ-rozvaha-pasiva-c-ii-8-5"
      },
      "342 - Ostatní přímé daně": {
       "account_number": "342",
-      "account_type": "Tax"
+      "account_type": "Tax",
+      "account_category": "CZ-rozvaha-pasiva-c-ii-8-5"
      },
      "343 - Daň z přidané hodnoty": {
       "is_group": 1,
@@ -750,24 +897,29 @@
       "account_number": "343",
       "343.100 - DPH na vstupu": {
        "account_number": "343.100",
-       "account_type": "Tax"
+       "account_type": "Tax",
+       "account_category": "CZ-rozvaha-aktiva-c-ii-2-4-3"
       },
       "343.200 - DPH na výstupu": {
        "account_number": "343.200",
-       "account_type": "Tax"
+       "account_type": "Tax",
+       "account_category": "CZ-rozvaha-pasiva-c-ii-8-5"
       }
      },
      "345 - Ostatní daně a poplatky": {
       "account_number": "345",
-      "account_type": "Tax"
+      "account_type": "Tax",
+      "account_category": "CZ-rozvaha-pasiva-c-ii-8-5"
      },
      "346 - Dotace ze státního rozpočtu": {
       "account_number": "346",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-ii-8-5"
      },
      "347 - Ostatní dotace": {
       "account_number": "347",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-ii-8-5"
      }
     },
     "36 - Závazky ke společníkům": {
@@ -775,35 +927,43 @@
      "root_type": "Liability",
      "360 - Závazky ke společníkům": {
       "account_number": "360",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-ii-8-1"
      },
      "361 - Dluhy - ovládaná nebo ovládající osoba": {
       "account_number": "361",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-ii-6"
      },
      "362 - Dluhy - podstatný vliv": {
       "account_number": "362",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-ii-7"
      },
      "364 - Dluhy ke společníkům obchodní korporace při rozdělování zisku": {
       "account_number": "364",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-ii-8-1"
      },
      "365 - Ostatní dluhy ke společníkům obchodní korporace": {
       "account_number": "365",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-ii-8-1"
      },
      "366 - Dluhy ke společníkům obchodní korporace ze závislé činnosti": {
       "account_number": "366",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-ii-8-1"
      },
      "367 - Dluhy z upsaných nesplacených cenných  papírů a vkladů": {
       "account_number": "367",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-ii-8-7"
      },
      "368 - Dluhy ke společníkům sdruženým ve společnosti": {
       "account_number": "368",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-ii-8-1"
      }
     },
     "37 - Jiné pohledávky a závazky": {
@@ -811,15 +971,18 @@
      "root_type": "Liability",
      "372 - Dluhy z koupě obchodního závodu": {
       "account_number": "372",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-ii-8-7"
      },
      "377 - Prodané opce": {
       "account_number": "377",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-ii-8-7"
      },
      "379 - Jiné dluhy": {
       "account_number": "379",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-ii-8-7"
      }
     },
     "38 - Přechodné účty aktiv a pasiv": {
@@ -827,15 +990,18 @@
      "root_type": "Liability",
      "383 - Výdaje příštích období": {
       "account_number": "383",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-d-1"
      },
      "384 - Výnosy příštích období": {
       "account_number": "384",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-d-2"
      },
      "389 - Dohadné účty pasivní": {
       "account_number": "389",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-ii-8-6"
      }
     }
    },
@@ -847,23 +1013,28 @@
      "root_type": "Liability",
      "450 - Rezervy": {
       "account_number": "450",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-b"
      },
      "451 - Rezervy podle zvláštních právních předpisů": {
       "account_number": "451",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-b-3"
      },
      "452 - Rezerva na důchody a podobné závazky": {
       "account_number": "452",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-b-1"
      },
      "453 - Rezerva na daň z příjmů": {
       "account_number": "453",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-b-2"
      },
      "459 - Ostatní rezervy": {
       "account_number": "459",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-b-4"
      }
     },
     "46 - Dlouhodobé závazky k úvěrovým institucím": {
@@ -871,15 +1042,18 @@
      "root_type": "Liability",
      "460 - Dlouhodobé závazky k úvěrovým institucím": {
       "account_number": "460",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-i-2"
      },
      "461 - Dlouhodobé závazky k úvěrovým institucím": {
       "account_number": "461",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-i-2"
      },
      "462 - Úvěry od nebankovních institucí": {
       "account_number": "462",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-i-9-3"
      }
     },
     "47 - Dlouhodobé závazky": {
@@ -887,35 +1061,43 @@
      "root_type": "Liability",
      "470 - Dlouhodobé závazky": {
       "account_number": "470",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-i"
      },
      "471 - Dlouhodobé dluhy - ovládaná nebo ovládající osoba": {
       "account_number": "471",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-i-6"
      },
      "472 - Dlouhodobé dluhy - podstatný vliv": {
       "account_number": "472",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-i-7"
      },
      "473 - Emitované dluhopisy": {
       "account_number": "473",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-i-1"
      },
      "474 - Dluhy z pachtu obchodního závodu": {
       "account_number": "474",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-i-9-3"
      },
      "475 - Dlouhodobé přijaté zálohy a závdavky": {
       "account_number": "475",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-i-3"
      },
      "478 - Dlouhodobé směnky k úhradě": {
       "account_number": "478",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-i-5"
      },
      "479 - Jiné dlouhodobé dluhy": {
       "account_number": "479",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-i-9-3"
      }
     },
     "48 - Odložený daňový závazek a pohledávka": {
@@ -923,11 +1105,13 @@
      "root_type": "Liability",
      "480 - Odložený daňový závazek a pohledávka": {
       "account_number": "480",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-i-8"
      },
      "481 - Odložený daňový dluh a pohledávka": {
       "account_number": "481",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-c-i-8"
      }
     }
    }
@@ -943,39 +1127,48 @@
      "root_type": "Equity",
      "410 - Základní kapitál a kapitálové fondy": {
       "account_number": "410",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-a-i-1"
      },
      "411 - Základní kapitál": {
       "account_number": "411",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-a-i-1"
      },
      "412 - Ážio": {
       "account_number": "412",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-a-ii-1"
      },
      "413 - Ostatní kapitálové fondy": {
       "account_number": "413",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-a-ii-2-1"
      },
      "414 - Oceňovací rozdíly z přecenění majetku a dluhů": {
       "account_number": "414",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-a-ii-2-2"
      },
      "416 - Rozdíly z ocenění při přeměnách obchodních korporací": {
       "account_number": "416",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-a-ii-2-5"
      },
      "417 - Rozdíly z přeměn obchodních korporací": {
       "account_number": "417",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-a-ii-2-4"
      },
      "418 - Oceňovací rozdíly z přecenění při přeměnách obchodních korporací": {
       "account_number": "418",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-a-ii-2-3"
      },
      "419 - Změny základního kapitálu": {
       "account_number": "419",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-a-i-3"
      }
     },
     "42 - Fondy ze zisku a převedené výsledky hospodaření": {
@@ -983,35 +1176,43 @@
      "root_type": "Equity",
      "420 - Fondy ze zisku a převedené výsledky hospodaření": {
       "account_number": "420",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-a-iii-1"
      },
      "421 - Rezervní fond": {
       "account_number": "421",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-a-iii-1"
      },
      "422 - Nedělitelný fond": {
       "account_number": "422",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-a-iii-1"
      },
      "423 - Statutární fondy": {
       "account_number": "423",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-a-iii-2"
      },
      "426 - Jiný výsledek hospodaření minulých let": {
       "account_number": "426",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-a-iv-2"
      },
      "427 - Ostatní fondy": {
       "account_number": "427",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-a-iii-2"
      },
      "428 - Nerozdělený zisk minulých let": {
       "account_number": "428",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-a-iv-1"
      },
      "429 - Neuhrazená ztráta minulých let": {
       "account_number": "429",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-a-iv-1"
      }
     },
     "43 - Výsledek hospodaření": {
@@ -1019,15 +1220,18 @@
      "root_type": "Equity",
      "430 - Výsledek hospodaření": {
       "account_number": "430",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-a-v"
      },
      "431 - Výsledek hospodaření ve schvalovacím řízení": {
       "account_number": "431",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-a-v"
      },
      "432 - Zálohy na podíly na zisku": {
       "account_number": "432",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-a-vi"
      }
     },
     "49 - Individuální podnikatel": {
@@ -1035,11 +1239,13 @@
      "root_type": "Equity",
      "490 - Individuální podnikatel": {
       "account_number": "490",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-a"
      },
      "491 - Účet individuálního podnikatele": {
       "account_number": "491",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-rozvaha-pasiva-a"
      }
     }
    },
@@ -1051,15 +1257,18 @@
      "root_type": "Equity",
      "700 - Účty rozvažné": {
       "account_number": "700",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-off-zaverkove"
      },
      "701 - Počáteční účet rozvažný": {
       "account_number": "701",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-off-zaverkove"
      },
      "702 - Konečný účet rozvažný": {
       "account_number": "702",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-off-zaverkove"
      }
     },
     "71 - Účet zisků a ztrát": {
@@ -1067,7 +1276,8 @@
      "root_type": "Equity",
      "710 - Účet zisků a ztrát": {
       "account_number": "710",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-off-zaverkove"
      }
     }
    }
@@ -1083,19 +1293,23 @@
      "root_type": "Income",
      "600 - Tržby za vlastní výkony a zboží": {
       "account_number": "600",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-i"
      },
      "601 - Tržby za vlastní výrobky": {
       "account_number": "601",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-i"
      },
      "602 - Tržby z prodeje služeb": {
       "account_number": "602",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-i"
      },
      "604 - Tržby za zboží": {
       "account_number": "604",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-ii"
      }
     },
     "61 - Změna stavu zásob vlastní činnosti": {
@@ -1103,19 +1317,23 @@
      "root_type": "Income",
      "611 - Změna stavu nedokončené výroby": {
       "account_number": "611",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-b"
      },
      "612 - Změna stavu polotovarů vlastní výroby": {
       "account_number": "612",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-b"
      },
      "613 - Změna stavu výrobků": {
       "account_number": "613",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-b"
      },
      "614 - Změna stavu zvířat": {
       "account_number": "614",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-b"
      }
     },
     "62 - Aktivace": {
@@ -1123,19 +1341,23 @@
      "root_type": "Income",
      "621 - Aktivace materiálu a zboží": {
       "account_number": "621",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-c"
      },
      "622 - Aktivace vnitropodnikových služeb": {
       "account_number": "622",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-c"
      },
      "623 - Aktivace dlouhodobého nehmotného majetku": {
       "account_number": "623",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-c"
      },
      "624 - Aktivace dlouhodobého hmotného majetku": {
       "account_number": "624",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-c"
      }
     },
     "64 - Jiné provozní výnosy": {
@@ -1143,35 +1365,43 @@
      "root_type": "Income",
      "640 - Jiné provozní výnosy": {
       "account_number": "640",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-iii-3"
      },
      "641 - Tržby z prodeje dlouhodobého nehmotného a hmotného majetku": {
       "account_number": "641",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-iii-1"
      },
      "642 - Tržby z prodeje materiálu": {
       "account_number": "642",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-iii-2"
      },
      "643 - Přijaté dary v provozní oblasti": {
       "account_number": "643",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-iii-3"
      },
      "644 - Smluvní pokuty a úroky z prodlení": {
       "account_number": "644",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-iii-3"
      },
      "646 - Výnosy z odepsaných pohledávek": {
       "account_number": "646",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-iii-3"
      },
      "648 - Jiné provozní výnosy": {
       "account_number": "648",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-iii-3"
      },
      "649 - Mimořádné provozní výnosy": {
       "account_number": "649",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-iii-3"
      }
     },
     "66 - Finanční výnosy": {
@@ -1179,43 +1409,53 @@
      "root_type": "Income",
      "660 - Finanční výnosy": {
       "account_number": "660",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-vii"
      },
      "661 - Tržby z prodeje cenných papírů a podílů": {
       "account_number": "661",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-vii"
      },
      "662 - Úroky": {
       "account_number": "662",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-vi-2"
      },
      "663 - Kursové zisky": {
       "account_number": "663",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-vii"
      },
      "664 - Výnosy z přecenění cenných papírů": {
       "account_number": "664",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-vii"
      },
      "665 - Výnosy z dlouhodobého finančního majetku": {
       "account_number": "665",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-iv-2"
      },
      "666 - Výnosy z krátkodobého finančního majetku": {
       "account_number": "666",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-vii"
      },
      "667 - Výnosy z derivátových operací": {
       "account_number": "667",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-vii"
      },
      "668 - Ostatní finanční výnosy": {
       "account_number": "668",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-vii"
      },
      "669 - Mimořádné finanční výnosy": {
       "account_number": "669",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-vii"
      }
     },
     "69 - Převodové účty": {
@@ -1223,15 +1463,18 @@
      "root_type": "Income",
      "690 - Převodové účty": {
       "account_number": "690",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-off-interni"
      },
      "697 - Převod provozních výnosů": {
       "account_number": "697",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-off-interni"
      },
      "698 - Převod finančních výnosů": {
       "account_number": "698",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-off-interni"
      }
     }
    }
@@ -1247,23 +1490,28 @@
      "root_type": "Expense",
      "500 - Spotřebované nákupy": {
       "account_number": "500",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-a"
      },
      "501 - Spotřeba materiálu": {
       "account_number": "501",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-a-2"
      },
      "502 - Spotřeba energie": {
       "account_number": "502",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-a-2"
      },
      "503 - Spotřeba ostatních neskladovatelných dodávek": {
       "account_number": "503",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-a-2"
      },
      "504 - Prodané zboží": {
       "account_number": "504",
-      "account_type": "Cost of Goods Sold"
+      "account_type": "Cost of Goods Sold",
+      "account_category": "CZ-vzz-a-1"
      }
     },
     "51 - Služby": {
@@ -1271,23 +1519,28 @@
      "root_type": "Expense",
      "510 - Služby": {
       "account_number": "510",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-a-3"
      },
      "511 - Opravy a udržování": {
       "account_number": "511",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-a-3"
      },
      "512 - Cestovné": {
       "account_number": "512",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-a-3"
      },
      "513 - Náklady na reprezentaci": {
       "account_number": "513",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-a-3"
      },
      "518 - Ostatní služby": {
       "account_number": "518",
-      "account_type": "Expenses Included In Valuation"
+      "account_type": "Expenses Included In Valuation",
+      "account_category": "CZ-vzz-a-3"
      }
     },
     "52 - Osobní náklady": {
@@ -1295,39 +1548,48 @@
      "root_type": "Expense",
      "520 - Osobní náklady": {
       "account_number": "520",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-d"
      },
      "521 - Mzdové náklady": {
       "account_number": "521",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-d-1"
      },
      "522 - Příjmy společníků obchodní korporace ze závislé činnosti": {
       "account_number": "522",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-d-1"
      },
      "523 - Odměny členům orgánů obchodní korporace": {
       "account_number": "523",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-d-1"
      },
      "524 - Zákonné sociální a zdravotní pojištění": {
       "account_number": "524",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-d-2-1"
      },
      "525 - Ostatní sociální pojištění": {
       "account_number": "525",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-d-2-1"
      },
      "526 - Sociální náklady individuálního podnikatele": {
       "account_number": "526",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-d-2-1"
      },
      "527 - Zákonné sociální náklady": {
       "account_number": "527",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-d-2-2"
      },
      "528 - Ostatní sociální náklady": {
       "account_number": "528",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-d-2-2"
      }
     },
     "53 - Daně a poplatky": {
@@ -1335,19 +1597,23 @@
      "root_type": "Expense",
      "530 - Daně a poplatky": {
       "account_number": "530",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-f-3"
      },
      "531 - Daň silniční": {
       "account_number": "531",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-f-3"
      },
      "532 - Daň z nemovitých věcí": {
       "account_number": "532",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-f-3"
      },
      "538 - Ostatní daně a poplatky": {
       "account_number": "538",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-f-3"
      }
     },
     "54 - Jiné provozní náklady": {
@@ -1355,43 +1621,53 @@
      "root_type": "Expense",
      "540 - Jiné provozní náklady": {
       "account_number": "540",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-f-5"
      },
      "541 - Zůstatková cena prodaného dlouhodob. nehmot. a hmot. majetku": {
       "account_number": "541",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-f-1"
      },
      "542 - Prodaný materiál": {
       "account_number": "542",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-f-2"
      },
      "543 - Dary": {
       "account_number": "543",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-f-5"
      },
      "544 - Smluvní pokuty a úroky z prodlení": {
       "account_number": "544",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-f-5"
      },
      "545 - Ostatní pokuty a penále": {
       "account_number": "545",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-f-5"
      },
      "546 - Odpis pohledávky": {
       "account_number": "546",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-f-5"
      },
      "547 - Mimořádné provozní náklady": {
       "account_number": "547",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-f-5"
      },
      "548 - Jiné provozní náklady": {
       "account_number": "548",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-f-5"
      },
      "549 - Manka a škody z provozní činnosti": {
       "account_number": "549",
-      "account_type": "Stock Adjustment"
+      "account_type": "Stock Adjustment",
+      "account_category": "CZ-vzz-f-5"
      }
     },
     "55 - Odpisy, rezervy, komplexní náklady příštích období a opravné položky v provozní oblasti": {
@@ -1399,35 +1675,43 @@
      "root_type": "Expense",
      "550 - Odpisy, rezervy, komplexní náklady příštích období a opravné položky v provozní oblasti": {
       "account_number": "550",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-e-1-1"
      },
      "551 - Odpisy dlouhodobého nehmotného a hmotného majetku": {
       "account_number": "551",
-      "account_type": "Depreciation"
+      "account_type": "Depreciation",
+      "account_category": "CZ-vzz-e-1-1"
      },
      "552 - Tvorba a zúčtování rezerv podle zvláštních právních předpisů": {
       "account_number": "552",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-f-4"
      },
      "554 - Tvorba a zúčtování ostatních rezerv": {
       "account_number": "554",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-f-4"
      },
      "555 - Tvorba a zúčtování komplexních nákladů příštích období": {
       "account_number": "555",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-f-4"
      },
      "557 - Zúčtování oprávky k oceňovacímu rozdílu k nabytému majetku": {
       "account_number": "557",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-e-1-1"
      },
      "558 - Tvorba a zúčtování zákonných opravných položek v provozní činnosti": {
       "account_number": "558",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-e-3"
      },
      "559 - Tvorba a zúčtování ostatních opravných položek v provozní činnosti": {
       "account_number": "559",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-e-3"
      }
     },
     "56 - Finanční náklady": {
@@ -1435,43 +1719,53 @@
      "root_type": "Expense",
      "560 - Finanční náklady": {
       "account_number": "560",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-k"
      },
      "561 - Prodané cenné papíry a podíly": {
       "account_number": "561",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-k"
      },
      "562 - Úroky": {
       "account_number": "562",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-j-2"
      },
      "563 - Kursové ztráty": {
       "account_number": "563",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-k"
      },
      "564 - Náklady z přecenění cenných papírů": {
       "account_number": "564",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-k"
      },
      "565 - Mimořádné finanční náklady": {
       "account_number": "565",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-k"
      },
      "566 - Náklady z finančního majetku": {
       "account_number": "566",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-k"
      },
      "567 - Náklady z derivátových operací": {
       "account_number": "567",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-k"
      },
      "568 - Ostatní finanční náklady": {
       "account_number": "568",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-k"
      },
      "569 - Manka a škody na finančním majetku": {
       "account_number": "569",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-k"
      }
     },
     "57 - Rezervy a opravné položky ve finanční oblasti": {
@@ -1479,15 +1773,18 @@
      "root_type": "Expense",
      "570 - Rezervy a opravné položky ve finanční oblasti": {
       "account_number": "570",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-i-fin"
      },
      "574 - Tvorba a zúčtování finančních rezerv": {
       "account_number": "574",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-i-fin"
      },
      "579 - Tvorba a zúčtování opravných položek ve finanční činnosti": {
       "account_number": "579",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-i-fin"
      }
     },
     "58 - Změna stavu zásob vlastní činnosti a aktivace": {
@@ -1495,39 +1792,48 @@
      "root_type": "Expense",
      "580 - Změna stavu zásob vlastní činnosti a aktivace": {
       "account_number": "580",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-b"
      },
      "581 - Změna stavu nedokončené výroby": {
       "account_number": "581",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-b"
      },
      "582 - Změna stavu polotovarů vlastní výroby": {
       "account_number": "582",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-b"
      },
      "583 - Změna stavu výrobků": {
       "account_number": "583",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-b"
      },
      "584 - Změna stavu zvířat": {
       "account_number": "584",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-b"
      },
      "585 - Aktivace materiálu a zboží": {
       "account_number": "585",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-c"
      },
      "586 - Aktivace vnitropodnikových služeb": {
       "account_number": "586",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-c"
      },
      "587 - Aktivace dlouhodobého nehmotného majetku": {
       "account_number": "587",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-c"
      },
      "588 - Aktivace dlouhodobého hmotného majetku": {
       "account_number": "588",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-c"
      }
     },
     "59 - Daně z příjmů, převodové účty a rezerva na daň z příjmů": {
@@ -1535,35 +1841,43 @@
      "root_type": "Expense",
      "590 - Daně z příjmů, převodové účty a rezerva na daň z příjmů": {
       "account_number": "590",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-l-1"
      },
      "591 - Daň z příjmů - splatná": {
       "account_number": "591",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-l-1"
      },
      "592 - Daň z příjmů - odložená": {
       "account_number": "592",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-l-2"
      },
      "595 - Dodatečné odvody daně z příjmů": {
       "account_number": "595",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-l-1"
      },
      "596 - Převod podílu na výsledku hospodaření společníkům obchodní korporace": {
       "account_number": "596",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-m"
      },
      "597 - Převod provozních nákladů": {
       "account_number": "597",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-off-interni"
      },
      "598 - Převod finančních nákladů": {
       "account_number": "598",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-off-interni"
      },
      "599 - Tvorba a zúčtování rezervy na daň z příjmů": {
       "account_number": "599",
-      "account_type": null
+      "account_type": null,
+      "account_category": "CZ-vzz-l-1"
      }
     }
    }

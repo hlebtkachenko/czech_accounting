@@ -1,0 +1,933 @@
+[
+ {
+  "doctype": "Account Category",
+  "name": "CZ-off-interni",
+  "account_category_name": "CZ-off-interni",
+  "root_type": "Asset",
+  "description": "Vnitřní zúčtování / vnitropodnikové převodové účty – nevykazují se ve výkazech (nettují se na nulu)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-off-zaverkove",
+  "account_category_name": "CZ-off-zaverkove",
+  "root_type": "Equity",
+  "description": "Závěrkové účty (počáteční/konečný účet rozvažný, účet Z+Z) – nevykazují se ve výkazech"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-a",
+  "account_category_name": "CZ-rozvaha-aktiva-a",
+  "root_type": "Asset",
+  "description": "Pohledávky za upsaný základní kapitál"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-b-i",
+  "account_category_name": "CZ-rozvaha-aktiva-b-i",
+  "root_type": "Asset",
+  "description": "Dlouhodobý nehmotný majetek (souhrn)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-b-i-1",
+  "account_category_name": "CZ-rozvaha-aktiva-b-i-1",
+  "root_type": "Asset",
+  "description": "Nehmotné výsledky vývoje"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-b-i-2-1",
+  "account_category_name": "CZ-rozvaha-aktiva-b-i-2-1",
+  "root_type": "Asset",
+  "description": "Software"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-b-i-2-2",
+  "account_category_name": "CZ-rozvaha-aktiva-b-i-2-2",
+  "root_type": "Asset",
+  "description": "Ostatní ocenitelná práva"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-b-i-3",
+  "account_category_name": "CZ-rozvaha-aktiva-b-i-3",
+  "root_type": "Asset",
+  "description": "Goodwill"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-b-i-4",
+  "account_category_name": "CZ-rozvaha-aktiva-b-i-4",
+  "root_type": "Asset",
+  "description": "Ostatní dlouhodobý nehmotný majetek"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-b-i-5-1",
+  "account_category_name": "CZ-rozvaha-aktiva-b-i-5-1",
+  "root_type": "Asset",
+  "description": "Poskytnuté zálohy na dlouhodobý nehmotný majetek"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-b-i-5-2",
+  "account_category_name": "CZ-rozvaha-aktiva-b-i-5-2",
+  "root_type": "Asset",
+  "description": "Nedokončený dlouhodobý nehmotný majetek"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-b-ii",
+  "account_category_name": "CZ-rozvaha-aktiva-b-ii",
+  "root_type": "Asset",
+  "description": "Dlouhodobý hmotný majetek (souhrn)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-b-ii-1-1",
+  "account_category_name": "CZ-rozvaha-aktiva-b-ii-1-1",
+  "root_type": "Asset",
+  "description": "Pozemky"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-b-ii-1-2",
+  "account_category_name": "CZ-rozvaha-aktiva-b-ii-1-2",
+  "root_type": "Asset",
+  "description": "Stavby"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-b-ii-2",
+  "account_category_name": "CZ-rozvaha-aktiva-b-ii-2",
+  "root_type": "Asset",
+  "description": "Hmotné movité věci a jejich soubory"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-b-ii-3",
+  "account_category_name": "CZ-rozvaha-aktiva-b-ii-3",
+  "root_type": "Asset",
+  "description": "Oceňovací rozdíl k nabytému majetku"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-b-ii-4-1",
+  "account_category_name": "CZ-rozvaha-aktiva-b-ii-4-1",
+  "root_type": "Asset",
+  "description": "Pěstitelské celky trvalých porostů"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-b-ii-4-2",
+  "account_category_name": "CZ-rozvaha-aktiva-b-ii-4-2",
+  "root_type": "Asset",
+  "description": "Dospělá zvířata a jejich skupiny"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-b-ii-4-3",
+  "account_category_name": "CZ-rozvaha-aktiva-b-ii-4-3",
+  "root_type": "Asset",
+  "description": "Jiný dlouhodobý hmotný majetek"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-b-ii-5-1",
+  "account_category_name": "CZ-rozvaha-aktiva-b-ii-5-1",
+  "root_type": "Asset",
+  "description": "Poskytnuté zálohy na dlouhodobý hmotný majetek"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-b-ii-5-2",
+  "account_category_name": "CZ-rozvaha-aktiva-b-ii-5-2",
+  "root_type": "Asset",
+  "description": "Nedokončený dlouhodobý hmotný majetek"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-b-iii",
+  "account_category_name": "CZ-rozvaha-aktiva-b-iii",
+  "root_type": "Asset",
+  "description": "Dlouhodobý finanční majetek (souhrn)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-b-iii-1",
+  "account_category_name": "CZ-rozvaha-aktiva-b-iii-1",
+  "root_type": "Asset",
+  "description": "Podíly – ovládaná nebo ovládající osoba"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-b-iii-2",
+  "account_category_name": "CZ-rozvaha-aktiva-b-iii-2",
+  "root_type": "Asset",
+  "description": "Zápůjčky a úvěry – ovládaná nebo ovládající osoba"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-b-iii-3",
+  "account_category_name": "CZ-rozvaha-aktiva-b-iii-3",
+  "root_type": "Asset",
+  "description": "Podíly – podstatný vliv"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-b-iii-4",
+  "account_category_name": "CZ-rozvaha-aktiva-b-iii-4",
+  "root_type": "Asset",
+  "description": "Zápůjčky a úvěry – podstatný vliv"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-b-iii-5",
+  "account_category_name": "CZ-rozvaha-aktiva-b-iii-5",
+  "root_type": "Asset",
+  "description": "Ostatní dlouhodobé cenné papíry a podíly"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-b-iii-6",
+  "account_category_name": "CZ-rozvaha-aktiva-b-iii-6",
+  "root_type": "Asset",
+  "description": "Zápůjčky a úvěry – ostatní"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-b-iii-7-1",
+  "account_category_name": "CZ-rozvaha-aktiva-b-iii-7-1",
+  "root_type": "Asset",
+  "description": "Jiný dlouhodobý finanční majetek"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-b-iii-7-2",
+  "account_category_name": "CZ-rozvaha-aktiva-b-iii-7-2",
+  "root_type": "Asset",
+  "description": "Poskytnuté zálohy na dlouhodobý finanční majetek"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-c-i",
+  "account_category_name": "CZ-rozvaha-aktiva-c-i",
+  "root_type": "Asset",
+  "description": "Zásoby (souhrn)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-c-i-1",
+  "account_category_name": "CZ-rozvaha-aktiva-c-i-1",
+  "root_type": "Asset",
+  "description": "Materiál"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-c-i-2",
+  "account_category_name": "CZ-rozvaha-aktiva-c-i-2",
+  "root_type": "Asset",
+  "description": "Nedokončená výroba a polotovary"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-c-i-3-1",
+  "account_category_name": "CZ-rozvaha-aktiva-c-i-3-1",
+  "root_type": "Asset",
+  "description": "Výrobky"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-c-i-3-2",
+  "account_category_name": "CZ-rozvaha-aktiva-c-i-3-2",
+  "root_type": "Asset",
+  "description": "Zboží"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-c-i-4",
+  "account_category_name": "CZ-rozvaha-aktiva-c-i-4",
+  "root_type": "Asset",
+  "description": "Mladá a ostatní zvířata a jejich skupiny"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-c-i-5",
+  "account_category_name": "CZ-rozvaha-aktiva-c-i-5",
+  "root_type": "Asset",
+  "description": "Poskytnuté zálohy na zásoby"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-c-ii",
+  "account_category_name": "CZ-rozvaha-aktiva-c-ii",
+  "root_type": "Asset",
+  "description": "Pohledávky (souhrn)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-c-ii-2-1",
+  "account_category_name": "CZ-rozvaha-aktiva-c-ii-2-1",
+  "root_type": "Asset",
+  "description": "Pohledávky z obchodních vztahů (krátkodobé)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-c-ii-2-2",
+  "account_category_name": "CZ-rozvaha-aktiva-c-ii-2-2",
+  "root_type": "Asset",
+  "description": "Pohledávky – ovládaná nebo ovládající osoba (krátkodobé)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-c-ii-2-3",
+  "account_category_name": "CZ-rozvaha-aktiva-c-ii-2-3",
+  "root_type": "Asset",
+  "description": "Pohledávky – podstatný vliv (krátkodobé)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-c-ii-2-4-1",
+  "account_category_name": "CZ-rozvaha-aktiva-c-ii-2-4-1",
+  "root_type": "Asset",
+  "description": "Pohledávky za společníky (krátkodobé)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-c-ii-2-4-3",
+  "account_category_name": "CZ-rozvaha-aktiva-c-ii-2-4-3",
+  "root_type": "Liability",
+  "description": "Stát – daňové pohledávky"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-c-ii-2-4-4",
+  "account_category_name": "CZ-rozvaha-aktiva-c-ii-2-4-4",
+  "root_type": "Asset",
+  "description": "Krátkodobé poskytnuté zálohy"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-c-ii-2-4-5",
+  "account_category_name": "CZ-rozvaha-aktiva-c-ii-2-4-5",
+  "root_type": "Asset",
+  "description": "Dohadné účty aktivní"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-c-ii-2-4-6",
+  "account_category_name": "CZ-rozvaha-aktiva-c-ii-2-4-6",
+  "root_type": "Asset",
+  "description": "Jiné pohledávky"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-c-iii",
+  "account_category_name": "CZ-rozvaha-aktiva-c-iii",
+  "root_type": "Asset",
+  "description": "Krátkodobý finanční majetek (souhrn)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-c-iii-1",
+  "account_category_name": "CZ-rozvaha-aktiva-c-iii-1",
+  "root_type": "Asset",
+  "description": "Podíly – ovládaná nebo ovládající osoba"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-c-iii-2",
+  "account_category_name": "CZ-rozvaha-aktiva-c-iii-2",
+  "root_type": "Asset",
+  "description": "Ostatní krátkodobý finanční majetek"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-c-iv-1",
+  "account_category_name": "CZ-rozvaha-aktiva-c-iv-1",
+  "root_type": "Asset",
+  "description": "Peněžní prostředky v pokladně"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-c-iv-2",
+  "account_category_name": "CZ-rozvaha-aktiva-c-iv-2",
+  "root_type": "Asset",
+  "description": "Peněžní prostředky na účtech"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-d",
+  "account_category_name": "CZ-rozvaha-aktiva-d",
+  "root_type": "Asset",
+  "description": "Časové rozlišení aktiv (souhrn)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-d-1",
+  "account_category_name": "CZ-rozvaha-aktiva-d-1",
+  "root_type": "Asset",
+  "description": "Náklady příštích období"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-d-2",
+  "account_category_name": "CZ-rozvaha-aktiva-d-2",
+  "root_type": "Asset",
+  "description": "Komplexní náklady příštích období"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-aktiva-d-3",
+  "account_category_name": "CZ-rozvaha-aktiva-d-3",
+  "root_type": "Asset",
+  "description": "Příjmy příštích období"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-a",
+  "account_category_name": "CZ-rozvaha-pasiva-a",
+  "root_type": "Equity",
+  "description": "Vlastní kapitál (souhrn)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-a-i-1",
+  "account_category_name": "CZ-rozvaha-pasiva-a-i-1",
+  "root_type": "Equity",
+  "description": "Základní kapitál"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-a-i-2",
+  "account_category_name": "CZ-rozvaha-pasiva-a-i-2",
+  "root_type": "Asset",
+  "description": "Vlastní podíly (-)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-a-i-3",
+  "account_category_name": "CZ-rozvaha-pasiva-a-i-3",
+  "root_type": "Equity",
+  "description": "Změny základního kapitálu"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-a-ii-1",
+  "account_category_name": "CZ-rozvaha-pasiva-a-ii-1",
+  "root_type": "Equity",
+  "description": "Ážio"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-a-ii-2-1",
+  "account_category_name": "CZ-rozvaha-pasiva-a-ii-2-1",
+  "root_type": "Equity",
+  "description": "Ostatní kapitálové fondy"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-a-ii-2-2",
+  "account_category_name": "CZ-rozvaha-pasiva-a-ii-2-2",
+  "root_type": "Equity",
+  "description": "Oceňovací rozdíly z přecenění majetku a závazků (+/-)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-a-ii-2-3",
+  "account_category_name": "CZ-rozvaha-pasiva-a-ii-2-3",
+  "root_type": "Equity",
+  "description": "Oceňovací rozdíly z přecenění při přeměnách obchodních korporací (+/-)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-a-ii-2-4",
+  "account_category_name": "CZ-rozvaha-pasiva-a-ii-2-4",
+  "root_type": "Equity",
+  "description": "Rozdíly z přeměn obchodních korporací (+/-)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-a-ii-2-5",
+  "account_category_name": "CZ-rozvaha-pasiva-a-ii-2-5",
+  "root_type": "Equity",
+  "description": "Rozdíly z ocenění při přeměnách obchodních korporací (+/-)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-a-iii-1",
+  "account_category_name": "CZ-rozvaha-pasiva-a-iii-1",
+  "root_type": "Equity",
+  "description": "Ostatní rezervní fondy"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-a-iii-2",
+  "account_category_name": "CZ-rozvaha-pasiva-a-iii-2",
+  "root_type": "Equity",
+  "description": "Statutární a ostatní fondy"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-a-iv-1",
+  "account_category_name": "CZ-rozvaha-pasiva-a-iv-1",
+  "root_type": "Equity",
+  "description": "Nerozdělený zisk nebo neuhrazená ztráta minulých let (+/-)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-a-iv-2",
+  "account_category_name": "CZ-rozvaha-pasiva-a-iv-2",
+  "root_type": "Equity",
+  "description": "Jiný výsledek hospodaření minulých let (+/-)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-a-v",
+  "account_category_name": "CZ-rozvaha-pasiva-a-v",
+  "root_type": "Equity",
+  "description": "Výsledek hospodaření běžného účetního období (+/-)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-a-vi",
+  "account_category_name": "CZ-rozvaha-pasiva-a-vi",
+  "root_type": "Equity",
+  "description": "Rozhodnuto o zálohové výplatě podílu na zisku (-)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-b",
+  "account_category_name": "CZ-rozvaha-pasiva-b",
+  "root_type": "Liability",
+  "description": "Rezervy (souhrn)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-b-1",
+  "account_category_name": "CZ-rozvaha-pasiva-b-1",
+  "root_type": "Liability",
+  "description": "Rezerva na důchody a podobné závazky"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-b-2",
+  "account_category_name": "CZ-rozvaha-pasiva-b-2",
+  "root_type": "Liability",
+  "description": "Rezerva na daň z příjmů"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-b-3",
+  "account_category_name": "CZ-rozvaha-pasiva-b-3",
+  "root_type": "Liability",
+  "description": "Rezervy podle zvláštních právních předpisů"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-b-4",
+  "account_category_name": "CZ-rozvaha-pasiva-b-4",
+  "root_type": "Liability",
+  "description": "Ostatní rezervy"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-c-i",
+  "account_category_name": "CZ-rozvaha-pasiva-c-i",
+  "root_type": "Liability",
+  "description": "Dlouhodobé závazky (souhrn)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-c-i-1",
+  "account_category_name": "CZ-rozvaha-pasiva-c-i-1",
+  "root_type": "Liability",
+  "description": "Vydané dluhopisy (dlouhodobé)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-c-i-2",
+  "account_category_name": "CZ-rozvaha-pasiva-c-i-2",
+  "root_type": "Liability",
+  "description": "Závazky k úvěrovým institucím (dlouhodobé)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-c-i-3",
+  "account_category_name": "CZ-rozvaha-pasiva-c-i-3",
+  "root_type": "Liability",
+  "description": "Dlouhodobé přijaté zálohy"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-c-i-5",
+  "account_category_name": "CZ-rozvaha-pasiva-c-i-5",
+  "root_type": "Liability",
+  "description": "Dlouhodobé směnky k úhradě"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-c-i-6",
+  "account_category_name": "CZ-rozvaha-pasiva-c-i-6",
+  "root_type": "Liability",
+  "description": "Závazky – ovládaná nebo ovládající osoba (dlouhodobé)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-c-i-7",
+  "account_category_name": "CZ-rozvaha-pasiva-c-i-7",
+  "root_type": "Liability",
+  "description": "Závazky – podstatný vliv (dlouhodobé)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-c-i-8",
+  "account_category_name": "CZ-rozvaha-pasiva-c-i-8",
+  "root_type": "Liability",
+  "description": "Odložený daňový závazek"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-c-i-9-3",
+  "account_category_name": "CZ-rozvaha-pasiva-c-i-9-3",
+  "root_type": "Liability",
+  "description": "Jiné závazky (dlouhodobé)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-c-ii",
+  "account_category_name": "CZ-rozvaha-pasiva-c-ii",
+  "root_type": "Liability",
+  "description": "Krátkodobé závazky (souhrn)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-c-ii-1",
+  "account_category_name": "CZ-rozvaha-pasiva-c-ii-1",
+  "root_type": "Liability",
+  "description": "Vydané dluhopisy (krátkodobé)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-c-ii-2",
+  "account_category_name": "CZ-rozvaha-pasiva-c-ii-2",
+  "root_type": "Liability",
+  "description": "Závazky k úvěrovým institucím (krátkodobé)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-c-ii-3",
+  "account_category_name": "CZ-rozvaha-pasiva-c-ii-3",
+  "root_type": "Liability",
+  "description": "Krátkodobé přijaté zálohy"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-c-ii-4",
+  "account_category_name": "CZ-rozvaha-pasiva-c-ii-4",
+  "root_type": "Liability",
+  "description": "Závazky z obchodních vztahů (krátkodobé)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-c-ii-5",
+  "account_category_name": "CZ-rozvaha-pasiva-c-ii-5",
+  "root_type": "Liability",
+  "description": "Krátkodobé směnky k úhradě"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-c-ii-6",
+  "account_category_name": "CZ-rozvaha-pasiva-c-ii-6",
+  "root_type": "Liability",
+  "description": "Závazky – ovládaná nebo ovládající osoba (krátkodobé)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-c-ii-7",
+  "account_category_name": "CZ-rozvaha-pasiva-c-ii-7",
+  "root_type": "Liability",
+  "description": "Závazky – podstatný vliv (krátkodobé)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-c-ii-8-1",
+  "account_category_name": "CZ-rozvaha-pasiva-c-ii-8-1",
+  "root_type": "Liability",
+  "description": "Závazky ke společníkům"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-c-ii-8-2",
+  "account_category_name": "CZ-rozvaha-pasiva-c-ii-8-2",
+  "root_type": "Liability",
+  "description": "Krátkodobé finanční výpomoci"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-c-ii-8-3",
+  "account_category_name": "CZ-rozvaha-pasiva-c-ii-8-3",
+  "root_type": "Liability",
+  "description": "Závazky k zaměstnancům"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-c-ii-8-4",
+  "account_category_name": "CZ-rozvaha-pasiva-c-ii-8-4",
+  "root_type": "Liability",
+  "description": "Závazky ze sociálního zabezpečení a zdravotního pojištění"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-c-ii-8-5",
+  "account_category_name": "CZ-rozvaha-pasiva-c-ii-8-5",
+  "root_type": "Liability",
+  "description": "Stát – daňové závazky a dotace"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-c-ii-8-6",
+  "account_category_name": "CZ-rozvaha-pasiva-c-ii-8-6",
+  "root_type": "Liability",
+  "description": "Dohadné účty pasivní"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-c-ii-8-7",
+  "account_category_name": "CZ-rozvaha-pasiva-c-ii-8-7",
+  "root_type": "Liability",
+  "description": "Jiné závazky"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-d-1",
+  "account_category_name": "CZ-rozvaha-pasiva-d-1",
+  "root_type": "Liability",
+  "description": "Výdaje příštích období"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-rozvaha-pasiva-d-2",
+  "account_category_name": "CZ-rozvaha-pasiva-d-2",
+  "root_type": "Liability",
+  "description": "Výnosy příštích období"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-vzz-a",
+  "account_category_name": "CZ-vzz-a",
+  "root_type": "Expense",
+  "description": "Výkonová spotřeba (souhrn)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-vzz-a-1",
+  "account_category_name": "CZ-vzz-a-1",
+  "root_type": "Expense",
+  "description": "Náklady vynaložené na prodané zboží"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-vzz-a-2",
+  "account_category_name": "CZ-vzz-a-2",
+  "root_type": "Expense",
+  "description": "Spotřeba materiálu a energie"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-vzz-a-3",
+  "account_category_name": "CZ-vzz-a-3",
+  "root_type": "Expense",
+  "description": "Služby"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-vzz-b",
+  "account_category_name": "CZ-vzz-b",
+  "root_type": "Expense",
+  "description": "Změna stavu zásob vlastní činnosti (+/-)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-vzz-c",
+  "account_category_name": "CZ-vzz-c",
+  "root_type": "Expense",
+  "description": "Aktivace (-)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-vzz-d",
+  "account_category_name": "CZ-vzz-d",
+  "root_type": "Expense",
+  "description": "Osobní náklady (souhrn)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-vzz-d-1",
+  "account_category_name": "CZ-vzz-d-1",
+  "root_type": "Expense",
+  "description": "Mzdové náklady"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-vzz-d-2-1",
+  "account_category_name": "CZ-vzz-d-2-1",
+  "root_type": "Expense",
+  "description": "Náklady na sociální zabezpečení a zdravotní pojištění"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-vzz-d-2-2",
+  "account_category_name": "CZ-vzz-d-2-2",
+  "root_type": "Expense",
+  "description": "Ostatní náklady (osobní)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-vzz-e-1-1",
+  "account_category_name": "CZ-vzz-e-1-1",
+  "root_type": "Expense",
+  "description": "Úpravy hodnot dlouhodobého nehmotného a hmotného majetku – trvalé"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-vzz-e-3",
+  "account_category_name": "CZ-vzz-e-3",
+  "root_type": "Expense",
+  "description": "Úpravy hodnot pohledávek"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-vzz-f-1",
+  "account_category_name": "CZ-vzz-f-1",
+  "root_type": "Expense",
+  "description": "Zůstatková cena prodaného dlouhodobého majetku"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-vzz-f-2",
+  "account_category_name": "CZ-vzz-f-2",
+  "root_type": "Expense",
+  "description": "Prodaný materiál"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-vzz-f-3",
+  "account_category_name": "CZ-vzz-f-3",
+  "root_type": "Expense",
+  "description": "Daně a poplatky (v provozní oblasti)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-vzz-f-4",
+  "account_category_name": "CZ-vzz-f-4",
+  "root_type": "Expense",
+  "description": "Rezervy v provozní oblasti a komplexní náklady příštích období"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-vzz-f-5",
+  "account_category_name": "CZ-vzz-f-5",
+  "root_type": "Expense",
+  "description": "Jiné provozní náklady"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-vzz-i",
+  "account_category_name": "CZ-vzz-i",
+  "root_type": "Income",
+  "description": "Tržby z prodeje výrobků a služeb"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-vzz-i-fin",
+  "account_category_name": "CZ-vzz-i-fin",
+  "root_type": "Expense",
+  "description": "Úpravy hodnot a rezervy ve finanční oblasti"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-vzz-ii",
+  "account_category_name": "CZ-vzz-ii",
+  "root_type": "Income",
+  "description": "Tržby za prodej zboží"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-vzz-iii-1",
+  "account_category_name": "CZ-vzz-iii-1",
+  "root_type": "Income",
+  "description": "Tržby z prodaného dlouhodobého majetku"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-vzz-iii-2",
+  "account_category_name": "CZ-vzz-iii-2",
+  "root_type": "Income",
+  "description": "Tržby z prodaného materiálu"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-vzz-iii-3",
+  "account_category_name": "CZ-vzz-iii-3",
+  "root_type": "Income",
+  "description": "Jiné provozní výnosy"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-vzz-iv-2",
+  "account_category_name": "CZ-vzz-iv-2",
+  "root_type": "Income",
+  "description": "Ostatní výnosy z podílů"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-vzz-j-2",
+  "account_category_name": "CZ-vzz-j-2",
+  "root_type": "Expense",
+  "description": "Ostatní nákladové úroky a podobné náklady"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-vzz-k",
+  "account_category_name": "CZ-vzz-k",
+  "root_type": "Expense",
+  "description": "Ostatní finanční náklady"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-vzz-l-1",
+  "account_category_name": "CZ-vzz-l-1",
+  "root_type": "Expense",
+  "description": "Daň z příjmů splatná"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-vzz-l-2",
+  "account_category_name": "CZ-vzz-l-2",
+  "root_type": "Expense",
+  "description": "Daň z příjmů odložená (+/-)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-vzz-m",
+  "account_category_name": "CZ-vzz-m",
+  "root_type": "Expense",
+  "description": "Převod podílu na výsledku hospodaření společníkům (+/-)"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-vzz-vi-2",
+  "account_category_name": "CZ-vzz-vi-2",
+  "root_type": "Income",
+  "description": "Ostatní výnosové úroky a podobné výnosy"
+ },
+ {
+  "doctype": "Account Category",
+  "name": "CZ-vzz-vii",
+  "account_category_name": "CZ-vzz-vii",
+  "root_type": "Income",
+  "description": "Ostatní finanční výnosy"
+ }
+]

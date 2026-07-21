@@ -50,6 +50,18 @@ for _num, _name, _rt, _at, _lvl, _parent in AUGMENT:
     })
 by_num = {n["account_number"]: n for n in nodes if n.get("account_number")}
 
+MAPPING = "docs/plans/research/coa-statement-mapping.json"
+statement_map = json.load(open(MAPPING, encoding="utf-8"))
+
+
+def leaf_node(num, account_type):
+    """A posting account, tagged with its Czech statement-row Account Category."""
+    node = {"account_number": num, "account_type": account_type or None}
+    entry = statement_map.get(num)
+    if entry and entry.get("category_code"):
+        node["account_category"] = "CZ-" + entry["category_code"]
+    return node
+
 
 def name_of(num, fallback):
     if num in NAME_OVERRIDES:
@@ -97,11 +109,11 @@ for acc in sorted(posting, key=lambda n: n["account_number"]):
         syn_node = ensure_group(
             grp_node, f"{parent_syn} - {name_of(parent_syn, parent_syn)}", rt, parent_syn
         )
-        syn_node[key] = {"account_number": num, "account_type": acc.get("account_type") or None}
+        syn_node[key] = leaf_node(num, acc.get("account_type"))
     elif num in synth_with_children:
         ensure_group(grp_node, key, rt, num)  # synthetic with analytics -> group, not posting
     else:
-        grp_node[key] = {"account_number": num, "account_type": acc.get("account_type") or None}
+        grp_node[key] = leaf_node(num, acc.get("account_type"))
     placed += 1
 
 chart = {"name": CHART_NAME, "country_code": "cz", "tree": tree}
@@ -129,3 +141,29 @@ g, l = count(tree)
 print(f"posting accounts placed: {placed}")
 print(f"tree: {len(tree)} roots, {g} group nodes, {l} leaf (posting) accounts")
 print(f"written: {OUT}")
+
+# --- Account Category fixture from the statement mapping (seam to Stream 3) ---
+FIX_OUT = "czech_accounting/fixtures/account_category.json"
+cat_root, cat_label = {}, {}
+for _num, _entry in statement_map.items():
+    _code = _entry.get("category_code")
+    if not _code:
+        continue
+    _rt = (by_num.get(_num) or {}).get("root_type")
+    if _rt not in ROOT_LABELS:
+        _rt = "Equity"
+    cat_root.setdefault(_code, set()).add(_rt)
+    cat_label[_code] = _entry.get("category_label") or _code
+records = []
+for _code in sorted(cat_root):
+    _rt = sorted(cat_root[_code])[0]
+    _name = "CZ-" + _code
+    records.append({
+        "doctype": "Account Category", "name": _name, "account_category_name": _name,
+        "root_type": _rt, "description": cat_label[_code],
+    })
+    if len(cat_root[_code]) > 1:
+        print(f"  WARN category {_code} spans roots {sorted(cat_root[_code])}; using {_rt}")
+with open(FIX_OUT, "w", encoding="utf-8") as f:
+    json.dump(records, f, ensure_ascii=False, indent=1)
+print(f"account categories: {len(records)} -> {FIX_OUT}")
