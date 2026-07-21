@@ -6,11 +6,9 @@
    "root_type": "Asset",
    "is_group": 1,
    "0 - Dlouhodobý majetek": {
-    "account_number": "0",
     "is_group": 1,
     "root_type": "Asset",
     "01 - Dlouhodobý nehmotný majetek": {
-     "account_number": "01",
      "is_group": 1,
      "root_type": "Asset",
      "010 - Dlouhodobý nehmotný majetek": {
@@ -39,7 +37,6 @@
      }
     },
     "02 - Dlouhodobý hmotný majetek odpisovaný": {
-     "account_number": "02",
      "is_group": 1,
      "root_type": "Asset",
      "020 - Dlouhodobý hmotný majetek odpisovaný": {
@@ -68,7 +65,6 @@
      }
     },
     "03 - Dlouhodobý hmotný majetek neodpisovaný": {
-     "account_number": "03",
      "is_group": 1,
      "root_type": "Asset",
      "030 - Dlouhodobý hmotný majetek neodpisovaný": {
@@ -85,7 +81,6 @@
      }
     },
     "04 - Nedokončený dlouhodobý nehmotný a hmotný majetek": {
-     "account_number": "04",
      "is_group": 1,
      "root_type": "Asset",
      "040 - Nedokončený dlouhodobý nehmotný a hmotný majetek": {
@@ -106,7 +101,6 @@
      }
     },
     "05 - Poskytnuté zálohy na dlouhodobý majetek": {
-     "account_number": "05",
      "is_group": 1,
      "root_type": "Asset",
      "050 - Poskytnuté zálohy na dlouhodobý majetek": {
@@ -127,7 +121,6 @@
      }
     },
     "06 - Dlouhodobý finanční majetek": {
-     "account_number": "06",
      "is_group": 1,
      "root_type": "Asset",
      "060 - Dlouhodobý finanční majetek": {
@@ -168,7 +161,6 @@
      }
     },
     "07 - Oprávky k dlouhodobému nehmotnému majetku": {
-     "account_number": "07",
      "is_group": 1,
      "root_type": "Asset",
      "070 - Oprávky k dlouhodobému nehmotnému majetku": {
@@ -197,7 +189,6 @@
      }
     },
     "08 - Oprávky k dlouhodobému hmotnému majetku": {
-     "account_number": "08",
      "is_group": 1,
      "root_type": "Asset",
      "080 - Oprávky k dlouhodobému hmotnému majetku": {
@@ -226,7 +217,6 @@
      }
     },
     "09 - Opravné položky k dlouhodobému majetku": {
-     "account_number": "09",
      "is_group": 1,
      "root_type": "Asset",
      "090 - Opravné položky k dlouhodobému majetku": {
@@ -268,11 +258,9 @@
     }
    },
    "1 - Zásoby": {
-    "account_number": "1",
     "is_group": 1,
     "root_type": "Asset",
     "11 - Materiál": {
-     "account_number": "11",
      "is_group": 1,
      "root_type": "Asset",
      "110 - Materiál": {
@@ -293,7 +281,6 @@
      }
     },
     "12 - Zásoby vlastní činnosti": {
-     "account_number": "12",
      "is_group": 1,
      "root_type": "Asset",
      "120 - Zásoby vlastní činnosti": {
@@ -318,7 +305,6 @@
      }
     },
     "13 - Zboží": {
-     "account_number": "13",
      "is_group": 1,
      "root_type": "Asset",
      "130 - Zboží": {
@@ -339,7 +325,6 @@
      }
     },
     "15 - Poskytnuté zálohy na zásoby": {
-     "account_number": "15",
      "is_group": 1,
      "root_type": "Asset",
      "150 - Poskytnuté zálohy na zásoby": {
@@ -360,7 +345,6 @@
      }
     },
     "19 - Opravné položky z zásobám": {
-     "account_number": "19",
      "is_group": 1,
      "root_type": "Asset",
      "190 - Opravné položky z zásobám": {
@@ -406,11 +390,9 @@
     }
    },
    "2 - Krátkodobý finanční majetek a peněžní prostředky": {
-    "account_number": "2",
     "is_group": 1,
     "root_type": "Asset",
     "21 - Peněžní prostředky v pokladně": {
-     "account_number": "21",
      "is_group": 1,
      "root_type": "Asset",
      "210 - Peněžní prostředky v pokladně": {
@@ -427,7 +409,6 @@
      }
     },
     "22 - Peněžní prostředky na účtech": {
-     "account_number": "22",
      "is_group": 1,
      "root_type": "Asset",
      "220 - Peněžní prostředky na účtech": {
@@ -435,9 +416,9 @@
       "account_type": null
      },
      "221 - Peněžní prostředky na účtech": {
-      "account_number": "221",
       "is_group": 1,
       "root_type": "Asset",
+      "account_number": "221",
       "221001 - Bankovní účet CZK": {
        "account_number": "221001",
        "account_type": "Bank"
@@ -445,7 +426,6 @@
      }
     },
     "25 - Krátkodobý finanční majetek": {
-     "account_number": "25",
      "is_group": 1,
      "root_type": "Asset",
      "250 - Krátkodobý finanční majetek": {
@@ -486,7 +466,6 @@
      }
     },
     "26 - Převody mezi finančními účty": {
-     "account_number": "26",
      "is_group": 1,
      "root_type": "Asset",
      "260 - Převody mezi finančními účty": {
@@ -499,7 +478,6 @@
      }
     },
     "29 - Opravné položky ke krátkodobému finančnímu majetku": {
-     "account_number": "29",
      "is_group": 1,
      "root_type": "Asset",
      "290 - Opravné položky ke krátkodobému finančnímu majetku": {
@@ -513,11 +491,9 @@
     }
    },
    "3 - Zúčtovací vztahy": {
-    "account_number": "3",
     "is_group": 1,
     "root_type": "Asset",
     "31 - Pohledávky (krátkodobé i dlouhodobé)": {
-     "account_number": "31",
      "is_group": 1,
      "root_type": "Asset",
      "310 - Pohledávky (krátkodobé i dlouhodobé)": {
@@ -546,7 +522,6 @@
      }
     },
     "33 - Zúčtování se zaměstnanci a institucemi": {
-     "account_number": "33",
      "is_group": 1,
      "root_type": "Asset",
      "335 - Pohledávky za zaměstnanci": {
@@ -555,7 +530,6 @@
      }
     },
     "35 - Pohledávky za společníky": {
-     "account_number": "35",
      "is_group": 1,
      "root_type": "Asset",
      "350 - Pohledávky za společníky": {
@@ -588,7 +562,6 @@
      }
     },
     "37 - Jiné pohledávky a závazky": {
-     "account_number": "37",
      "is_group": 1,
      "root_type": "Asset",
      "370 - Jiné pohledávky a závazky": {
@@ -621,7 +594,6 @@
      }
     },
     "38 - Přechodné účty aktiv a pasiv": {
-     "account_number": "38",
      "is_group": 1,
      "root_type": "Asset",
      "380 - Přechodné účty aktiv a pasiv": {
@@ -646,7 +618,6 @@
      }
     },
     "39 - Opravná položka k zúčtovacím vztahům a vnitřní zúčtování": {
-     "account_number": "39",
      "is_group": 1,
      "root_type": "Asset",
      "390 - Opravná položka k zúčtovacím vztahům a vnitřní zúčtování": {
@@ -672,11 +643,9 @@
    "root_type": "Liability",
    "is_group": 1,
    "2 - Krátkodobý finanční majetek a peněžní prostředky": {
-    "account_number": "2",
     "is_group": 1,
     "root_type": "Liability",
     "23 - Krátkodobé úvěry": {
-     "account_number": "23",
      "is_group": 1,
      "root_type": "Liability",
      "230 - Krátkodobé úvěry": {
@@ -697,7 +666,6 @@
      }
     },
     "24 - Krátkodobé finanční výpomoci": {
-     "account_number": "24",
      "is_group": 1,
      "root_type": "Liability",
      "240 - Krátkodobé finanční výpomoci": {
@@ -715,11 +683,9 @@
     }
    },
    "3 - Zúčtovací vztahy": {
-    "account_number": "3",
     "is_group": 1,
     "root_type": "Liability",
     "32 - Závazky (krátkodobé)": {
-     "account_number": "32",
      "is_group": 1,
      "root_type": "Liability",
      "320 - Závazky (krátkodobé)": {
@@ -744,7 +710,6 @@
      }
     },
     "33 - Zúčtování se zaměstnanci a institucemi": {
-     "account_number": "33",
      "is_group": 1,
      "root_type": "Liability",
      "330 - Zúčtování se zaměstnanci a institucemi": {
@@ -765,7 +730,6 @@
      }
     },
     "34 - Zúčtování daní a dotací": {
-     "account_number": "34",
      "is_group": 1,
      "root_type": "Liability",
      "340 - Zúčtování daní a dotací": {
@@ -781,9 +745,9 @@
       "account_type": "Tax"
      },
      "343 - Daň z přidané hodnoty": {
-      "account_number": "343",
       "is_group": 1,
       "root_type": "Liability",
+      "account_number": "343",
       "343.100 - DPH na vstupu": {
        "account_number": "343.100",
        "account_type": "Tax"
@@ -807,7 +771,6 @@
      }
     },
     "36 - Závazky ke společníkům": {
-     "account_number": "36",
      "is_group": 1,
      "root_type": "Liability",
      "360 - Závazky ke společníkům": {
@@ -844,7 +807,6 @@
      }
     },
     "37 - Jiné pohledávky a závazky": {
-     "account_number": "37",
      "is_group": 1,
      "root_type": "Liability",
      "372 - Dluhy z koupě obchodního závodu": {
@@ -861,7 +823,6 @@
      }
     },
     "38 - Přechodné účty aktiv a pasiv": {
-     "account_number": "38",
      "is_group": 1,
      "root_type": "Liability",
      "383 - Výdaje příštích období": {
@@ -879,11 +840,9 @@
     }
    },
    "4 - Kapitálové účty a dlouhodobé závazky": {
-    "account_number": "4",
     "is_group": 1,
     "root_type": "Liability",
     "45 - Rezervy": {
-     "account_number": "45",
      "is_group": 1,
      "root_type": "Liability",
      "450 - Rezervy": {
@@ -908,7 +867,6 @@
      }
     },
     "46 - Dlouhodobé závazky k úvěrovým institucím": {
-     "account_number": "46",
      "is_group": 1,
      "root_type": "Liability",
      "460 - Dlouhodobé závazky k úvěrovým institucím": {
@@ -925,7 +883,6 @@
      }
     },
     "47 - Dlouhodobé závazky": {
-     "account_number": "47",
      "is_group": 1,
      "root_type": "Liability",
      "470 - Dlouhodobé závazky": {
@@ -962,7 +919,6 @@
      }
     },
     "48 - Odložený daňový závazek a pohledávka": {
-     "account_number": "48",
      "is_group": 1,
      "root_type": "Liability",
      "480 - Odložený daňový závazek a pohledávka": {
@@ -980,11 +936,9 @@
    "root_type": "Equity",
    "is_group": 1,
    "4 - Kapitálové účty a dlouhodobé závazky": {
-    "account_number": "4",
     "is_group": 1,
     "root_type": "Equity",
     "41 - Základní kapitál a kapitálové fondy": {
-     "account_number": "41",
      "is_group": 1,
      "root_type": "Equity",
      "410 - Základní kapitál a kapitálové fondy": {
@@ -1025,7 +979,6 @@
      }
     },
     "42 - Fondy ze zisku a převedené výsledky hospodaření": {
-     "account_number": "42",
      "is_group": 1,
      "root_type": "Equity",
      "420 - Fondy ze zisku a převedené výsledky hospodaření": {
@@ -1062,7 +1015,6 @@
      }
     },
     "43 - Výsledek hospodaření": {
-     "account_number": "43",
      "is_group": 1,
      "root_type": "Equity",
      "430 - Výsledek hospodaření": {
@@ -1079,7 +1031,6 @@
      }
     },
     "49 - Individuální podnikatel": {
-     "account_number": "49",
      "is_group": 1,
      "root_type": "Equity",
      "490 - Individuální podnikatel": {
@@ -1093,11 +1044,9 @@
     }
    },
    "7 - Závěrkové a podrozvahové účty": {
-    "account_number": "7",
     "is_group": 1,
     "root_type": "Equity",
     "70 - Účty rozvažné": {
-     "account_number": "70",
      "is_group": 1,
      "root_type": "Equity",
      "700 - Účty rozvažné": {
@@ -1114,7 +1063,6 @@
      }
     },
     "71 - Účet zisků a ztrát": {
-     "account_number": "71",
      "is_group": 1,
      "root_type": "Equity",
      "710 - Účet zisků a ztrát": {
@@ -1128,11 +1076,9 @@
    "root_type": "Income",
    "is_group": 1,
    "6 - Výnosy": {
-    "account_number": "6",
     "is_group": 1,
     "root_type": "Income",
     "60 - Tržby za vlastní výkony a zboží": {
-     "account_number": "60",
      "is_group": 1,
      "root_type": "Income",
      "600 - Tržby za vlastní výkony a zboží": {
@@ -1153,7 +1099,6 @@
      }
     },
     "61 - Změna stavu zásob vlastní činnosti": {
-     "account_number": "61",
      "is_group": 1,
      "root_type": "Income",
      "611 - Změna stavu nedokončené výroby": {
@@ -1174,7 +1119,6 @@
      }
     },
     "62 - Aktivace": {
-     "account_number": "62",
      "is_group": 1,
      "root_type": "Income",
      "621 - Aktivace materiálu a zboží": {
@@ -1195,7 +1139,6 @@
      }
     },
     "64 - Jiné provozní výnosy": {
-     "account_number": "64",
      "is_group": 1,
      "root_type": "Income",
      "640 - Jiné provozní výnosy": {
@@ -1232,7 +1175,6 @@
      }
     },
     "66 - Finanční výnosy": {
-     "account_number": "66",
      "is_group": 1,
      "root_type": "Income",
      "660 - Finanční výnosy": {
@@ -1277,7 +1219,6 @@
      }
     },
     "69 - Převodové účty": {
-     "account_number": "69",
      "is_group": 1,
      "root_type": "Income",
      "690 - Převodové účty": {
@@ -1299,11 +1240,9 @@
    "root_type": "Expense",
    "is_group": 1,
    "5 - Náklady": {
-    "account_number": "5",
     "is_group": 1,
     "root_type": "Expense",
     "50 - Spotřebované nákupy": {
-     "account_number": "50",
      "is_group": 1,
      "root_type": "Expense",
      "500 - Spotřebované nákupy": {
@@ -1328,7 +1267,6 @@
      }
     },
     "51 - Služby": {
-     "account_number": "51",
      "is_group": 1,
      "root_type": "Expense",
      "510 - Služby": {
@@ -1353,7 +1291,6 @@
      }
     },
     "52 - Osobní náklady": {
-     "account_number": "52",
      "is_group": 1,
      "root_type": "Expense",
      "520 - Osobní náklady": {
@@ -1394,7 +1331,6 @@
      }
     },
     "53 - Daně a poplatky": {
-     "account_number": "53",
      "is_group": 1,
      "root_type": "Expense",
      "530 - Daně a poplatky": {
@@ -1415,7 +1351,6 @@
      }
     },
     "54 - Jiné provozní náklady": {
-     "account_number": "54",
      "is_group": 1,
      "root_type": "Expense",
      "540 - Jiné provozní náklady": {
@@ -1460,7 +1395,6 @@
      }
     },
     "55 - Odpisy, rezervy, komplexní náklady příštích období a opravné položky v provozní oblasti": {
-     "account_number": "55",
      "is_group": 1,
      "root_type": "Expense",
      "550 - Odpisy, rezervy, komplexní náklady příštích období a opravné položky v provozní oblasti": {
@@ -1497,7 +1431,6 @@
      }
     },
     "56 - Finanční náklady": {
-     "account_number": "56",
      "is_group": 1,
      "root_type": "Expense",
      "560 - Finanční náklady": {
@@ -1542,7 +1475,6 @@
      }
     },
     "57 - Rezervy a opravné položky ve finanční oblasti": {
-     "account_number": "57",
      "is_group": 1,
      "root_type": "Expense",
      "570 - Rezervy a opravné položky ve finanční oblasti": {
@@ -1559,7 +1491,6 @@
      }
     },
     "58 - Změna stavu zásob vlastní činnosti a aktivace": {
-     "account_number": "58",
      "is_group": 1,
      "root_type": "Expense",
      "580 - Změna stavu zásob vlastní činnosti a aktivace": {
@@ -1600,7 +1531,6 @@
      }
     },
     "59 - Daně z příjmů, převodové účty a rezerva na daň z příjmů": {
-     "account_number": "59",
      "is_group": 1,
      "root_type": "Expense",
      "590 - Daně z příjmů, převodové účty a rezerva na daň z příjmů": {

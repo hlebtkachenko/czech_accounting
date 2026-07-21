@@ -58,10 +58,19 @@ def name_of(num, fallback):
     return n["name_cs"] if n and n.get("name_cs") else fallback
 
 
-def ensure_group(parent, key, number, root_type):
-    """Insert (or fetch) a group node under parent and return it."""
+def ensure_group(parent, key, root_type, number=None):
+    """Insert (or fetch) a group node under parent and return it.
+
+    Intermediate class/group nodes carry NO account_number: a Czech class/group can span two
+    ERPNext root_types (classes 2, 3, 4), and ERPNext requires account_number to be unique per
+    company. Only real accounts (synthetic parents and leaves) keep their number; ERPNext
+    auto-suffixes any duplicate group names.
+    """
     if key not in parent:
-        parent[key] = {"account_number": number, "is_group": 1, "root_type": root_type}
+        node = {"is_group": 1, "root_type": root_type}
+        if number:
+            node["account_number"] = number
+        parent[key] = node
     return parent[key]
 
 
@@ -79,18 +88,18 @@ for acc in sorted(posting, key=lambda n: n["account_number"]):
     root = tree[ROOT_LABELS[rt]]
 
     cls, grp, syn = num[0], num[:2], num[:3]
-    cls_node = ensure_group(root, f"{cls} - {name_of(cls, 'Účtová třída ' + cls)}", cls, rt)
-    grp_node = ensure_group(cls_node, f"{grp} - {name_of(grp, 'Skupina ' + grp)}", grp, rt)
+    cls_node = ensure_group(root, f"{cls} - {name_of(cls, 'Účtová třída ' + cls)}", rt)
+    grp_node = ensure_group(cls_node, f"{grp} - {name_of(grp, 'Skupina ' + grp)}", rt)
     key = f"{num} - {acc['name_cs']}"
 
     if acc["level"] == "analytical":
         parent_syn = acc.get("parent_number") or syn
         syn_node = ensure_group(
-            grp_node, f"{parent_syn} - {name_of(parent_syn, parent_syn)}", parent_syn, rt
+            grp_node, f"{parent_syn} - {name_of(parent_syn, parent_syn)}", rt, parent_syn
         )
         syn_node[key] = {"account_number": num, "account_type": acc.get("account_type") or None}
     elif num in synth_with_children:
-        ensure_group(grp_node, key, num, rt)  # synthetic with analytics -> group, not posting
+        ensure_group(grp_node, key, rt, num)  # synthetic with analytics -> group, not posting
     else:
         grp_node[key] = {"account_number": num, "account_type": acc.get("account_type") or None}
     placed += 1
