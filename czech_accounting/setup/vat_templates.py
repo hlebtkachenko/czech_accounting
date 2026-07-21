@@ -125,25 +125,26 @@ def _ensure_mode_of_payment(name, mop_type, company, account_number):
 
 
 def setup_company_vat(company):
-	"""Create the Czech tax templates and cash/bank modes for one company."""
+	"""Create the Czech tax templates and cash/bank modes for one company.
+
+	Titles are bare (e.g. "DPH 21 %"). ERPNext's tax-template autoname appends
+	" - {abbr}" to build the record name, so do NOT add the abbr here or the name
+	ends up double-suffixed.
+	"""
 	vat = get_account(company, VAT_ACCOUNT)
-	abbr = frappe.get_cached_value("Company", company, "abbr")
 	rates = VAT_RATES_2024_01_01
 
-	def title(base):
-		return f"{base} - {abbr}"
-
 	sales = "Sales Taxes and Charges Template"
-	_upsert_template(sales, company, title("DPH 21 %"), sales_tax_rows(rates["standard"], vat))
-	_upsert_template(sales, company, title("DPH 12 %"), sales_tax_rows(rates["reduced"], vat))
-	_upsert_template(sales, company, title("DPH 0 % (osvobozeno / vývoz)"), sales_tax_rows(rates["zero"], vat))
+	_upsert_template(sales, company, "DPH 21 %", sales_tax_rows(rates["standard"], vat))
+	_upsert_template(sales, company, "DPH 12 %", sales_tax_rows(rates["reduced"], vat))
+	_upsert_template(sales, company, "DPH 0 % (osvobozeno / vývoz)", sales_tax_rows(rates["zero"], vat))
 
 	purchase = "Purchase Taxes and Charges Template"
-	_upsert_template(purchase, company, title("DPH 21 %"), purchase_tax_rows(rates["standard"], vat))
-	_upsert_template(purchase, company, title("DPH 12 %"), purchase_tax_rows(rates["reduced"], vat))
-	_upsert_template(purchase, company, title("DPH 0 % (osvobozeno / dovoz)"), purchase_tax_rows(rates["zero"], vat))
-	_upsert_template(purchase, company, title("PDP 21 % (přenesená daňová povinnost)"), reverse_charge_rows(rates["standard"], vat, vat))
-	_upsert_template(purchase, company, title("PDP 12 % (přenesená daňová povinnost)"), reverse_charge_rows(rates["reduced"], vat, vat))
+	_upsert_template(purchase, company, "DPH 21 %", purchase_tax_rows(rates["standard"], vat))
+	_upsert_template(purchase, company, "DPH 12 %", purchase_tax_rows(rates["reduced"], vat))
+	_upsert_template(purchase, company, "DPH 0 % (osvobozeno / dovoz)", purchase_tax_rows(rates["zero"], vat))
+	_upsert_template(purchase, company, "PDP 21 % (přenesená daňová povinnost)", reverse_charge_rows(rates["standard"], vat, vat))
+	_upsert_template(purchase, company, "PDP 12 % (přenesená daňová povinnost)", reverse_charge_rows(rates["reduced"], vat, vat))
 
 	_ensure_mode_of_payment("Cash", "Cash", company, CASH_ACCOUNT)
 	_ensure_mode_of_payment("Bank", "Bank", company, BANK_ACCOUNT)

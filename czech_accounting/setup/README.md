@@ -19,8 +19,8 @@ Mode of Payment account row in place.
 
 Accounts are synthetic-only (3-digit). Input and output VAT both post to the
 single synthetic **343**; the input/output split for DPH/KH is carried by the tax
-rows, not by separate accounts. Tax templates (title suffixed with the company
-abbreviation, ERPNext convention):
+rows, not by separate accounts. Titles are bare (ERPNext's autoname appends the
+company abbreviation to the record name):
 
 | Template | Rows | Account |
 |---|---|---|
