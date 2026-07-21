@@ -2,11 +2,11 @@
 # For license information, see license.txt
 """Genuine fixed asset (automobil) depreciates on both Finance Books.
 
-Builds the CZ-Automobil Asset Category with two finance_books (CZ-Účetní odpisy monthly, CZ-Daňové
-odpisy annual) exactly as shipped in fixtures/asset_category.json + fixtures/finance_book.json,
-creates an Asset that uses it, submits it, and asserts ERPNext generates two parallel
-depreciation schedules (účetní vs daňové odpisy, §28 ZÚ vs §26–33 ZDP). The IntegrationTestCase
-data is cancelled/removed in teardown.
+Builds the CZ-Automobil Asset Category programmatically (its accounts are per-company, so it is
+not a fixture) with the two finance books from fixtures/finance_book.json (CZ-Účetní odpisy
+monthly, CZ-Daňové odpisy annual), creates an Asset that uses it, submits it, and asserts two
+parallel schedules exist — účetní (straight line) vs daňové (statutory § 31/§ 32, non-posting).
+The IntegrationTestCase data is cancelled/removed in teardown.
 """
 
 import frappe
@@ -144,6 +144,8 @@ def _ensure_category(company, fa, ad, de):
             "accumulated_depreciation_account": ad,
             "depreciation_expense_account": de,
         })
+    cat.cz_tax_group = "2"  # osobní automobil -> group 2 (5 years)
+    cat.cz_tax_method = "Rovnoměrné (§ 31)"
     cat.save(ignore_permissions=True)
 
 

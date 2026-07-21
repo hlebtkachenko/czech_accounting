@@ -1,0 +1,26 @@
+[
+ {
+  "doctype": "Custom Field",
+  "name": "Asset Category-cz_tax_group",
+  "dt": "Asset Category",
+  "module": "Czech Accounting",
+  "fieldname": "cz_tax_group",
+  "label": "Odpisová skupina (daňová)",
+  "fieldtype": "Select",
+  "options": "\n1\n2\n3\n4\n5\n6",
+  "insert_after": "enable_cwip_accounting",
+  "description": "Tax depreciation group (Annex 1, Act 586/1992). Empty = no statutory tax schedule."
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Asset Category-cz_tax_method",
+  "dt": "Asset Category",
+  "module": "Czech Accounting",
+  "fieldname": "cz_tax_method",
+  "label": "Daňová metoda odpisování",
+  "fieldtype": "Select",
+  "options": "Rovnoměrné (§ 31)\nZrychlené (§ 32)",
+  "default": "Rovnoměrné (§ 31)",
+  "insert_after": "cz_tax_group"
+ }
+]
