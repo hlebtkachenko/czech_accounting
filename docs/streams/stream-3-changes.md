@@ -53,6 +53,13 @@ Category seam is still consumed READ-ONLY either way.
   Pasiva), Brutto/Korekce/Netto on the 022/082 row, the result lands in A.V and equals the
   VZZ `***` total, the construction is P&L-neutral with 121 carrying the remaining WIP by
   project, and the deník lists chronologically with MD = Dal.
+- `czech_accounting/tests/test_asset_depreciation.py` (`IntegrationTestCase`): an Automobil
+  Asset with the two shipped finance_books generates two parallel depreciation schedules
+  (Účetní + Daňové odpisy), each with rows.
+
+Note: this dev site runs with immutable ledger + auto-commit on submit, so per-test
+transaction rollback does not undo posted GL. The books test posts its scenario once and
+cancels it explicitly (tagged JEs) so re-runs stay net-correct.
 
 ## Account Categories CONSUMED (READ-ONLY, owned by Stream 1)
 
@@ -111,6 +118,12 @@ No `Financial Report Template` and no `Report` fixture entries are required from
 
 ## Verification status
 
-Reports compile and load; the reconciliation/WIP/deník test passes on the VPS dev bench.
-Full acceptance (auto-depreciation on both Finance Books; 121/611 on the real Czech CoA)
-is re-verified after rebasing onto merged Stream 1 + Stream 2 per the merge protocol.
+Verified on the VPS dev bench (`erpnext.localhost`) against Stream 1's live `CZ-*`
+Account Category taxonomy:
+- `test_rozvaha` — 5/5 pass (Rozvaha reconciles, Brutto/Korekce/Netto, result → A.V ==
+  VZZ ***, 121/611 WIP P&L-neutral by project, deník chronological MD = Dal).
+- `test_asset_depreciation` — 1/1 pass (automobile depreciates on both Finance Books).
+- Finance Book + Asset Category fixtures import cleanly.
+
+Re-verified end-to-end after rebasing onto merged Stream 1 + Stream 2 per the merge protocol
+(bench migrate, then run the acceptance on the real Czech CoA).
