@@ -62,6 +62,12 @@ class TestAssetDepreciation(IntegrationTestCase):
         asset.submit()
         self.addCleanup(_delete_asset, asset.name)
 
+        # In production this runs from the Asset on_submit hook after commit; call it directly
+        # here since the test transaction never commits.
+        from czech_accounting.assets.cz_ads import apply_czech_tax_depreciation
+
+        apply_czech_tax_depreciation(asset.name)
+
         schedules = frappe.get_all(
             "Asset Depreciation Schedule",
             filters={"asset": asset.name, "docstatus": 1},

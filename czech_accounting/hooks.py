@@ -29,10 +29,7 @@ fixtures = [
 doc_events = {
     "Sales Invoice": {"validate": "czech_accounting.doc_events.validate_sales_invoice"},
     "Purchase Invoice": {"validate": "czech_accounting.doc_events.validate_purchase_invoice"},
-}
-
-# The CZ-Daňové odpisy Finance Book must carry statutory § 31/§ 32 amounts, not ERPNext's
-# straight line. A subclass rewrites the schedule once ERPNext has finished submitting it.
-override_doctype_class = {
-    "Asset Depreciation Schedule": "czech_accounting.assets.cz_ads.CzechAssetDepreciationSchedule"
+    # After the asset is submitted (and ERPNext has built its straight-line schedules), replace
+    # the CZ-Daňové odpisy schedule with statutory § 31/§ 32 amounts, after the commit.
+    "Asset": {"on_submit": "czech_accounting.assets.cz_ads.apply_after_submit"},
 }
