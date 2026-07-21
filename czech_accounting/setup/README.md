@@ -63,6 +63,8 @@ ERPNext's native voucher engine (party + item accounts); Stream 2 supplies the
 **Interní doklad (Journal Entry, `ID-.YYYY.-`)**
 - PDP samovyměření: Add + Deduct on `343` (net zero).
 - Aktivace: `042` / `62x`.  Odpisy: `551` / `08x`.  FX, časové rozlišení.
+- WIP change of state (build-to-sell): `121` / `611` — bookable via this ID-series
+  JE; the WIP valuation / monthly automation is **Stream 3** (assets), not here.
 
 ## hooks.py entries Stream 1 must declare (Stream 2 does not edit hooks.py)
 
