@@ -31,7 +31,7 @@ def apply_statutory_tax_schedule(doc):
     if doc.finance_book != TAX_FINANCE_BOOK:
         return
     asset = frappe.db.get_value(
-        "Asset", doc.asset, ["asset_category", "gross_purchase_amount", "available_for_use_date"],
+        "Asset", doc.asset, ["asset_category", "purchase_amount", "available_for_use_date"],
         as_dict=True,
     )
     category = frappe.db.get_value(
@@ -42,7 +42,7 @@ def apply_statutory_tax_schedule(doc):
 
     group = int(category.cz_tax_group)
     method = METHOD_BY_LABEL.get(category.get("cz_tax_method"), "linear")
-    amounts = tax_depreciation_schedule(asset.gross_purchase_amount, group, method)
+    amounts = tax_depreciation_schedule(asset.purchase_amount, group, method)
 
     first_date = frappe.db.get_value(
         "Depreciation Schedule", {"parent": doc.name}, "schedule_date", order_by="idx asc"
