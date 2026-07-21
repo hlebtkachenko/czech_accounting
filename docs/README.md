@@ -28,6 +28,8 @@ Nothing in the knowledge base is treated as verified merely because it exists; e
 
 ## Project docs — `docs/`
 
-| File | Purpose |
+| Path | Purpose |
 |---|---|
 | [ROADMAP.md](ROADMAP.md) | Phased build plan (Phases A-F) with deliverables and acceptance criteria |
+| [adr/](adr/) | Architecture Decision Records — why load-bearing choices were made |
+| [conventions/](conventions/) | Commits, code review, and naming rules |
