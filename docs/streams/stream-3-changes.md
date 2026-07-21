@@ -39,14 +39,16 @@ Category seam is still consumed READ-ONLY either way.
   On sale → derecognition from 121. The Rozvaha row C.I.2 and this report both read 121 from
   the GL. Impairment (`MD 559 / D 192`) shows as **Korekce** on C.I.2 automatically (192 is a
   09x/19x/29x/39x correction prefix). No ERPNext Asset doctype is used for the flats.
-- **Asset Category fixtures** `fixtures/asset_category.json` — `Automobil` (022, odp. skupina
-  2), `Stavby` (021), `Pozemky` (031, `non_depreciable_category=1`). Each depreciable
-  category ships two `finance_books` rows (see below). The `accounts` child is intentionally
-  empty — the fixed_asset / accumulated_depreciation / depreciation_expense accounts are
-  per-Company Account links and must be filled per company at setup (they cannot be a static
-  site-wide fixture). Genuine fixed assets use the ERPNext `Asset` flow.
-- **Finance Book fixtures** `fixtures/finance_book.json` — `Účetní odpisy` (accounting
-  odpisový plán, monthly straight-line) and `Daňové odpisy` (tax, annual). Two parallel
+- **Asset Categories — created per company, NOT a fixture.** ERPNext makes the Asset Category
+  `accounts` child mandatory and those accounts are company-specific, so the categories cannot
+  be a static site-wide fixture (an empty-`accounts` fixture fails import with `MandatoryError:
+  accounts`). Create them per company: `CZ-Automobil` (022, odp. skupina 2), `CZ-Stavby` (021),
+  `CZ-Pozemky` (031, `non_depreciable_category=1`), each with the company's accounts row and the
+  two `finance_books` schedules. The setup table is in the usage guide; `export-fixtures` picks
+  up the `CZ-` records (Stream 1 already declares the Asset Category fixture entry). Genuine
+  fixed assets use the ERPNext `Asset` flow.
+- **Finance Book fixtures** `fixtures/finance_book.json` — `CZ-Účetní odpisy` (accounting
+  odpisový plán, monthly straight-line) and `CZ-Daňové odpisy` (tax, annual). Two parallel
   depreciation books per asset (§ 28 ZÚ vs § 26–33 ZDP).
 
 ### Tests
@@ -56,9 +58,9 @@ Category seam is still consumed READ-ONLY either way.
   Pasiva), Brutto/Korekce/Netto on the 022/082 row, the result lands in A.V and equals the
   VZZ `***` total, the construction is P&L-neutral with 121 carrying the remaining WIP by
   project, and the deník lists chronologically with MD = Dal.
-- `czech_accounting/tests/test_asset_depreciation.py` (`IntegrationTestCase`): an Automobil
+- `czech_accounting/tests/test_asset_depreciation.py` (`IntegrationTestCase`): a CZ-Automobil
   Asset with the two shipped finance_books generates two parallel depreciation schedules
-  (Účetní + Daňové odpisy), each with rows.
+  (Účetní + CZ-Daňové odpisy), each with rows.
 
 Note: this dev site runs with immutable ledger + auto-commit on submit, so per-test
 transaction rollback does not undo posted GL. The books test posts its scenario once and
@@ -85,34 +87,37 @@ reconciles), so misassignments are caught, not hidden.
 Brutto/Korekce split relies on **account numbers** (07x/08x oprávky, 09x/19x/29x/39x opravné
 položky) being set on accounts — Stream 1 sets these as the join key (00-master §1).
 
-## hooks.py fixture entries Stream 1 must declare
+## hooks.py fixture entries (already declared by Stream 1)
 
 The four reports are `is_standard = "Yes"` and load by module sync on `bench migrate` — they
-need **no** fixture entry. Only the two fixture files need declaring, in this order (Finance
-Book before Asset Category, because the category links the finance book):
+need **no** fixture entry. Stream 1's merged `hooks.py` already declares the two fixture
+doctypes Stream 3 ships, filtered by the `CZ-` name prefix convention:
 
 ```python
-fixtures = [
-    # ... Stream 1 + Stream 2 entries ...
-    {"dt": "Finance Book", "filters": [["name", "in", ["Účetní odpisy", "Daňové odpisy"]]]},
-    {"dt": "Asset Category", "filters": [["name", "in", ["Automobil", "Stavby", "Pozemky"]]]},
-]
+{"dt": "Asset Category", "filters": [["name", "like", "CZ-%"]]},
+{"dt": "Finance Book", "filters": [["name", "like", "CZ-%"]]},
 ```
 
-No `Financial Report Template` and no `Report` fixture entries are required from Stream 3.
+Stream 3 ships **only `fixtures/finance_book.json`** — Finance Books **`CZ-Účetní odpisy`** /
+**`CZ-Daňové odpisy`** (they need no accounts and are site-wide). It does **not** ship an
+`asset_category.json` (the Asset Category `accounts` child is mandatory + per-company, so a
+static fixture fails import); the categories are created per company (named `CZ-…`) and
+`export-fixtures` captures them via Stream 1's `CZ-%` filter. The `CZ-` prefix is required so
+that filter round-trips the records. No `Financial Report Template` and no `Report` fixture
+entries are required from Stream 3 (the reports are `is_standard` and load by module sync).
 
 ## Per-company setup (documented, not a fixture)
 
 - Asset Category `accounts` rows (fixed asset / accumulated depreciation / depreciation
   expense per Company) must be filled once per Company after its Czech CoA exists.
-- The statutory statements should be run with the accounting Finance Book (`Účetní odpisy`)
+- The statutory statements should be run with the accounting Finance Book (`CZ-Účetní odpisy`)
   selected, so the daňové book's memo depreciation is excluded from the books.
 
 ## Known gaps / accountant sign-off
 
 - Statement layouts are **draft-for-accountant-signoff** (repo invariant) — verify against
   the verbatim Příloha 1/2 forms before real filing use.
-- Tax depreciation on `Daňové odpisy` uses ERPNext straight-line as an approximation; Czech
+- Tax depreciation on `CZ-Daňové odpisy` uses ERPNext straight-line as an approximation; Czech
   § 31 rovnoměrné (year-1 ≠ year-2+) and § 32 zrychlené coefficients are not yet implemented
   (Custom API follow-up).
 - Real-estate-dev open policy questions (accountant to confirm): land at 031 vs folded into

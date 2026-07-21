@@ -26,13 +26,20 @@ Decree 500/2002 Sb. forms before any real filing use.
    must be set (07x/08x/09x… drive the Brutto/Korekce split). Stream 3 consumes these
    read-only; it never assigns them.
 3. **Per-company Finance Book default.** On the Company, set **Default Finance Book =
-   `Účetní odpisy`**. The statutory statements fall back to this when no book is chosen, so the
+   `CZ-Účetní odpisy`**. The statutory statements fall back to this when no book is chosen, so the
    účetní and daňové depreciation books are not summed together.
-4. **Per-company Asset Category accounts.** Open each shipped Asset Category (Automobil, Stavby,
-   Pozemky) and, in the **Accounts** table, add a row for the company with its
-   fixed-asset / accumulated-depreciation / depreciation-expense accounts (022/082/551 etc.).
-   The fixtures ship the categories and the two finance-book schedules but not these
-   company-specific account links.
+4. **Per-company Asset Categories.** ERPNext makes the Asset Category **Accounts** table
+   mandatory, and those accounts are company-specific, so the categories are **not** shipped as
+   a fixture (only the Finance Books are). Create them once per company (name them `CZ-…` so
+   `export-fixtures` captures them), each with a company row in **Accounts** (fixed-asset /
+   accumulated-depreciation / depreciation-expense, e.g. 022 / 082 / 551) and the two
+   finance-book schedules:
+
+   | Category | Účet | Depreciable | Účetní odpisy | Daňové odpisy |
+   |---|---|---|---|---|
+   | `CZ-Automobil` | 022 (skupina 2) | yes | Straight Line, 60 × monthly | Straight Line, 5 × yearly |
+   | `CZ-Stavby` | 021 (skupina 5) | yes | Straight Line, 360 × monthly | Straight Line, 30 × yearly |
+   | `CZ-Pozemky` | 031 | no (`non_depreciable_category`) | — | — |
 
 ---
 
@@ -99,19 +106,19 @@ folded into 121, and whether completion reserves are deductible, are accountant 
 ## 4. Genuine fixed assets (automobil, own-use property) — dual odpisy
 
 Only real DHM uses the ERPNext **Asset** flow. Two **Finance Books** give the parallel
-schedules: `Účetní odpisy` (accounting, monthly straight-line over useful life) and
-`Daňové odpisy` (tax, annual). Categories: **Automobil** (022, odp. skupina 2), **Stavby**
-(021), **Pozemky** (031, non-depreciable).
+schedules: `CZ-Účetní odpisy` (accounting, monthly straight-line over useful life) and
+`CZ-Daňové odpisy` (tax, annual). Categories: **CZ-Automobil** (022, odp. skupina 2), **CZ-Stavby**
+(021), **CZ-Pozemky** (031, non-depreciable).
 
 1. Ensure the Asset Category has the company's accounts (see Prerequisites §4).
-2. Create a fixed-asset **Item** (Is Fixed Asset ✓, Asset Category = Automobil).
+2. Create a fixed-asset **Item** (Is Fixed Asset ✓, Asset Category = CZ-Automobil).
 3. Create the **Asset**: set Asset Category, gross/net purchase amount, Available For Use Date,
    **Calculate Depreciation ✓**. The two finance-book rows copy from the category. Submit.
 4. ERPNext generates one **Asset Depreciation Schedule** per finance book. The účetní book posts
    depreciation to the GL (551 / 082); the daňové book is the parallel tax schedule for the
    deferred-tax difference (481).
 
-Run the statutory statements with **Finance Book = Účetní odpisy** (or leave blank if the
+Run the statutory statements with **Finance Book = CZ-Účetní odpisy** (or leave blank if the
 company default is set) so only účetní odpisy hit the books.
 
 > Note: the daňové book currently uses ERPNext straight-line as an approximation. Czech § 31
