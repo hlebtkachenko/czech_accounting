@@ -26,9 +26,10 @@ def apply_czech_tax_depreciation(asset, method=None):
     if not category or not category.get("cz_tax_group"):
         return  # category not configured for statutory tax depreciation
 
+    # The active schedule only (ERPNext leaves cancelled/draft ADS rows behind on regeneration).
     ads_name = frappe.db.get_value(
         "Asset Depreciation Schedule",
-        {"asset": asset.name, "finance_book": TAX_FINANCE_BOOK, "docstatus": ["<", 2]},
+        {"asset": asset.name, "finance_book": TAX_FINANCE_BOOK, "docstatus": 1},
         "name",
     )
     if not ads_name:
