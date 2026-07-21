@@ -33,6 +33,8 @@ Sources: `research/cz-law-requirements.md` (MD/Dal tables per agenda) and
   from Stream 1. (Rates are effective-dated: 21 standard, 12 reduced, since 2024-01-01. Never 15.)
 - **Reverse charge (přenesená daňová povinnost):** Purchase template with Add+Deduct rows on
   343 that net to zero — the native ERPNext lever. Drive it from `cz_is_reverse_charge`.
+  Covers **§92e construction PDP** (CZ-CPA 41-43) for subcontractor invoices: the developer
+  self-assesses output + input DPH (net zero if fully deductible). Set `cz_vat_supply_type`.
 - Classification fields (`cz_vat_supply_type`, `cz_kh_section`) populate for later KH1/DPHDP3.
   **Fields only now — no XML.**
 

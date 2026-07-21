@@ -79,14 +79,20 @@ foundation commit; every stream codes against them.
 4. **Merge order 1 → 2 → 3.** After each merge: on the VPS `git pull` + `bench migrate` +
    `clear-cache`, then verify that stream's acceptance on a throwaway test company.
 
-## Decisions (defaults chosen — confirm or override)
-1. **Isolation:** site-per-client recommended; defaulting to that. (Still the top open item.)
-2. **Self-built byty:** build-to-own → asset (042/624→021, depreciated). [alt: build-to-sell
-   inventory 121/611 — the critical fork per the law brief.]
-3. **enable_immutable_ledger:** recommend ON for statutory immutability (defaults 0 in v16).
-4. **Analytical depth:** standard synthetic set + minimal analytics (343.100/.200, 221001);
-   deeper analytics added per entity later.
-5. **VAT period:** monthly vs quarterly (affects deadlines, not the build).
+## Decisions (LOCKED 2026-07-21)
+1. **One site**, one Company per client (up to 13). Masters (Customer/Supplier/Item) are
+   shared site-wide — accept it; enforce separation via the Company field + permissions.
+2. **Self-built byty = build-to-SELL → inventory, not DHM.** Construction WIP accumulates in
+   `121` Nedokončená výroba (method A: class-5 costs expensed as incurred, then period-end
+   change-in-state **MD 121 / D 611**), valued at vlastní náklady (direct material + labor +
+   production overhead; not admin/selling). On sale → `132` / derecognition. Land bought for
+   the development is project inventory, **not `031`**. (KB: ČÚS 015 + Decree 500/2002 §10;
+   `research/`… real-estate-dev scenario.) Genuine long-term fixed assets — automobil (`022`),
+   any own-use/long-held property (`021`/`031`) — still use the ERPNext Asset flow.
+3. **enable_immutable_ledger = ON.**
+4. **VAT = monthly** filing (plátce).
+5. Analytical depth: standard synthetic set + minimal analytics (`343.100/.200`, `221001`,
+   plus `121` by project/block/unit).
 6. **Accountant sign-off** gates the CoA and the statement layouts before real use.
 
 ## Reuse review

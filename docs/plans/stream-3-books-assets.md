@@ -18,15 +18,25 @@ The three statutory books and the asset/odpisy configuration. Sources:
    §13 (evidenční číslo, datum, MD/Dal účet, částka, popis). Reuse GL data; thin report on top.
    Add drill-down from rows to the source voucher + attachment.
 
-## Assets
-4. **Asset Categories.** automobil → `022`, odpisová skupina 2; pozemek → `031`, **depreciation
-   disabled** (land is not depreciated); byty/stavby → `021`. Map each to its accounts.
-5. **Self-built byty (build-to-own default).** Model via CWIP account `042` (Asset Category
-   CWIP toggle) + `Asset Capitalization` to activate to `021`. Capitalize own construction
-   costs (`042`/`624`). [If build-to-sell is chosen instead: inventory `121`/`611` — coordinate
-   with the master decision.]
-6. **Účetní vs daňové odpisy.** Two `Finance Book`s (native parallel depreciation schedules):
-   one accounting (odpisový plán), one tax (odpisové skupiny per zákon o daních z příjmů).
+## Assets & developer inventory
+LOCKED: the self-built flats are **build-to-SELL → inventory, not DHM**. Keep the two paths
+strictly separate.
+
+4. **Developer WIP inventory (the flats — the main case).** Construction costs accumulate in
+   `121` Nedokončená výroba, **method A (způsob A)**: costs hit class-5 (`501` material, `518`
+   subcontractors/design, `521` own wages, `551` own-equipment depreciation) as incurred, then
+   at period-end book the change-in-state **MD `121` / D `611`** (`611` = změna stavu, a Class-6
+   výnosový account — the net P&L effect of construction within the period is zero). Value at
+   vlastní náklady (direct material + labor + production overhead; NOT admin/selling costs). On
+   unit sale → `132` / derecognition. Model via **Journal Entries** (the deník series) with a
+   **Project / Cost Center dimension** so `121` carries analytics by project/block/unit. This is
+   inventory accounting — do NOT use the ERPNext Asset doctype for the flats. Land acquired for
+   the development is project inventory, not `031`.
+5. **Genuine fixed assets (secondary).** Only real DHM uses the ERPNext `Asset` + `Asset
+   Category` flow: automobil → `022`, odpisová skupina 2; any own-use/long-held property →
+   `021`/`031` (land `031` depreciation disabled). Not the developed flats.
+6. **Účetní vs daňové odpisy** (for the fixed assets, e.g. auto). Two `Finance Book`s (native
+   parallel schedules): accounting odpisový plán + tax odpisové skupiny (zákon o daních z příjmů).
 7. **Trial balance + reconciliation checks** feeding the statements.
 
 ## Depends on (contract)
@@ -38,8 +48,9 @@ accounts or categories here.
 - Rozvaha and VZZ render the statutory layout and reconcile to the trial balance
   (debit = credit; opening + turnover = closing per account).
 - Účetní deník lists all entries chronologically with §13 content and drill-down.
-- An automobile asset depreciates on both Finance Books; a self-built byt capitalizes via
-  `042` → `021`; a pozemek does not depreciate.
+- Construction costs accumulate in `121` and the period-end change-in-state books `MD 121 /
+  D 611`; a unit sale derecognizes from inventory. An automobile (fixed asset) depreciates on
+  both Finance Books.
 - Accountant sign-off on statement layouts before real use.
 
 ## Reuse review
