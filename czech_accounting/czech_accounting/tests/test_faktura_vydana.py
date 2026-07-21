@@ -58,6 +58,7 @@ def _make_invoice(company, acc, cost_center):
     si.company = company
     si.customer = CUSTOMER
     si.posting_date = si.due_date = nowdate()
+    si.cz_duzp = nowdate()  # datum uskutečnění zdanitelného plnění — required by Stream 2's validator
     si.debit_to = acc["311"]
     si.append("items", {
         "item_code": ITEM, "qty": 1, "rate": NET,
