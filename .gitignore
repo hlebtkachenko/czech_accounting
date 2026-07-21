@@ -1,0 +1,27 @@
+# Python
+*.pyc
+__pycache__/
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Secrets and environment (real values live only on the VPS, never here)
+.env
+*.env
+!env.example
+*.key
+*.enc
+client_secret*.json
+
+# Frappe site data and backups (never in git)
+sites/
+*.sql
+*.sql.gz
+backups/
+
+# Node / build artifacts
+node_modules/
+
+# OS
+.DS_Store
