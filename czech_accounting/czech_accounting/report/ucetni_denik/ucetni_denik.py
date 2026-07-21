@@ -96,9 +96,11 @@ def _build_rows(entries):
         data.append(e)
 
     if data:
+        # The label goes in the Data "Typ dokladu" column, not the Link "Účet" column: a label in
+        # a Link cell renders as a clickable account that 404s (no such Account).
         data.append(
             {
-                "account": _("Součet (MD = Dal)"),
+                "voucher_type": _("Součet (MD = Dal)"),
                 "debit": total_debit,
                 "credit": total_credit,
                 "entry_no": None,

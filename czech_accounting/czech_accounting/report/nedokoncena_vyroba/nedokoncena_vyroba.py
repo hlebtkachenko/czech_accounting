@@ -40,7 +40,9 @@ def _columns():
     return [
         {"label": _("Projekt"), "fieldname": "project", "fieldtype": "Link", "options": "Project", "width": 200},
         {"label": _("Středisko"), "fieldname": "cost_center", "fieldtype": "Link", "options": "Cost Center", "width": 200},
-        {"label": _("Účet"), "fieldname": "account", "fieldtype": "Link", "options": "Account", "width": 240},
+        # Data, not a Link to Account: the "Celkem" total row puts its label here, and a label in a
+        # Link cell renders as a clickable account that 404s.
+        {"label": _("Účet"), "fieldname": "account", "fieldtype": "Data", "width": 240},
         {"label": _("Zůstatek NV"), "fieldname": "balance", "fieldtype": "Currency", "width": 160},
     ]
 
