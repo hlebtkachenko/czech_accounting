@@ -95,9 +95,7 @@ placed = 0
 for acc in sorted(posting, key=lambda n: n["account_number"]):
     num = acc["account_number"]
     rt = acc["root_type"]
-    if rt not in ROOT_LABELS:
-        rt = "Equity"  # class 7 closing/off-balance fallback; flagged for accountant review
-    root = tree[ROOT_LABELS[rt]]
+    root = tree[ROOT_LABELS[rt]]  # an unexpected root_type fails loudly here with KeyError
 
     cls, grp, syn = num[0], num[:2], num[:3]
     cls_node = ensure_group(root, f"{cls} - {name_of(cls, 'Účtová třída ' + cls)}", rt)
@@ -149,9 +147,7 @@ for _num, _entry in statement_map.items():
     _code = _entry.get("category_code")
     if not _code:
         continue
-    _rt = (by_num.get(_num) or {}).get("root_type")
-    if _rt not in ROOT_LABELS:
-        _rt = "Equity"
+    _rt = by_num[_num]["root_type"]
     cat_root.setdefault(_code, set()).add(_rt)
     cat_label[_code] = _entry.get("category_label") or _code
 records = []

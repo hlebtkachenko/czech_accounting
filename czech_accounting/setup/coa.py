@@ -2,11 +2,13 @@
 
 A company's chart is fixed at creation, so a Czech company is created on any chart and then
 switched to the Czech one here, before it has any transactions. Reuses ERPNext's own reset
-(unset_existing_data) and create_charts(custom_chart=...) so we do not fork core.
+(unset_existing_data) and create_charts(custom_chart=...) so we do not fork core. The Czech
+Account Category records the chart references ship as fixtures and are synced by migrate.
 """
 import json
 
 import frappe
+from frappe import _
 from erpnext.accounts.doctype.account.chart_of_accounts.chart_of_accounts import create_charts
 from erpnext.accounts.doctype.chart_of_accounts_importer.chart_of_accounts_importer import (
     set_default_accounts,
@@ -15,6 +17,20 @@ from erpnext.accounts.doctype.chart_of_accounts_importer.chart_of_accounts_impor
 
 CHART_FILE = ("chart_of_accounts", "cz_coa.json")
 
+# apply_czech_coa deletes and rebuilds the company's accounts, so it must only run on a company
+# with no bookkeeping yet: not merely no posted GL entries, but no transactional documents at
+# all, since drafts (docstatus=0) reference accounts without creating GL entries.
+TRANSACTIONAL_DOCTYPES = (
+    "GL Entry",
+    "Journal Entry",
+    "Payment Entry",
+    "Sales Invoice",
+    "Purchase Invoice",
+    "Stock Entry",
+    "Delivery Note",
+    "Purchase Receipt",
+)
+
 
 def load_cz_chart():
     """Load the versioned Czech chart tree shipped with the app."""
@@ -22,44 +38,30 @@ def load_cz_chart():
         return json.load(f)
 
 
-def ensure_account_categories(tree):
-    """Create every Account Category the tree references but the site does not have yet."""
-    created = []
-
-    def walk(node, parent_root):
-        for _key, child in node.items():
-            if not isinstance(child, dict):
-                continue
-            root_type = child.get("root_type") or parent_root
-            category = child.get("account_category")
-            if category and not frappe.db.exists("Account Category", category):
-                frappe.get_doc(
-                    {
-                        "doctype": "Account Category",
-                        "account_category_name": category,
-                        "root_type": root_type,
-                    }
-                ).insert(ignore_permissions=True)
-                created.append(category)
-            walk(child, root_type)
-
-    walk(tree, None)
-    return created
-
-
 @frappe.whitelist()
 def apply_czech_coa(company):
-    """Build the Czech chart of accounts on a zero-transaction company.
+    """Build the Czech chart of accounts on a brand-new, un-configured company.
 
-    Refuses to run once the company has GL entries.
+    Destructive (deletes and rebuilds the company's accounts), so it is restricted to a System
+    Manager with write access to the company and refuses to run once the company has any
+    transactional documents.
     """
-    if frappe.db.count("GL Entry", {"company": company}):
-        frappe.throw(f"Company {company} already has GL entries; refusing to rebuild its chart.")
+    frappe.only_for("Accounts Manager")
+    if not isinstance(company, str) or not frappe.db.exists("Company", company):
+        frappe.throw(_("Unknown company"))
+    if not frappe.has_permission("Company", ptype="write", doc=company):
+        raise frappe.PermissionError
 
-    chart = load_cz_chart()
-    ensure_account_categories(chart["tree"])
+    for doctype in TRANSACTIONAL_DOCTYPES:
+        if frappe.db.count(doctype, {"company": company}):
+            frappe.throw(
+                _("Company {0} already has {1} records; refusing to rebuild its chart.").format(
+                    company, doctype
+                )
+            )
+
     unset_existing_data(company)
-    create_charts(company, custom_chart=chart["tree"])
+    create_charts(company, custom_chart=load_cz_chart()["tree"])
     set_default_accounts(company)
     frappe.db.commit()
 
