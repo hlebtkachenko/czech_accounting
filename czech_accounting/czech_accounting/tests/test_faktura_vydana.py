@@ -10,6 +10,7 @@ import frappe
 from frappe.tests import IntegrationTestCase
 from frappe.utils import nowdate
 
+from czech_accounting.setup.coa import set_round_off_account
 from czech_accounting.setup.vat_templates import sales_tax_rows
 
 NET, RATE, VAT, GROSS = 100_000.0, 21, 21_000.0, 121_000.0
@@ -25,6 +26,7 @@ class TestFakturaVydana(IntegrationTestCase):
         cls.abbr = frappe.get_cached_value("Company", cls.company, "abbr")
         cls.cost_center = frappe.get_cached_value("Company", cls.company, "cost_center")
         cls.acc = _ensure_accounts(cls.company, cls.abbr)
+        set_round_off_account(cls.company)  # rounded invoices need a Round Off Account to post
         _ensure_customer()
         _ensure_item(cls.acc["602"])
         _cancel_invoices(cls.company)

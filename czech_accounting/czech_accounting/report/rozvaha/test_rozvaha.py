@@ -60,6 +60,13 @@ ACCOUNTS = [
     ("551", "Odpisy (test)", "Expense", "CZ-vzz-e-1-1"),
 ]
 
+# Suffix appended to every scenario account number. The real Czech chart has some of these
+# numbers as *group* accounts (221, 343) or as Receivable/Payable leaves that demand a party on
+# a journal line (311, 321); reusing them makes the scenario impossible to post. The suffix keeps
+# the leading class digits (is_correction_account reads the prefix) while guaranteeing the test
+# builds its own fresh, type-less, postable leaves that never collide with the production chart.
+TEST_SUFFIX = "T"
+
 EXPECTED_BALANCE = 1_721_000.0
 EXPECTED_RESULT = 295_000.0
 
@@ -217,14 +224,15 @@ def _group_parent(company, abbr, root_type):
 def _ensure_accounts(company, abbr):
     mapping = {}
     for number, acc_name, root_type, category in ACCOUNTS:
-        existing = frappe.db.get_value("Account", {"account_number": number, "company": company}, "name")
+        acc_number = number + TEST_SUFFIX
+        existing = frappe.db.get_value("Account", {"account_number": acc_number, "company": company}, "name")
         if existing:
             frappe.db.set_value("Account", existing, "account_category", category)
             mapping[number] = existing
             continue
         parent = _group_parent(company, abbr, root_type)
         doc = frappe.get_doc({
-            "doctype": "Account", "account_name": acc_name, "account_number": number,
+            "doctype": "Account", "account_name": acc_name, "account_number": acc_number,
             "company": company, "parent_account": parent, "is_group": 0,
             "root_type": root_type, "account_category": category,
         })

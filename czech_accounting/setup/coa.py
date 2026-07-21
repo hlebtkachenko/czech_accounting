@@ -17,6 +17,11 @@ from erpnext.accounts.doctype.chart_of_accounts_importer.chart_of_accounts_impor
 
 CHART_FILE = ("chart_of_accounts", "cz_coa.json")
 
+# 548 Jiné provozní náklady — the Czech home for invoice rounding (zaokrouhlení na celé koruny).
+# ERPNext needs a Round Off Account before it can post that rounding line, and its
+# set_default_accounts cannot map one because the Czech chart has no account named "Round Off".
+ROUND_OFF_ACCOUNT_NUMBER = "548"
+
 # apply_czech_coa deletes and rebuilds the company's accounts, so it must only run on a company
 # with no bookkeeping yet: not merely no posted GL entries, but no transactional documents at
 # all, since drafts (docstatus=0) reference accounts without creating GL entries.
@@ -42,9 +47,9 @@ def load_cz_chart():
 def apply_czech_coa(company):
     """Build the Czech chart of accounts on a brand-new, un-configured company.
 
-    Destructive (deletes and rebuilds the company's accounts), so it is restricted to a System
-    Manager with write access to the company and refuses to run once the company has any
-    transactional documents.
+    Destructive (deletes and rebuilds the company's accounts), so it is restricted to an
+    Accounts Manager with write access to the company and refuses to run once the company has
+    any transactional documents.
     """
     frappe.only_for("Accounts Manager")
     if not isinstance(company, str) or not frappe.db.exists("Company", company):
@@ -63,6 +68,41 @@ def apply_czech_coa(company):
     unset_existing_data(company)
     create_charts(company, custom_chart=load_cz_chart()["tree"])
     set_default_accounts(company)
+    set_round_off_account(company)
     frappe.db.commit()
 
     return {"company": company, "accounts": frappe.db.count("Account", {"company": company})}
+
+
+def set_round_off_account(company):
+    """Point the company's Round Off Account (and cost center) at 548 so rounded invoices post."""
+    account = frappe.db.get_value(
+        "Account",
+        {"company": company, "account_number": ROUND_OFF_ACCOUNT_NUMBER, "is_group": 0},
+        "name",
+    )
+    if not account:
+        return
+    frappe.db.set_value(
+        "Company",
+        company,
+        {
+            "round_off_account": account,
+            "round_off_cost_center": frappe.get_cached_value("Company", company, "cost_center"),
+        },
+    )
+
+
+@frappe.whitelist()
+def provision_czech_company(company):
+    """Go-live in one call: build the Czech chart, then the Czech VAT setup.
+
+    Wraps apply_czech_coa (chart) and setup_company_vat (DPH/PDP templates, cash/bank payment
+    modes, and removal of ERPNext's seeded default VAT templates). Run once on a brand-new
+    company. The permission and no-transactions gate is enforced by apply_czech_coa.
+    """
+    from czech_accounting.setup.vat_templates import setup_company_vat
+
+    result = apply_czech_coa(company)
+    setup_company_vat(company)
+    return result
