@@ -1,0 +1,90 @@
+[
+ {
+  "doctype": "Property Setter",
+  "name": "Purchase Invoice-naming_series-options",
+  "module": "Czech Accounting",
+  "doctype_or_field": "DocField",
+  "doc_type": "Purchase Invoice",
+  "field_name": "naming_series",
+  "property": "options",
+  "property_type": "Text",
+  "value": "FP-.YYYY.-"
+ },
+ {
+  "doctype": "Property Setter",
+  "name": "Purchase Invoice-naming_series-default",
+  "module": "Czech Accounting",
+  "doctype_or_field": "DocField",
+  "doc_type": "Purchase Invoice",
+  "field_name": "naming_series",
+  "property": "default",
+  "property_type": "Text",
+  "value": "FP-.YYYY.-"
+ },
+ {
+  "doctype": "Property Setter",
+  "name": "Sales Invoice-naming_series-options",
+  "module": "Czech Accounting",
+  "doctype_or_field": "DocField",
+  "doc_type": "Sales Invoice",
+  "field_name": "naming_series",
+  "property": "options",
+  "property_type": "Text",
+  "value": "FV-.YYYY.-"
+ },
+ {
+  "doctype": "Property Setter",
+  "name": "Sales Invoice-naming_series-default",
+  "module": "Czech Accounting",
+  "doctype_or_field": "DocField",
+  "doc_type": "Sales Invoice",
+  "field_name": "naming_series",
+  "property": "default",
+  "property_type": "Text",
+  "value": "FV-.YYYY.-"
+ },
+ {
+  "doctype": "Property Setter",
+  "name": "Payment Entry-naming_series-options",
+  "module": "Czech Accounting",
+  "doctype_or_field": "DocField",
+  "doc_type": "Payment Entry",
+  "field_name": "naming_series",
+  "property": "options",
+  "property_type": "Text",
+  "value": "PO-.YYYY.-\nBV-.YYYY.-"
+ },
+ {
+  "doctype": "Property Setter",
+  "name": "Payment Entry-naming_series-default",
+  "module": "Czech Accounting",
+  "doctype_or_field": "DocField",
+  "doc_type": "Payment Entry",
+  "field_name": "naming_series",
+  "property": "default",
+  "property_type": "Text",
+  "value": "PO-.YYYY.-"
+ },
+ {
+  "doctype": "Property Setter",
+  "name": "Journal Entry-naming_series-options",
+  "module": "Czech Accounting",
+  "doctype_or_field": "DocField",
+  "doc_type": "Journal Entry",
+  "field_name": "naming_series",
+  "property": "options",
+  "property_type": "Text",
+  "value": "ID-.YYYY.-"
+ },
+ {
+  "doctype": "Property Setter",
+  "name": "Journal Entry-naming_series-default",
+  "module": "Czech Accounting",
+  "doctype_or_field": "DocField",
+  "doc_type": "Journal Entry",
+  "field_name": "naming_series",
+  "property": "default",
+  "property_type": "Text",
+  "value": "ID-.YYYY.-"
+ }
+]
