@@ -74,10 +74,16 @@ fixtures = [
     {"dt": "Property Setter", "filters": [["module", "=", "Czech Accounting"]]},
     # ... Stream 1 / Stream 3 entries
 ]
+
+doc_events = {
+    "Sales Invoice": {"validate": "czech_accounting.doc_events.validate_sales_invoice"},
+    "Purchase Invoice": {"validate": "czech_accounting.doc_events.validate_purchase_invoice"},
+}
 ```
 
 Custom fields and Property Setters (naming series) **import** on `bench migrate`
 via the fixtures-directory glob regardless; these entries are needed so
-`bench export-fixtures` re-exports Stream 2's records. The VAT setup runs by
-`bench execute` (or an optional future `Company` `after_insert` doc_event) — it is
-**not** a fixture, because tax templates are company-scoped.
+`bench export-fixtures` re-exports Stream 2's records. The `doc_events` block wires
+the boundary validators in `../doc_events.py`. The VAT setup runs by `bench execute`
+(or an optional future `Company` `after_insert` doc_event) — it is **not** a
+fixture, because tax templates are company-scoped.
