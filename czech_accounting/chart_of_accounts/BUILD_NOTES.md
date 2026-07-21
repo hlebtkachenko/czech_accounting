@@ -29,9 +29,9 @@ Follow-up (non-blocking): `set_default_accounts` leaves ~2 ERPNext default accou
 (Stream 2 VAT templates supersede); optional unmapped-posting-account report. No-posting-to-group
 is enforced natively by ERPNext.
 
-## Accountant sign-off still required
-The chart, the added accounts, the class-7 root fallback, and the statement-row mapping all need
-accountant approval before real bookkeeping.
+## Review (advisory, not a blocking gate)
+The chart, the added accounts, and the statement-row mapping are worth an accountant eye, but
+the hard control is draft-only posting (`docstatus = 0`, human submits) — no sign-off gate.
 
 ## Verify
 Create a throwaway company on the VPS (`bench console`), run `apply_czech_coa`, count accounts,
