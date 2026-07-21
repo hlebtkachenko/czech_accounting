@@ -1,0 +1,12 @@
+[
+ {
+  "doctype": "Finance Book",
+  "name": "Účetní odpisy",
+  "finance_book_name": "Účetní odpisy"
+ },
+ {
+  "doctype": "Finance Book",
+  "name": "Daňové odpisy",
+  "finance_book_name": "Daňové odpisy"
+ }
+]
