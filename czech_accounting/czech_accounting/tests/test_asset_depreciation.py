@@ -2,15 +2,17 @@
 # For license information, see license.txt
 """Genuine fixed asset (automobil) depreciates on both Finance Books.
 
-Builds the CZ-Automobil Asset Category with two finance_books (CZ-Účetní odpisy monthly, CZ-Daňové
-odpisy annual) exactly as shipped in fixtures/asset_category.json + fixtures/finance_book.json,
-creates an Asset that uses it, submits it, and asserts ERPNext generates two parallel
-depreciation schedules (účetní vs daňové odpisy, §28 ZÚ vs §26–33 ZDP). The IntegrationTestCase
-data is cancelled/removed in teardown.
+Builds the CZ-Automobil Asset Category programmatically (its accounts are per-company, so it is
+not a fixture) with the two finance books from fixtures/finance_book.json (CZ-Účetní odpisy
+monthly, CZ-Daňové odpisy annual), creates an Asset that uses it, submits it, and asserts two
+parallel schedules exist — účetní (straight line) vs daňové (statutory § 31/§ 32, non-posting).
+The IntegrationTestCase data is cancelled/removed in teardown.
 """
 
 import frappe
 from frappe.tests import IntegrationTestCase
+
+from czech_accounting.assets.tax_depreciation import tax_depreciation_schedule
 
 FINANCE_BOOKS = [
     ("CZ-Účetní odpisy", "Straight Line", 60, 1),
@@ -71,6 +73,25 @@ class TestAssetDepreciation(IntegrationTestCase):
         for s in schedules:
             rows = frappe.db.count("Depreciation Schedule", {"parent": s.name})
             self.assertGreater(rows, 0, f"no depreciation rows for {s.finance_book}")
+
+        # The tax book must carry the statutory § 31 amounts (not straight line) and must not
+        # post to the GL — daňové odpisy are a parallel tax calculation.
+        tax = next(s for s in schedules if s.finance_book == "CZ-Daňové odpisy")
+        tax_rows = frappe.get_all(
+            "Depreciation Schedule",
+            filters={"parent": tax.name},
+            fields=["depreciation_amount", "make_depreciation_entry"],
+            order_by="idx",
+        )
+        self.assertEqual(
+            [r.depreciation_amount for r in tax_rows],
+            tax_depreciation_schedule(GROSS, 2, "linear"),
+            "CZ-Daňové odpisy must use statutory § 31 amounts, not ERPNext straight line",
+        )
+        self.assertTrue(
+            all(r.make_depreciation_entry == 0 for r in tax_rows),
+            "daňové odpisy rows must not post to the GL",
+        )
 
 
 def _delete_asset(name):
@@ -144,6 +165,8 @@ def _ensure_category(company, fa, ad, de):
             "accumulated_depreciation_account": ad,
             "depreciation_expense_account": de,
         })
+    cat.cz_tax_group = "2"  # osobní automobil -> group 2 (5 years)
+    cat.cz_tax_method = "Rovnoměrné (§ 31)"
     cat.save(ignore_permissions=True)
 
 
