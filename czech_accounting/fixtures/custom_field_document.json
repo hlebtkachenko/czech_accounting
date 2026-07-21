@@ -1,0 +1,227 @@
+[
+ {
+  "doctype": "Custom Field",
+  "name": "Purchase Invoice-cz_duzp",
+  "module": "Czech Accounting",
+  "dt": "Purchase Invoice",
+  "fieldname": "cz_duzp",
+  "label": "Date of Taxable Supply (DUZP)",
+  "fieldtype": "Date",
+  "insert_after": "posting_date",
+  "description": "Datum uskutečnění zdanitelného plnění (§ 21 ZDPH). Tax point; distinct from the accounting posting date.",
+  "translatable": 0
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Purchase Invoice-cz_date_received",
+  "module": "Czech Accounting",
+  "dt": "Purchase Invoice",
+  "fieldname": "cz_date_received",
+  "label": "Date Received",
+  "fieldtype": "Date",
+  "insert_after": "bill_date",
+  "description": "Datum přijetí. Drives input-VAT deduction timing (§ 73 ZDPH, receipt-date rule).",
+  "translatable": 0
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Purchase Invoice-cz_vat_section",
+  "module": "Czech Accounting",
+  "dt": "Purchase Invoice",
+  "fieldname": "cz_vat_section",
+  "label": "Czech VAT",
+  "fieldtype": "Section Break",
+  "insert_after": "taxes_and_charges",
+  "collapsible": 1
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Purchase Invoice-cz_vat_supply_type",
+  "module": "Czech Accounting",
+  "dt": "Purchase Invoice",
+  "fieldname": "cz_vat_supply_type",
+  "label": "VAT Supply Type",
+  "fieldtype": "Select",
+  "insert_after": "cz_vat_section",
+  "options": "\nDomestic\nEU acquisition\nEU supply\nImport (third country)\nExport (third country)\nReverse charge (§ 92)\nExempt with credit (§ 63)\nExempt without credit (§ 51)\nOut of scope",
+  "description": "Regime classification for DPH / kontrolní hlášení. Fields only; XML export is a later phase.",
+  "translatable": 0
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Purchase Invoice-cz_is_reverse_charge",
+  "module": "Czech Accounting",
+  "dt": "Purchase Invoice",
+  "fieldname": "cz_is_reverse_charge",
+  "label": "Reverse Charge (PDP)",
+  "fieldtype": "Check",
+  "insert_after": "cz_vat_supply_type",
+  "default": "0",
+  "description": "Přenesená daňová povinnost. Use a PDP tax template so account 343 nets to zero (samovyměření)."
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Purchase Invoice-cz_kh_section",
+  "module": "Czech Accounting",
+  "dt": "Purchase Invoice",
+  "fieldname": "cz_kh_section",
+  "label": "Kontrolní hlášení Section",
+  "fieldtype": "Select",
+  "insert_after": "cz_is_reverse_charge",
+  "options": "\nB1\nB2\nB3",
+  "translatable": 0
+ },
+
+ {
+  "doctype": "Custom Field",
+  "name": "Sales Invoice-cz_duzp",
+  "module": "Czech Accounting",
+  "dt": "Sales Invoice",
+  "fieldname": "cz_duzp",
+  "label": "Date of Taxable Supply (DUZP)",
+  "fieldtype": "Date",
+  "insert_after": "posting_date",
+  "description": "Datum uskutečnění zdanitelného plnění (§ 21 ZDPH). VAT liability arises at DUZP, not the invoice date.",
+  "translatable": 0
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Sales Invoice-cz_vat_section",
+  "module": "Czech Accounting",
+  "dt": "Sales Invoice",
+  "fieldname": "cz_vat_section",
+  "label": "Czech VAT",
+  "fieldtype": "Section Break",
+  "insert_after": "taxes_and_charges",
+  "collapsible": 1
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Sales Invoice-cz_vat_supply_type",
+  "module": "Czech Accounting",
+  "dt": "Sales Invoice",
+  "fieldname": "cz_vat_supply_type",
+  "label": "VAT Supply Type",
+  "fieldtype": "Select",
+  "insert_after": "cz_vat_section",
+  "options": "\nDomestic\nEU acquisition\nEU supply\nImport (third country)\nExport (third country)\nReverse charge (§ 92)\nExempt with credit (§ 63)\nExempt without credit (§ 51)\nOut of scope",
+  "description": "Regime classification for DPH / kontrolní hlášení. Fields only; XML export is a later phase.",
+  "translatable": 0
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Sales Invoice-cz_is_reverse_charge",
+  "module": "Czech Accounting",
+  "dt": "Sales Invoice",
+  "fieldname": "cz_is_reverse_charge",
+  "label": "Reverse Charge (PDP)",
+  "fieldtype": "Check",
+  "insert_after": "cz_vat_supply_type",
+  "default": "0",
+  "description": "Přenesená daňová povinnost. Supply invoiced without VAT; buyer self-assesses. Text \"Daň odvede zákazník\" required on the document."
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Sales Invoice-cz_kh_section",
+  "module": "Czech Accounting",
+  "dt": "Sales Invoice",
+  "fieldname": "cz_kh_section",
+  "label": "Kontrolní hlášení Section",
+  "fieldtype": "Select",
+  "insert_after": "cz_is_reverse_charge",
+  "options": "\nA1\nA2\nA3\nA4\nA5",
+  "translatable": 0
+ },
+
+ {
+  "doctype": "Custom Field",
+  "name": "Payment Entry-cz_payment_symbols_section",
+  "module": "Czech Accounting",
+  "dt": "Payment Entry",
+  "fieldname": "cz_payment_symbols_section",
+  "label": "Czech Payment Symbols",
+  "fieldtype": "Section Break",
+  "insert_after": "reference_date",
+  "collapsible": 1
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Payment Entry-cz_variable_symbol",
+  "module": "Czech Accounting",
+  "dt": "Payment Entry",
+  "fieldname": "cz_variable_symbol",
+  "label": "Variable Symbol",
+  "fieldtype": "Data",
+  "insert_after": "cz_payment_symbols_section",
+  "description": "Variabilní symbol. Payment-matching reference, not a statutory invoice field.",
+  "translatable": 0
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Payment Entry-cz_constant_symbol",
+  "module": "Czech Accounting",
+  "dt": "Payment Entry",
+  "fieldname": "cz_constant_symbol",
+  "label": "Constant Symbol",
+  "fieldtype": "Data",
+  "insert_after": "cz_variable_symbol",
+  "translatable": 0
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Payment Entry-cz_specific_symbol",
+  "module": "Czech Accounting",
+  "dt": "Payment Entry",
+  "fieldname": "cz_specific_symbol",
+  "label": "Specific Symbol",
+  "fieldtype": "Data",
+  "insert_after": "cz_constant_symbol",
+  "translatable": 0
+ },
+
+ {
+  "doctype": "Custom Field",
+  "name": "Bank Transaction-cz_payment_symbols_section",
+  "module": "Czech Accounting",
+  "dt": "Bank Transaction",
+  "fieldname": "cz_payment_symbols_section",
+  "label": "Czech Payment Symbols",
+  "fieldtype": "Section Break",
+  "insert_after": "reference_number",
+  "collapsible": 1
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Bank Transaction-cz_variable_symbol",
+  "module": "Czech Accounting",
+  "dt": "Bank Transaction",
+  "fieldname": "cz_variable_symbol",
+  "label": "Variable Symbol",
+  "fieldtype": "Data",
+  "insert_after": "cz_payment_symbols_section",
+  "description": "Variabilní symbol parsed from the statement line; drives auto-match to the invoice.",
+  "translatable": 0
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Bank Transaction-cz_constant_symbol",
+  "module": "Czech Accounting",
+  "dt": "Bank Transaction",
+  "fieldname": "cz_constant_symbol",
+  "label": "Constant Symbol",
+  "fieldtype": "Data",
+  "insert_after": "cz_variable_symbol",
+  "translatable": 0
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Bank Transaction-cz_specific_symbol",
+  "module": "Czech Accounting",
+  "dt": "Bank Transaction",
+  "fieldname": "cz_specific_symbol",
+  "label": "Specific Symbol",
+  "fieldtype": "Data",
+  "insert_after": "cz_constant_symbol",
+  "translatable": 0
+ }
+]
