@@ -56,9 +56,9 @@ foundation commit; every stream codes against them.
      not statutory invoice fields** (law brief) — they live here, not on the invoice.
 4. **Naming series (číselné řady)** — policy, not gapless-by-law: `FP-.YYYY.-`, `FV-.YYYY.-`,
    `PO-.YYYY.-` (pokladna), `BV-.YYYY.-` (banka), `ID-.YYYY.-` (interní). Accountant-approved.
-5. **hooks.py fixtures** — the foundation commit pre-declares the full `fixtures` list so each
-   stream drops fixture JSON files WITHOUT editing hooks.py (avoids the one guaranteed merge
-   conflict).
+5. **hooks.py fixtures** — Stream 1 (which merges first) pre-declares the full, filtered
+   `fixtures` list covering all three streams so each stream drops fixture JSON files WITHOUT
+   editing hooks.py (avoids the one guaranteed merge conflict).
 6. **File-ownership map** — no two streams touch the same file:
    - Stream 1: `chart_of_accounts/`, account-creation patch, `fixtures/account_category*.json`,
      `fixtures/custom_field_party.json`, VAT account setup, `hooks.py` (fixtures skeleton).
@@ -68,8 +68,9 @@ foundation commit; every stream codes against them.
      `fixtures/account_category` is READ-ONLY here, asset categories + finance books.
 
 ## Execution protocol
-1. **Foundation commit** (this contract + `hooks.py` fixtures skeleton + the 4 plan files +
-   `research/`) lands on `main`. Done by the coordinator.
+1. **Foundation commit** (this contract + the 4 plan files + `research/`) lands on `main`
+   [done]. Stream 1 then lands the `hooks.py` fixtures skeleton first (it merges first),
+   pre-declaring all three streams' fixture entries so Streams 2 and 3 never edit hooks.py.
 2. Three Conductor workspaces branch from `main`: `stream/1-foundation-coa`,
    `stream/2-agendas-vat`, `stream/3-books-assets`. Each reads its plan in `docs/plans/`.
 3. Parallel dev against the frozen identifiers. Streams 2 and 3 build against known account
