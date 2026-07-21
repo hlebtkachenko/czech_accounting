@@ -29,9 +29,9 @@ fixtures = [
 doc_events = {
     "Sales Invoice": {"validate": "czech_accounting.doc_events.validate_sales_invoice"},
     "Purchase Invoice": {"validate": "czech_accounting.doc_events.validate_purchase_invoice"},
-    # Impose statutory § 31/§ 32 amounts on the CZ-Daňové odpisy tax book. Runs on validate,
-    # after ERPNext has built its straight-line schedule, so our rows are what persists.
-    "Asset Depreciation Schedule": {
-        "validate": "czech_accounting.assets.depreciation_hook.set_czech_tax_schedule"
+    # Impose statutory § 31/§ 32 amounts on the CZ-Daňové odpisy tax book, after ERPNext has
+    # built and submitted its straight-line schedule during Asset submit.
+    "Asset": {
+        "on_submit": "czech_accounting.assets.depreciation_hook.apply_czech_tax_depreciation"
     },
 }
