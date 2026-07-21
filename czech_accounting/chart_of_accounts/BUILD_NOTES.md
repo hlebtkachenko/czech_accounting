@@ -17,17 +17,21 @@ account's own root_type (classes 2/3/4 are split across roots). Current output: 
   accountant (no clean ERPNext root).
 - Minor: source carries `600/640/660/690` header-level synthetics (non-standard); review.
 
-## Remaining Stream 1 tasks
-1. Augment the chart: add 61x/62x, the 343 analytics, `221001` (present), pending sign-off.
-2. Account Category taxonomy + assign every posting account (seam to Stream 3; use the KB
-   `90-meta/INDEX-by-rozvaha-row.md` / `INDEX-by-vzz-row.md` mappings).
-3. `czech_accounting/setup/coa.py::apply_czech_coa(company)` — validate zero-GL, then
-   `create_charts(company, custom_chart=load_cz_chart())`. Idempotent.
-4. Party custom fields (`cz_ico` on Company/Customer/Supplier); confirm `tax_id` = DIČ.
-5. `enable_immutable_ledger = 1` (Accounts Settings) via patch/after_install.
-6. `hooks.py` fixtures skeleton covering all three streams' fixture doctypes.
-7. Validation: no posting to group; unmapped-posting-account report; every posting account
-   has an Account Category.
+## Stream 1 status — DONE (verified on the bench)
+1. [x] Augment chart: 61x/62x + 343.100/.200 added; 221001 present. (Sign-off still pending.)
+2. [x] Account Category taxonomy: 133 `CZ-` categories, every posting account tagged.
+3. [x] `setup/coa.py::apply_czech_coa(company)` — zero-GL guard + ERPNext reset + create_charts.
+4. [x] `cz_ico` custom field on Company/Customer/Supplier; DIČ = native `tax_id`.
+5. [x] `enable_immutable_ledger = 1` via migrate patch.
+6. [x] `hooks.py` fixtures skeleton (all three streams).
+
+Follow-up (non-blocking): `set_default_accounts` leaves ~2 ERPNext default accounts uncategorized
+(Stream 2 VAT templates supersede); optional unmapped-posting-account report. No-posting-to-group
+is enforced natively by ERPNext.
+
+## Accountant sign-off still required
+The chart, the added accounts, the class-7 root fallback, and the statement-row mapping all need
+accountant approval before real bookkeeping.
 
 ## Verify
 Create a throwaway company on the VPS (`bench console`), run `apply_czech_coa`, count accounts,

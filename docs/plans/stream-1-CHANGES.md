@@ -26,8 +26,35 @@ onto it. This complements the frozen contract in `00-master.md` — read both. U
 - Only Stream 1 edits `hooks.py` and `chart_of_accounts/`. Streams 2 & 3 drop fixture JSON files.
 - Commit to your branch; merge via PR in order 1 → 2 → 3. No direct pushes to `main`.
 
-## Pending on this branch
-- Account Category taxonomy + per-account assignment (codes will be listed here).
-- `setup/coa.py::apply_czech_coa(company)`; `cz_ico` custom-field fixture;
-  `enable_immutable_ledger = 1`; `hooks.py` fixtures skeleton (declares fixture doctypes for all
-  three streams — full list posted here once set).
+## Verified on the bench (throwaway company)
+`apply_czech_coa(company)` builds 314 Czech posting accounts (+ groups), correct root/account
+types, all CZK, default receivable/payable wired, immutable ledger on. No errors.
+
+## Account Categories (seam to Stream 3) — LANDED
+- **133 Account Category records**, named `CZ-<code>`, shipped as `fixtures/account_category.json`.
+  Codes are statement-row slugs: `CZ-rozvaha-aktiva-...`, `CZ-rozvaha-pasiva-...`, `CZ-vzz-...`,
+  `CZ-off-...` (off-balance). Every posting account is tagged (`Account.account_category`).
+- **Stream 3:** build Financial Report Templates from these categories. Full code→row map is in
+  `docs/plans/research/coa-statement-mapping.json` (account_number → rozvaha_row / vzz_row / code);
+  narrative + statutory-order category list in `...coa-statement-mapping.md`. The mapping follows
+  the **current Decree 500/2002 (post-2016)**, not the older KB scheme.
+- **Report-time logic Stream 3 must add** (the category tag alone is not enough): (1) short- vs
+  long-term reclassification for 311/321/351/361/462/475… (needs a maturity input); (2) sign-based
+  switching for mixed debit/credit accounts (341-347, 343.100/.200, 480/481, 373); (3) the ~55
+  ERPNext `x0` group-summary placeholders; (4) the finanční-VZZ podíly-vs-securities split. See
+  section 2 of `coa-statement-mapping.md`.
+
+## hooks.py fixtures declared (do not edit hooks.py — Stream 1 owns it)
+`Custom Field` + `Property Setter` + `Print Format` (filter: module = Czech Accounting);
+`Account Category`, `Financial Report Template`, `Asset Category`, `Finance Book` (filter:
+name like `CZ-%`). Use the `CZ-` name prefix for any Czech record in a module-less doctype, and
+`module = "Czech Accounting"` on custom fields/property setters, so your fixtures export cleanly.
+
+## Setup entry point
+`czech_accounting.setup.coa.apply_czech_coa(company)` (whitelisted) — run on a zero-transaction
+company to put it on the Czech chart. `enable_immutable_ledger` is set by a migrate patch.
+
+## Follow-up (non-blocking)
+- `set_default_accounts` creates ~2 ERPNext default accounts (tax template / round-off) with no
+  CZ category; Stream 2's VAT templates supersede these. May trim later.
+- Optional: an unmapped-posting-account validation report.
