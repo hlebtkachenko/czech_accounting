@@ -30,7 +30,14 @@ frappe.query_reports["Rozvaha"] = {
 			label: __("Finance Book"),
 			fieldtype: "Link",
 			options: "Finance Book",
-			description: __("Select the accounting book (Účetní odpisy) for the statutory statement"),
+			description: __("Defaults to the Company's accounting book (Účetní odpisy)"),
+		},
+		{
+			fieldname: "show_zero_rows",
+			label: __("Show Zero Rows"),
+			fieldtype: "Check",
+			default: 0,
+			description: __("Show all statutory rows, including empty ones"),
 		},
 	],
 };

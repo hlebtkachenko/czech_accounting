@@ -90,7 +90,7 @@ def _ensure_finance_books():
             frappe.get_doc({"doctype": "Finance Book", "finance_book_name": name}).insert(ignore_permissions=True)
 
 
-def _group_parent(company, abbr, root_type, account_type=None):
+def _group_parent(company, abbr, root_type):
     parent = f"CZ Asset Test {root_type} - {abbr}"
     if not frappe.db.exists("Account", parent):
         root = frappe.db.get_value(
@@ -106,16 +106,16 @@ def _group_parent(company, abbr, root_type, account_type=None):
 
 
 def _account(company, abbr, number, name, root_type, account_type):
-    full = f"{name} - {abbr}"
-    if not frappe.db.exists("Account", full):
-        parent = _group_parent(company, abbr, root_type)
-        doc = frappe.get_doc({
-            "doctype": "Account", "account_name": name, "account_number": number, "company": company,
-            "parent_account": parent, "is_group": 0, "root_type": root_type, "account_type": account_type,
-        })
-        doc.insert(ignore_permissions=True)
-        return doc.name
-    return full
+    existing = frappe.db.get_value("Account", {"account_number": number, "company": company}, "name")
+    if existing:
+        return existing
+    parent = _group_parent(company, abbr, root_type)
+    doc = frappe.get_doc({
+        "doctype": "Account", "account_name": name, "account_number": number, "company": company,
+        "parent_account": parent, "is_group": 0, "root_type": root_type, "account_type": account_type,
+    })
+    doc.insert(ignore_permissions=True)
+    return doc.name
 
 
 def _ensure_asset_accounts(company, abbr):

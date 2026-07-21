@@ -51,6 +51,11 @@ UNMAPPED_PL_LABEL = "Nezařazené náklady a výnosy"
 # 07x/08x = oprávky (accumulated depreciation), 09x/19x/29x/39x = opravné položky.
 CORRECTION_PREFIXES = ("07", "08", "09", "19", "29", "39")
 
+# Accounts inside those groups that are NOT contra-asset (they belong in Brutto, not Korekce):
+# 097 Oceňovací rozdíl k nabytému majetku (a valuation account; its own contra is 098),
+# 395 Vnitřní zúčtování, 396/398 Spojovací účty (clearing/consolidation, not opravné položky).
+NON_CORRECTION_NUMBERS = ("097", "395", "396", "398")
+
 # Roman numerals used in the statutory row codes, mapped to their ordinal for sorting.
 _ROMAN = {r: i for i, r in enumerate(
     ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x", "xi", "xii"], start=1)}
@@ -60,7 +65,10 @@ def is_correction_account(account_number) -> bool:
     """True when the account is oprávky / opravná položka (contributes to Korekce)."""
     if not account_number:
         return False
-    return str(account_number)[:2] in CORRECTION_PREFIXES
+    number = str(account_number)
+    if number[:3] in NON_CORRECTION_NUMBERS:
+        return False
+    return number[:2] in CORRECTION_PREFIXES
 
 
 def category_side(name: str) -> str:
@@ -85,7 +93,7 @@ def category_sort_key(name: str):
 # ---------------------------------------------------------------------------
 # VZZ druhové (Příloha 2) — explicit statutory ordering.
 # Each entry: code, label, indent, kind, category, nature, members
-#   kind "L" leaf(category), "S" souhrn(members), "R" result(members), "T" grand total
+#   kind "L" leaf(category), "S" subtotal(members), "R" result(members), "T" grand total
 #   nature "revenue" -> presented as (credit-debit); "cost" -> as (debit-credit)
 # The grand total *** is computed straight from the GL (-sum(debit-credit) over all class
 # 5/6 accounts) so it always reconciles to Rozvaha A.V.

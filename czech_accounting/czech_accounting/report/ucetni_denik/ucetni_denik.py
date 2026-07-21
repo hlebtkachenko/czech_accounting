@@ -15,13 +15,14 @@ import frappe
 from frappe import _
 from frappe.utils import flt, getdate
 
+from .._common import finance_book_condition, require_company_and_to_date
+
 
 def execute(filters=None):
     filters = frappe._dict(filters or {})
-    if not filters.get("company"):
-        frappe.throw(_("Company is mandatory"))
-    if not filters.get("to_date"):
-        frappe.throw(_("To Date is mandatory"))
+    require_company_and_to_date(filters)
+    # No finance-book default here: the deník is a chronological listing of every entry, not
+    # an aggregate, so it shows all books unless the user narrows to one.
 
     entries = _get_entries(filters)
     data = _build_rows(entries)
@@ -57,9 +58,9 @@ def _get_entries(filters):
     if filters.get("from_date"):
         conditions.append("gle.posting_date >= %(from_date)s")
         params["from_date"] = getdate(filters.from_date)
-    if filters.get("finance_book"):
-        conditions.append("(gle.finance_book = %(fb)s OR gle.finance_book IS NULL OR gle.finance_book = '')")
-        params["fb"] = filters.finance_book
+    fb = finance_book_condition(filters, params)
+    if fb:
+        conditions.append(fb)
     if filters.get("voucher_no"):
         conditions.append("gle.voucher_no = %(voucher_no)s")
         params["voucher_no"] = filters.voucher_no
