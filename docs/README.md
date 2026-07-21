@@ -31,5 +31,6 @@ Nothing in the knowledge base is treated as verified merely because it exists; e
 | Path | Purpose |
 |---|---|
 | [ROADMAP.md](ROADMAP.md) | Phased build plan (Phases A-F) with deliverables and acceptance criteria |
+| [plans/](plans/) | Active build plans: `00-master.md` (contract + parallel split) and the three stream plans; `plans/research/` holds the CoA/law/modeling analyses |
 | [adr/](adr/) | Architecture Decision Records — why load-bearing choices were made |
 | [conventions/](conventions/) | Commits, code review, and naming rules |
