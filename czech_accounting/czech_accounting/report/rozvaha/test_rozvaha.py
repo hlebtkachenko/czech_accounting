@@ -217,17 +217,17 @@ def _group_parent(company, abbr, root_type):
 def _ensure_accounts(company, abbr):
     mapping = {}
     for number, acc_name, root_type, category in ACCOUNTS:
-        full = f"{acc_name} - {abbr}"
-        if not frappe.db.exists("Account", full):
-            parent = _group_parent(company, abbr, root_type)
-            doc = frappe.get_doc({
-                "doctype": "Account", "account_name": acc_name, "account_number": number,
-                "company": company, "parent_account": parent, "is_group": 0,
-                "root_type": root_type, "account_category": category,
-            })
-            doc.insert(ignore_permissions=True)
-            full = doc.name
-        else:
-            frappe.db.set_value("Account", full, "account_category", category)
-        mapping[number] = full
+        existing = frappe.db.get_value("Account", {"account_number": number, "company": company}, "name")
+        if existing:
+            frappe.db.set_value("Account", existing, "account_category", category)
+            mapping[number] = existing
+            continue
+        parent = _group_parent(company, abbr, root_type)
+        doc = frappe.get_doc({
+            "doctype": "Account", "account_name": acc_name, "account_number": number,
+            "company": company, "parent_account": parent, "is_group": 0,
+            "root_type": root_type, "account_category": category,
+        })
+        doc.insert(ignore_permissions=True)
+        mapping[number] = doc.name
     return mapping

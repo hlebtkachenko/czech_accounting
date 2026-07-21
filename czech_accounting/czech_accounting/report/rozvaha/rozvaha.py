@@ -2,23 +2,30 @@
 # For license information, see license.txt
 """Rozvaha (balance sheet) — statutory 4-column filing layout.
 
-Decree 500/2002 Sb., Příloha 1: Brutto / Korekce / Netto (běžné období) / Netto
-(minulé období). The native v16 Financial Report Template renders one value per row per
-period (its columns are periods), so it cannot produce the Brutto/Korekce split the Aktiva
-side requires — hence this dedicated report (the "custom report row builder" scoped in the
-Stream 3 plan).
+Decree 500/2002 Sb., Příloha 1: Brutto / Korekce / Netto (běžné) / Netto (minulé). The native
+v16 Financial Report Template renders one value per row per period (its columns are periods),
+so it cannot produce the Brutto/Korekce split the Aktiva side requires — hence this dedicated
+report (the "custom report row builder" scoped in the Stream 3 plan).
 
-The row tree is built at runtime from the live ``CZ-rozvaha-*`` Account Categories (the
-Stream 1 seam, READ-ONLY here) so it stays in sync with Stream 1's taxonomy. It reads the
-same GL the Trial Balance reads (no second ledger) and reconciles Aktiva = Pasiva by routing
-the provisional period result into A.V and any unmapped account into a visible
-"Nezařazené účty" row. Draft-for-accountant-signoff (repo domain invariant).
+The row tree is built at runtime from the live ``CZ-rozvaha-*`` Account Categories (the Stream 1
+seam, READ-ONLY here). Balance-sheet accounts use their cumulative balance as of the date; the
+period result routed into A.V uses the fiscal-year movement of the class 5/6 accounts — the same
+basis as the VZZ report, so A.V and the VZZ bottom line stay equal. Any unmapped account surfaces
+in a visible "Nezařazené účty" row, so the statement always reconciles Aktiva = Pasiva.
+Draft-for-accountant-signoff (repo domain invariant).
 """
 
 import frappe
 from frappe import _
 from frappe.utils import add_years, flt, getdate
 
+from .._common import (
+    account_balances,
+    account_movements,
+    fiscal_year_start,
+    require_company_and_to_date,
+    resolve_finance_book,
+)
 from .statement_lines import (
     DUAL_SIDE_ROUTING,
     RESULT_CATEGORY,
@@ -38,33 +45,28 @@ ZERO = 0.005
 
 def execute(filters=None):
     filters = frappe._dict(filters or {})
-    _validate(filters)
+    require_company_and_to_date(filters)
+    resolve_finance_book(filters)
 
     to_date = getdate(filters.to_date)
     prev_to = getdate(filters.previous_to_date) if filters.get("previous_to_date") else add_years(to_date, -1)
 
     accounts = _accounts(filters.company)
-    bal_cur = _balances(filters, to_date)
-    bal_prev = _balances(filters, prev_to)
+    bal_cur = account_balances(filters, to_date)
+    bal_prev = account_balances(filters, prev_to)
+    result_cur, result_prev = _period_result(filters, accounts, to_date, prev_to)
 
     cats = _categories()
     tree = _tree(cats)
 
-    own, result_cur, result_prev = _classify(accounts, bal_cur, bal_prev, cats)
-    # provisional / booked result of the period -> A.V (raw terms; presented as credit +)
+    own = _classify(accounts, bal_cur, bal_prev, cats)
+    # period result -> A.V (raw terms; presented on the Pasiva side as credit-positive)
     own.setdefault(RESULT_CATEGORY, _zero())
     own[RESULT_CATEGORY]["bc"] += result_cur
     own[RESULT_CATEGORY]["bp"] += result_prev
 
     displayed = _rollup(tree, own)
     return _columns(), _rows(filters, tree, cats, displayed, own)
-
-
-def _validate(filters):
-    if not filters.get("company"):
-        frappe.throw(_("Company is mandatory"))
-    if not filters.get("to_date"):
-        frappe.throw(_("To Date is mandatory"))
 
 
 def _columns():
@@ -85,23 +87,16 @@ def _accounts(company):
     )
 
 
-def _balances(filters, date):
-    conditions = ["gle.company = %(company)s", "gle.is_cancelled = 0", "gle.posting_date <= %(date)s"]
-    params = {"company": filters.company, "date": date}
-    if filters.get("finance_book"):
-        conditions.append("(gle.finance_book = %(fb)s OR gle.finance_book IS NULL OR gle.finance_book = '')")
-        params["fb"] = filters.finance_book
-    rows = frappe.db.sql(
-        """
-        SELECT gle.account AS account, SUM(gle.debit - gle.credit) AS bal
-        FROM `tabGL Entry` gle
-        WHERE {c}
-        GROUP BY gle.account
-        """.format(c=" AND ".join(conditions)),
-        params,
-        as_dict=True,
-    )
-    return {r.account: flt(r.bal) for r in rows}
+def _period_result(filters, accounts, to_date, prev_to):
+    """Signed period result (sum of debit-credit over class 5/6 accounts) for the fiscal year
+    of each column, excluding opening entries. Presented on the Pasiva side it becomes the
+    profit/loss; computed on the same basis as the VZZ report so A.V == VZZ ***."""
+    ie_accounts = [a.name for a in accounts if a.root_type in ("Income", "Expense")]
+    if not ie_accounts:
+        return 0.0, 0.0
+    mv_cur = account_movements(filters, fiscal_year_start(filters.company, to_date), to_date, ie_accounts)
+    mv_prev = account_movements(filters, fiscal_year_start(filters.company, prev_to), prev_to, ie_accounts)
+    return sum(mv_cur.values()), sum(mv_prev.values())
 
 
 def _categories():
@@ -114,7 +109,7 @@ def _categories():
 
 
 def _tree(cats):
-    """Return {parent -> [children]} and {name -> parent} using longest-existing-prefix."""
+    """Return {parent -> [children]} and roots per side using longest-existing-prefix."""
     names = list(cats)
     seg = {n: n[len(ROZVAHA_PREFIX):].split("-") for n in names}
     by_side = {"A": set(), "P": set()}
@@ -159,35 +154,32 @@ def _route(category, signed_balance):
 
 
 def _classify(accounts, bal_cur, bal_prev, cats):
+    """Aggregate balance-sheet accounts into leaf categories, split Brutto/Korekce, per period.
+    Class 5/6 accounts are excluded here — they form the period result (see _period_result)."""
     own = {}
-    result_cur = 0.0
-    result_prev = 0.0
 
     def bucket(cat):
         return own.setdefault(cat, _zero())
 
     for acc in accounts:
+        if acc.root_type in ("Income", "Expense"):
+            continue
         b_cur = bal_cur.get(acc.name, 0.0)
         b_prev = bal_prev.get(acc.name, 0.0)
         if abs(b_cur) < ZERO and abs(b_prev) < ZERO:
-            continue
-        if acc.root_type in ("Income", "Expense"):
-            result_cur += b_cur
-            result_prev += b_prev
             continue
 
         category = acc.account_category
         cat_cur = _target(category, b_cur, cats)
         cat_prev = _target(category, b_prev, cats)
-        corr = is_correction_account(acc.account_number)
-        if corr:
+        if is_correction_account(acc.account_number):
             bucket(cat_cur)["kc"] += b_cur
             bucket(cat_prev)["kp"] += b_prev
         else:
             bucket(cat_cur)["bc"] += b_cur
             bucket(cat_prev)["bp"] += b_prev
 
-    return own, result_cur, result_prev
+    return own
 
 
 def _target(category, signed_balance, cats):
@@ -245,8 +237,7 @@ def _rows(filters, tree, cats, displayed, own):
             for k in total:
                 total[k] += unmapped_raw[k]
 
-        tp = _present(side, total)
-        data.append(_row(label, tp, side, indent=0, group=True))
+        data.append(_row(label, _present(side, total), side, indent=0, group=True))
 
         for r in tree["roots"][side]:
             _emit(data, tree, cats, displayed, r, side, 1, show_zero)
@@ -259,13 +250,21 @@ def _rows(filters, tree, cats, displayed, own):
 
 
 def _emit(data, tree, cats, displayed, name, side, indent, show_zero):
+    """Emit a node and its subtree. A node is kept when it OR any descendant is non-zero, so a
+    group that nets to ~0 from material offsetting children is still shown."""
     p = _present(side, displayed[name])
     kids = tree["children"].get(name, [])
-    if not show_zero and abs(p["netto"]) < ZERO and abs(p["minule"]) < ZERO:
-        return
-    data.append(_row(cats[name]["desc"], p, side, indent=indent, group=bool(kids)))
+
+    child_rows = []
     for ch in kids:
-        _emit(data, tree, cats, displayed, ch, side, indent + 1, show_zero)
+        _emit(child_rows, tree, cats, displayed, ch, side, indent + 1, show_zero)
+
+    node_zero = abs(p["netto"]) < ZERO and abs(p["minule"]) < ZERO
+    if not show_zero and node_zero and not child_rows:
+        return
+
+    data.append(_row(cats[name]["desc"], p, side, indent=indent, group=bool(kids)))
+    data.extend(child_rows)
 
 
 def _row(label, p, side, indent, group):

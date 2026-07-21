@@ -18,15 +18,15 @@ import frappe
 from frappe import _
 from frappe.utils import flt, getdate
 
-WIP_CATEGORY = "AKT-C.I.2"
+from .._common import finance_book_condition, require_company_and_to_date, resolve_finance_book
+
+WIP_CATEGORY = "CZ-rozvaha-aktiva-c-i-2"
 
 
 def execute(filters=None):
     filters = frappe._dict(filters or {})
-    if not filters.get("company"):
-        frappe.throw(_("Company is mandatory"))
-    if not filters.get("to_date"):
-        frappe.throw(_("To Date is mandatory"))
+    require_company_and_to_date(filters)
+    resolve_finance_book(filters)
 
     accounts = _wip_accounts(filters.company)
     if not accounts:
@@ -68,9 +68,9 @@ def _balances(filters, accounts):
     if filters.get("project"):
         conditions.append("gle.project = %(project)s")
         params["project"] = filters.project
-    if filters.get("finance_book"):
-        conditions.append("(gle.finance_book = %(fb)s OR gle.finance_book IS NULL OR gle.finance_book = '')")
-        params["fb"] = filters.finance_book
+    fb = finance_book_condition(filters, params)
+    if fb:
+        conditions.append(fb)
 
     return frappe.db.sql(
         """
