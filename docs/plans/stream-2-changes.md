@@ -56,9 +56,29 @@ The `Property Setter` entry is the one to double-check — it carries Stream 2's
 naming series. Import on `bench migrate` works via the fixtures glob regardless;
 the entries matter for `bench export-fixtures`.
 
+## ⚠ Account decision — synthetic-only (supersedes contract anchors)
+
+Per user directive, Stream 2 uses **synthetic (3-digit) accounts only, no
+analyticals**:
+
+| Use | Account |
+|---|---|
+| VAT (input + output) | **343** (single synthetic) |
+| Cash | **211** |
+| Bank | **221** |
+
+This **diverges from `00-master.md`** point 1 ("VAT `343.100` / `343.200`", "bank
+`221` + `221001`") and point 5 ("minimal analytics 343.100/.200, 221001").
+
+**Stream 1 must align:** create **343, 221, 211 as posting (leaf) synthetic
+accounts** — do NOT make 343 a group with 343.100/.200 children, or 221 a group
+with 221001, or posting to them fails ("no posting to group account"). The
+input/output VAT split is carried by the tax rows, not by separate accounts.
+Someone owning the contract should update `00-master.md` to match.
+
 ## Depends on Stream 1 (frozen identifiers, verified after Stream 1 merges)
 
-Accounts by number: `343.100`, `343.200`, `211`, `221001`. The VAT setup looks
+Accounts by number: `343`, `211`, `221` (all posting leaves). The VAT setup looks
 these up per company. Run once the CoA exists:
 
 ```
