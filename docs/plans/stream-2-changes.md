@@ -96,6 +96,15 @@ these up per company. Run once the CoA exists:
 bench --site <site> execute czech_accounting.setup.vat_templates.setup_all_companies
 ```
 
+## Review fixes (thermo-review)
+
+- Tax templates: dropped the manual `" - {abbr}"` title suffix — ERPNext's tax
+  autoname already appends it, so names were doubling (`DPH 21 % - ACME - ACME`).
+  Titles are now bare; the record name gets one abbr.
+- Print format: removed the invoice-level Variabilní symbol cell — it derived a
+  letter-prefixed, over-length VS from `doc.name` (`FV202600001`), invalid for a
+  Czech VS. VS stays a payment attribute (Payment Entry / Bank Transaction).
+
 ## Deferred (out of Stream 2 acceptance)
 
 DPH/KH/SH XML export and the normalized VAT-event ledger — later phase (fields
