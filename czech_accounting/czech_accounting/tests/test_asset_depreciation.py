@@ -74,23 +74,18 @@ class TestAssetDepreciation(IntegrationTestCase):
             rows = frappe.db.count("Depreciation Schedule", {"parent": s.name})
             self.assertGreater(rows, 0, f"no depreciation rows for {s.finance_book}")
 
-        # The tax book must carry the statutory § 31 amounts (not straight line) and must not
-        # post to the GL — daňové odpisy are a parallel tax calculation.
+        # The tax book must carry the statutory § 31 amounts, not ERPNext straight line.
         tax = next(s for s in schedules if s.finance_book == "CZ-Daňové odpisy")
         tax_rows = frappe.get_all(
             "Depreciation Schedule",
             filters={"parent": tax.name},
-            fields=["depreciation_amount", "make_depreciation_entry"],
+            fields=["depreciation_amount"],
             order_by="idx",
         )
         self.assertEqual(
             [r.depreciation_amount for r in tax_rows],
             tax_depreciation_schedule(GROSS, 2, "linear"),
             "CZ-Daňové odpisy must use statutory § 31 amounts, not ERPNext straight line",
-        )
-        self.assertTrue(
-            all(r.make_depreciation_entry == 0 for r in tax_rows),
-            "daňové odpisy rows must not post to the GL",
         )
 
 

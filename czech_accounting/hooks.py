@@ -29,7 +29,7 @@ fixtures = [
 doc_events = {
     "Sales Invoice": {"validate": "czech_accounting.doc_events.validate_sales_invoice"},
     "Purchase Invoice": {"validate": "czech_accounting.doc_events.validate_purchase_invoice"},
-    # Impose statutory § 31/§ 32 amounts (non-posting) on the CZ-Daňové odpisy tax book.
+    # Impose statutory § 31/§ 32 amounts on the CZ-Daňové odpisy tax book.
     "Asset Depreciation Schedule": {
         "before_insert": "czech_accounting.assets.depreciation_hook.set_czech_tax_schedule"
     },

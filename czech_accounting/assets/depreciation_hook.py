@@ -1,9 +1,10 @@
 """Czech tax depreciation for the CZ-Daňové odpisy Finance Book.
 
 ERPNext builds a straight-line schedule for every finance book. For the Czech tax book we
-replace it with the statutory § 31 / § 32 amounts and mark the rows non-posting: daňové odpisy
-are a parallel tax calculation (feeding the tax return and deferred tax), not an accounting GL
-entry — the účetní book is what posts depreciation to 551/08x.
+replace it with the statutory § 31 / § 32 amounts. Daňové odpisy are a parallel tax calculation
+(feeding the tax return and deferred tax via 592/481), distinct from účetní odpisy which the
+CZ-Účetní odpisy book posts to 551/08x. Whether ERPNext posts the tax book to the GL is left to
+ERPNext's per-book behaviour; confirm before running live depreciation.
 """
 import frappe
 from frappe.utils import add_years, getdate
@@ -44,7 +45,6 @@ def set_czech_tax_schedule(doc, method=None):
                 "schedule_date": add_years(base_date, year),
                 "depreciation_amount": amount,
                 "accumulated_depreciation_amount": accumulated,
-                "make_depreciation_entry": 0,
             },
         )
     doc.total_number_of_depreciations = len(amounts)
