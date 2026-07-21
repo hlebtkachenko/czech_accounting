@@ -60,37 +60,32 @@ doc_events = {
 }
 ```
 
-The `Property Setter` entry is the one to double-check — it carries Stream 2's
-naming series. Import on `bench migrate` works via the fixtures glob regardless;
-the entries matter for `bench export-fixtures`. The `doc_events` block wires the
-Stream 2 boundary validators (`doc_events.py`) — without it the invoices still
-work, just unvalidated. The print format syncs automatically from its module
+Stream 1 shipped the `Custom Field` + `Property Setter` fixtures entries. At merge
+Stream 2 added the `doc_events` block to `hooks.py` itself (Stream 1 had not), to
+wire the boundary validators. The print format syncs automatically from its module
 folder on `bench migrate` (no hooks entry needed).
 
-## ⚠ Account decision — synthetic-only (supersedes contract anchors)
+## Account decision — analytical leaves (resolved at merge)
 
-Per user directive, Stream 2 uses **synthetic (3-digit) accounts only, no
-analyticals**:
+A synthetic-only variant was tried, but Stream 1's merged chart ships `343` and
+`221` as **group** accounts with the analytical leaves `343.100` / `343.200` /
+`221001` as the postable children. Posting to a group is rejected, so Stream 2
+posts to the leaves — which is the original `00-master.md` contract:
 
 | Use | Account |
 |---|---|
-| VAT (input + output) | **343** (single synthetic) |
-| Cash | **211** |
-| Bank | **221** |
+| Input VAT | **343.100** (leaf) |
+| Output VAT | **343.200** (leaf) |
+| Cash | **211** (leaf) |
+| Bank | **221001** (leaf) |
 
-This **diverges from `00-master.md`** point 1 ("VAT `343.100` / `343.200`", "bank
-`221` + `221001`") and point 5 ("minimal analytics 343.100/.200, 221001").
+Reverse charge = Add 343.200 + Deduct 343.100, so the 343 group nets to zero with
+the proper input/output split.
 
-**Stream 1 must align:** create **343, 221, 211 as posting (leaf) synthetic
-accounts** — do NOT make 343 a group with 343.100/.200 children, or 221 a group
-with 221001, or posting to them fails ("no posting to group account"). The
-input/output VAT split is carried by the tax rows, not by separate accounts.
-Someone owning the contract should update `00-master.md` to match.
+## Depends on Stream 1 (frozen identifiers, verified at merge)
 
-## Depends on Stream 1 (frozen identifiers, verified after Stream 1 merges)
-
-Accounts by number: `343`, `211`, `221` (all posting leaves). The VAT setup looks
-these up per company. Run once the CoA exists:
+Accounts by number: `343.100`, `343.200`, `211`, `221001` (all posting leaves).
+The VAT setup looks these up per company. Run once the CoA exists:
 
 ```
 bench --site <site> execute czech_accounting.setup.vat_templates.setup_all_companies

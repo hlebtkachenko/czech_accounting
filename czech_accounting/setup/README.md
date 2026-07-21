@@ -17,20 +17,19 @@ Mode of Payment account row in place.
 
 ## What it creates per company
 
-Accounts are synthetic-only (3-digit). Input and output VAT both post to the
-single synthetic **343**; the input/output split for DPH/KH is carried by the tax
-rows, not by separate accounts. Titles are bare (ERPNext's autoname appends the
-company abbreviation to the record name):
+Posting accounts are Stream 1's analytical leaves (343 and 221 are group
+accounts). Titles are bare (ERPNext's autoname appends the company abbreviation to
+the record name):
 
 | Template | Rows | Account |
 |---|---|---|
-| Sales `DPH 21 %` / `DPH 12 %` | output VAT on net | 343 |
-| Sales `DPH 0 % (osvobozeno / vývoz)` | 0 % line | 343 |
-| Purchase `DPH 21 %` / `DPH 12 %` | input VAT on net | 343 |
-| Purchase `DPH 0 % (osvobozeno / dovoz)` | 0 % line | 343 |
-| Purchase `PDP 21 %` / `PDP 12 %` | Add + Deduct on 343, nets to zero | 343 |
+| Sales `DPH 21 %` / `DPH 12 %` | output VAT on net | 343.200 |
+| Sales `DPH 0 % (osvobozeno / vývoz)` | 0 % line | 343.200 |
+| Purchase `DPH 21 %` / `DPH 12 %` | input VAT on net | 343.100 |
+| Purchase `DPH 0 % (osvobozeno / dovoz)` | 0 % line | 343.100 |
+| Purchase `PDP 21 %` / `PDP 12 %` | Add 343.200 + Deduct 343.100, nets to zero | 343 |
 
-Modes of Payment: `Cash` → 211, `Bank` → 221.
+Modes of Payment: `Cash` → 211, `Bank` → 221001.
 
 Rates are effective-dated (`VAT_RATES_2024_01_01`, Act 349/2023): 21 standard,
 12 reduced, since 2024-01-01. No 15 %. No statutory 0 % rate — the "0 %" template
@@ -43,13 +42,13 @@ ERPNext's native voucher engine (party + item accounts); Stream 2 supplies the
 343 VAT rows via the tax templates above.
 
 **Faktura přijatá (Purchase Invoice, `FP-.YYYY.-`)**
-- Plátce buyer: `5xx`/`042` + `343` (VAT) / `321` (gross).
+- Plátce buyer: `5xx`/`042` + `343.100` (VAT) / `321` (gross).
 - Neplátce buyer: gross to `5xx`/`042` / `321` — no 343.
 - Payment: `321` / `221` (or `211`).
 
 **Faktura vydaná (Sales Invoice, `FV-.YYYY.-`)**
-- `311` / `6xx` + `343` (VAT).
-- Advance received: `221` / `324`, then `324` / `343`; final invoice offsets 324.
+- `311` / `6xx` + `343.200` (VAT).
+- Advance received: `221` / `324`, then `324` / `343.200`; final invoice offsets 324.
 
 **Banka (Bank Transaction → Payment Entry / Reconciliation, `BV-.YYYY.-`)**
 - Incoming: `221` / `311` (or `324`).  Outgoing: `321` / `221`.
@@ -57,11 +56,11 @@ ERPNext's native voucher engine (party + item accounts); Stream 2 supplies the
 - Own-account transfer via transit `261` (zero at month-end).  FX: `563` / `663`.
 
 **Pokladna (Payment Entry, Mode of Payment Cash → 211, `PO-.YYYY.-`)**
-- Příjmový: `211` / `6xx` + `343`.  Výdajový: `5xx` + `343` / `211`.
+- Příjmový: `211` / `6xx` + `343.200`.  Výdajový: `5xx` + `343.100` / `211`.
 - Cash ↔ bank: Internal Transfer via `261`.
 
 **Interní doklad (Journal Entry, `ID-.YYYY.-`)**
-- PDP samovyměření: Add + Deduct on `343` (net zero).
+- PDP samovyměření: Add `343.200` + Deduct `343.100` (net zero).
 - Aktivace: `042` / `62x`.  Odpisy: `551` / `08x`.  FX, časové rozlišení.
 - WIP change of state (build-to-sell): `121` / `611` — bookable via this ID-series
   JE; the WIP valuation / monthly automation is **Stream 3** (assets), not here.
