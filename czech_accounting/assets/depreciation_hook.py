@@ -16,7 +16,7 @@ METHOD_BY_LABEL = {"Rovnoměrné (§ 31)": "linear", "Zrychlené (§ 32)": "acce
 
 
 def set_czech_tax_schedule(doc, method=None):
-    """before_insert on Asset Depreciation Schedule: impose the statutory tax schedule."""
+    """validate hook on Asset Depreciation Schedule: impose the statutory tax schedule."""
     if doc.finance_book != TAX_FINANCE_BOOK:
         return
     asset = frappe.get_doc("Asset", doc.asset)
