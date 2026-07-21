@@ -49,6 +49,12 @@ bench --site <your-site> set-config developer_mode 1
 
 Then commit and push.
 
+## Documentation
+
+Everything is mapped in [docs/README.md](docs/README.md): the phased build plan
+([docs/ROADMAP.md](docs/ROADMAP.md)) and the researched Frappe / ERPNext / Czech-accounting
+knowledge base ([docs/knowledge-base/](docs/knowledge-base/)).
+
 ## Safety
 
 This repository is public and contains source only. Never commit credentials, `.env`
