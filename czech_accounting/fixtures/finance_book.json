@@ -1,12 +1,12 @@
 [
  {
   "doctype": "Finance Book",
-  "name": "Účetní odpisy",
-  "finance_book_name": "Účetní odpisy"
+  "name": "CZ-Účetní odpisy",
+  "finance_book_name": "CZ-Účetní odpisy"
  },
  {
   "doctype": "Finance Book",
-  "name": "Daňové odpisy",
-  "finance_book_name": "Daňové odpisy"
+  "name": "CZ-Daňové odpisy",
+  "finance_book_name": "CZ-Daňové odpisy"
  }
 ]

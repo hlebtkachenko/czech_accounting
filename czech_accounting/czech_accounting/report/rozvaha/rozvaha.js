@@ -30,7 +30,7 @@ frappe.query_reports["Rozvaha"] = {
 			label: __("Finance Book"),
 			fieldtype: "Link",
 			options: "Finance Book",
-			description: __("Defaults to the Company's accounting book (Účetní odpisy)"),
+			description: __("Defaults to the Company's accounting book (CZ-Účetní odpisy)"),
 		},
 		{
 			fieldname: "show_zero_rows",

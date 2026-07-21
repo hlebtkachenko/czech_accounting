@@ -2,7 +2,7 @@
 # For license information, see license.txt
 """Genuine fixed asset (automobil) depreciates on both Finance Books.
 
-Builds the Automobil Asset Category with two finance_books (Účetní odpisy monthly, Daňové
+Builds the CZ-Automobil Asset Category with two finance_books (CZ-Účetní odpisy monthly, CZ-Daňové
 odpisy annual) exactly as shipped in fixtures/asset_category.json + fixtures/finance_book.json,
 creates an Asset that uses it, submits it, and asserts ERPNext generates two parallel
 depreciation schedules (účetní vs daňové odpisy, §28 ZÚ vs §26–33 ZDP). The IntegrationTestCase
@@ -13,8 +13,8 @@ import frappe
 from frappe.tests import IntegrationTestCase
 
 FINANCE_BOOKS = [
-    ("Účetní odpisy", "Straight Line", 60, 1),
-    ("Daňové odpisy", "Straight Line", 5, 12),
+    ("CZ-Účetní odpisy", "Straight Line", 60, 1),
+    ("CZ-Daňové odpisy", "Straight Line", 5, 12),
 ]
 GROSS = 300_000.0
 
@@ -35,7 +35,7 @@ class TestAssetDepreciation(IntegrationTestCase):
         asset = frappe.new_doc("Asset")
         asset.update({
             "asset_name": "CZ Test Car Depreciation",
-            "asset_category": "Automobil",
+            "asset_category": "CZ-Automobil",
             "item_code": "CZ-TEST-CAR",
             "company": self.company,
             "purchase_date": "2026-01-01",
@@ -67,7 +67,7 @@ class TestAssetDepreciation(IntegrationTestCase):
         )
         books = {s.finance_book for s in schedules}
         self.assertEqual(len(schedules), 2, f"expected 2 schedules, got {schedules}")
-        self.assertEqual(books, {"Účetní odpisy", "Daňové odpisy"})
+        self.assertEqual(books, {"CZ-Účetní odpisy", "CZ-Daňové odpisy"})
         for s in schedules:
             rows = frappe.db.count("Depreciation Schedule", {"parent": s.name})
             self.assertGreater(rows, 0, f"no depreciation rows for {s.finance_book}")
@@ -85,7 +85,7 @@ def _delete_asset(name):
 
 
 def _ensure_finance_books():
-    for name in ("Účetní odpisy", "Daňové odpisy"):
+    for name in ("CZ-Účetní odpisy", "CZ-Daňové odpisy"):
         if not frappe.db.exists("Finance Book", name):
             frappe.get_doc({"doctype": "Finance Book", "finance_book_name": name}).insert(ignore_permissions=True)
 
@@ -126,11 +126,11 @@ def _ensure_asset_accounts(company, abbr):
 
 
 def _ensure_category(company, fa, ad, de):
-    if frappe.db.exists("Asset Category", "Automobil"):
-        cat = frappe.get_doc("Asset Category", "Automobil")
+    if frappe.db.exists("Asset Category", "CZ-Automobil"):
+        cat = frappe.get_doc("Asset Category", "CZ-Automobil")
     else:
         cat = frappe.new_doc("Asset Category")
-        cat.asset_category_name = "Automobil"
+        cat.asset_category_name = "CZ-Automobil"
         cat.enable_cwip_accounting = 0
         for fb, method, total, freq in FINANCE_BOOKS:
             cat.append("finance_books", {
@@ -152,7 +152,7 @@ def _ensure_item():
         frappe.get_doc({
             "doctype": "Item", "item_code": "CZ-TEST-CAR", "item_name": "CZ Test Car",
             "item_group": "All Item Groups", "stock_uom": "Nos", "is_stock_item": 0,
-            "is_fixed_asset": 1, "asset_category": "Automobil",
+            "is_fixed_asset": 1, "asset_category": "CZ-Automobil",
         }).insert(ignore_permissions=True)
 
 

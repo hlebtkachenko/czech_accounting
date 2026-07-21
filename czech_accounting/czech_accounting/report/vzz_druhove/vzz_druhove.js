@@ -37,7 +37,7 @@ frappe.query_reports["VZZ druhove"] = {
 			label: __("Finance Book"),
 			fieldtype: "Link",
 			options: "Finance Book",
-			description: __("Select the accounting book (Účetní odpisy) for the statutory statement"),
+			description: __("Select the accounting book (CZ-Účetní odpisy) for the statutory statement"),
 		},
 	],
 };
