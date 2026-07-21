@@ -4,6 +4,9 @@ Branch `stream/3-books-assets`. Merges third (after Stream 1 + Stream 2). This f
 cross-stream summary of what Stream 3 added, what it CONSUMES from Stream 1, and the exact
 contract asks Stream 1 must satisfy. Author-only files; no core or Stream 1/2 files edited.
 
+**How to use it:** [docs/guides/statutory-books-and-assets.md](../guides/statutory-books-and-assets.md)
+— running the reports, the developer-WIP (121) workflow, dual-odpisy setup, and reconciliation.
+
 ## What Stream 3 built
 
 ### Books (three statutory books)
