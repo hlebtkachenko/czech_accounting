@@ -33,8 +33,10 @@ for the shape and [docs/README.md](docs/README.md) for where everything lives.
   fields) carries an effective date and is versioned. Never hardcode a rule as timeless.
 - **Draft-only automation.** Automated/agent documents are drafts; submission is human.
 - **No posting to group accounts.** Detect and reject unmapped posting accounts.
-- **Accountant sign-off** gates every legal output (CoA, statements, VAT XML) before real
-  use. Software tests prove consistency with encoded rules, not which legal regime applies.
+- **Draft-only is the hard control.** Agent/automated documents stay `docstatus = 0`; a human
+  reviews and submits. Accountant sign-off on legal outputs (CoA, statements, VAT XML) is
+  advisory, not a blocking gate. Software tests prove consistency with encoded rules, not which
+  legal regime applies.
 - **Traceability.** Every reported figure traces back to its source voucher and attachment.
 
 ## Dev workflow — author here, the server only runs

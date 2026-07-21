@@ -1,0 +1,1886 @@
+{
+ "110": {
+  "rozvaha_row": "C.I.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-i-1",
+  "category_label": "Materiál"
+ },
+ "111": {
+  "rozvaha_row": "C.I.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-i-1",
+  "category_label": "Materiál"
+ },
+ "112": {
+  "rozvaha_row": "C.I.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-i-1",
+  "category_label": "Materiál"
+ },
+ "119": {
+  "rozvaha_row": "C.I.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-i-1",
+  "category_label": "Materiál"
+ },
+ "120": {
+  "rozvaha_row": "C.I.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-i",
+  "category_label": "Zásoby (souhrn)"
+ },
+ "121": {
+  "rozvaha_row": "C.I.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-i-2",
+  "category_label": "Nedokončená výroba a polotovary"
+ },
+ "122": {
+  "rozvaha_row": "C.I.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-i-2",
+  "category_label": "Nedokončená výroba a polotovary"
+ },
+ "123": {
+  "rozvaha_row": "C.I.3.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-i-3-1",
+  "category_label": "Výrobky"
+ },
+ "124": {
+  "rozvaha_row": "C.I.4.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-i-4",
+  "category_label": "Mladá a ostatní zvířata a jejich skupiny"
+ },
+ "130": {
+  "rozvaha_row": "C.I.3.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-i-3-2",
+  "category_label": "Zboží"
+ },
+ "131": {
+  "rozvaha_row": "C.I.3.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-i-3-2",
+  "category_label": "Zboží"
+ },
+ "132": {
+  "rozvaha_row": "C.I.3.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-i-3-2",
+  "category_label": "Zboží"
+ },
+ "139": {
+  "rozvaha_row": "C.I.3.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-i-3-2",
+  "category_label": "Zboží"
+ },
+ "150": {
+  "rozvaha_row": "C.I.5.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-i-5",
+  "category_label": "Poskytnuté zálohy na zásoby"
+ },
+ "151": {
+  "rozvaha_row": "C.I.5.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-i-5",
+  "category_label": "Poskytnuté zálohy na zásoby"
+ },
+ "152": {
+  "rozvaha_row": "C.I.5.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-i-5",
+  "category_label": "Poskytnuté zálohy na zásoby"
+ },
+ "153": {
+  "rozvaha_row": "C.I.5.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-i-5",
+  "category_label": "Poskytnuté zálohy na zásoby"
+ },
+ "190": {
+  "rozvaha_row": "C.I.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-i",
+  "category_label": "Zásoby (souhrn)"
+ },
+ "191": {
+  "rozvaha_row": "C.I.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-i-1",
+  "category_label": "Materiál"
+ },
+ "192": {
+  "rozvaha_row": "C.I.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-i-2",
+  "category_label": "Nedokončená výroba a polotovary"
+ },
+ "193": {
+  "rozvaha_row": "C.I.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-i-2",
+  "category_label": "Nedokončená výroba a polotovary"
+ },
+ "194": {
+  "rozvaha_row": "C.I.3.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-i-3-1",
+  "category_label": "Výrobky"
+ },
+ "195": {
+  "rozvaha_row": "C.I.4.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-i-4",
+  "category_label": "Mladá a ostatní zvířata a jejich skupiny"
+ },
+ "196": {
+  "rozvaha_row": "C.I.3.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-i-3-2",
+  "category_label": "Zboží"
+ },
+ "197": {
+  "rozvaha_row": "C.I.5.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-i-5",
+  "category_label": "Poskytnuté zálohy na zásoby"
+ },
+ "198": {
+  "rozvaha_row": "C.I.5.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-i-5",
+  "category_label": "Poskytnuté zálohy na zásoby"
+ },
+ "199": {
+  "rozvaha_row": "C.I.5.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-i-5",
+  "category_label": "Poskytnuté zálohy na zásoby"
+ },
+ "210": {
+  "rozvaha_row": "C.IV.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-iv-1",
+  "category_label": "Peněžní prostředky v pokladně"
+ },
+ "211": {
+  "rozvaha_row": "C.IV.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-iv-1",
+  "category_label": "Peněžní prostředky v pokladně"
+ },
+ "213": {
+  "rozvaha_row": "C.IV.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-iv-1",
+  "category_label": "Peněžní prostředky v pokladně"
+ },
+ "220": {
+  "rozvaha_row": "C.IV.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-iv-2",
+  "category_label": "Peněžní prostředky na účtech"
+ },
+ "230": {
+  "rozvaha_row": "C.II.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-2",
+  "category_label": "Závazky k úvěrovým institucím (krátkodobé)"
+ },
+ "231": {
+  "rozvaha_row": "C.II.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-2",
+  "category_label": "Závazky k úvěrovým institucím (krátkodobé)"
+ },
+ "232": {
+  "rozvaha_row": "C.II.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-2",
+  "category_label": "Závazky k úvěrovým institucím (krátkodobé)"
+ },
+ "233": {
+  "rozvaha_row": "C.II.8.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-8-2",
+  "category_label": "Krátkodobé finanční výpomoci"
+ },
+ "240": {
+  "rozvaha_row": "C.II.8.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-8-2",
+  "category_label": "Krátkodobé finanční výpomoci"
+ },
+ "241": {
+  "rozvaha_row": "C.II.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-1",
+  "category_label": "Vydané dluhopisy (krátkodobé)"
+ },
+ "249": {
+  "rozvaha_row": "C.II.8.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-8-2",
+  "category_label": "Krátkodobé finanční výpomoci"
+ },
+ "250": {
+  "rozvaha_row": "C.III.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-iii",
+  "category_label": "Krátkodobý finanční majetek (souhrn)"
+ },
+ "251": {
+  "rozvaha_row": "C.III.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-iii-2",
+  "category_label": "Ostatní krátkodobý finanční majetek"
+ },
+ "252": {
+  "rozvaha_row": "A.I.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-a-i-2",
+  "category_label": "Vlastní podíly (-)"
+ },
+ "253": {
+  "rozvaha_row": "C.III.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-iii-2",
+  "category_label": "Ostatní krátkodobý finanční majetek"
+ },
+ "254": {
+  "rozvaha_row": "C.III.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-iii-1",
+  "category_label": "Podíly – ovládaná nebo ovládající osoba"
+ },
+ "255": {
+  "rozvaha_row": "C.III.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-iii-2",
+  "category_label": "Ostatní krátkodobý finanční majetek"
+ },
+ "256": {
+  "rozvaha_row": "C.III.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-iii-2",
+  "category_label": "Ostatní krátkodobý finanční majetek"
+ },
+ "257": {
+  "rozvaha_row": "C.III.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-iii-2",
+  "category_label": "Ostatní krátkodobý finanční majetek"
+ },
+ "259": {
+  "rozvaha_row": "C.III.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-iii-2",
+  "category_label": "Ostatní krátkodobý finanční majetek"
+ },
+ "260": {
+  "rozvaha_row": "C.IV.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-iv-2",
+  "category_label": "Peněžní prostředky na účtech"
+ },
+ "261": {
+  "rozvaha_row": "C.IV.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-iv-2",
+  "category_label": "Peněžní prostředky na účtech"
+ },
+ "290": {
+  "rozvaha_row": "C.III.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-iii",
+  "category_label": "Krátkodobý finanční majetek (souhrn)"
+ },
+ "291": {
+  "rozvaha_row": "C.III.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-iii-2",
+  "category_label": "Ostatní krátkodobý finanční majetek"
+ },
+ "310": {
+  "rozvaha_row": "C.II.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-ii",
+  "category_label": "Pohledávky (souhrn)"
+ },
+ "311": {
+  "rozvaha_row": "C.II.2.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-ii-2-1",
+  "category_label": "Pohledávky z obchodních vztahů (krátkodobé)"
+ },
+ "312": {
+  "rozvaha_row": "C.II.2.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-ii-2-1",
+  "category_label": "Pohledávky z obchodních vztahů (krátkodobé)"
+ },
+ "313": {
+  "rozvaha_row": "C.II.2.4.6.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-ii-2-4-6",
+  "category_label": "Jiné pohledávky"
+ },
+ "314": {
+  "rozvaha_row": "C.II.2.4.4.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-ii-2-4-4",
+  "category_label": "Krátkodobé poskytnuté zálohy"
+ },
+ "315": {
+  "rozvaha_row": "C.II.2.4.6.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-ii-2-4-6",
+  "category_label": "Jiné pohledávky"
+ },
+ "320": {
+  "rozvaha_row": "C.II.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii",
+  "category_label": "Krátkodobé závazky (souhrn)"
+ },
+ "321": {
+  "rozvaha_row": "C.II.4.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-4",
+  "category_label": "Závazky z obchodních vztahů (krátkodobé)"
+ },
+ "322": {
+  "rozvaha_row": "C.II.5.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-5",
+  "category_label": "Krátkodobé směnky k úhradě"
+ },
+ "324": {
+  "rozvaha_row": "C.II.3.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-3",
+  "category_label": "Krátkodobé přijaté zálohy"
+ },
+ "325": {
+  "rozvaha_row": "C.II.8.7.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-8-7",
+  "category_label": "Jiné závazky"
+ },
+ "330": {
+  "rozvaha_row": "C.II.8.3.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-8-3",
+  "category_label": "Závazky k zaměstnancům"
+ },
+ "331": {
+  "rozvaha_row": "C.II.8.3.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-8-3",
+  "category_label": "Závazky k zaměstnancům"
+ },
+ "333": {
+  "rozvaha_row": "C.II.8.3.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-8-3",
+  "category_label": "Závazky k zaměstnancům"
+ },
+ "335": {
+  "rozvaha_row": "C.II.2.4.6.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-ii-2-4-6",
+  "category_label": "Jiné pohledávky"
+ },
+ "336": {
+  "rozvaha_row": "C.II.8.4.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-8-4",
+  "category_label": "Závazky ze sociálního zabezpečení a zdravotního pojištění"
+ },
+ "340": {
+  "rozvaha_row": "C.II.8.5.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-8-5",
+  "category_label": "Stát – daňové závazky a dotace"
+ },
+ "341": {
+  "rozvaha_row": "C.II.8.5.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-8-5",
+  "category_label": "Stát – daňové závazky a dotace"
+ },
+ "342": {
+  "rozvaha_row": "C.II.8.5.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-8-5",
+  "category_label": "Stát – daňové závazky a dotace"
+ },
+ "345": {
+  "rozvaha_row": "C.II.8.5.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-8-5",
+  "category_label": "Stát – daňové závazky a dotace"
+ },
+ "346": {
+  "rozvaha_row": "C.II.8.5.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-8-5",
+  "category_label": "Stát – daňové závazky a dotace"
+ },
+ "347": {
+  "rozvaha_row": "C.II.8.5.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-8-5",
+  "category_label": "Stát – daňové závazky a dotace"
+ },
+ "350": {
+  "rozvaha_row": "C.II.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-ii",
+  "category_label": "Pohledávky (souhrn)"
+ },
+ "351": {
+  "rozvaha_row": "C.II.2.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-ii-2-2",
+  "category_label": "Pohledávky – ovládaná nebo ovládající osoba (krátkodobé)"
+ },
+ "352": {
+  "rozvaha_row": "C.II.2.3.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-ii-2-3",
+  "category_label": "Pohledávky – podstatný vliv (krátkodobé)"
+ },
+ "353": {
+  "rozvaha_row": "A.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-a",
+  "category_label": "Pohledávky za upsaný základní kapitál"
+ },
+ "354": {
+  "rozvaha_row": "C.II.2.4.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-ii-2-4-1",
+  "category_label": "Pohledávky za společníky (krátkodobé)"
+ },
+ "355": {
+  "rozvaha_row": "C.II.2.4.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-ii-2-4-1",
+  "category_label": "Pohledávky za společníky (krátkodobé)"
+ },
+ "358": {
+  "rozvaha_row": "C.II.2.4.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-ii-2-4-1",
+  "category_label": "Pohledávky za společníky (krátkodobé)"
+ },
+ "360": {
+  "rozvaha_row": "C.II.8.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-8-1",
+  "category_label": "Závazky ke společníkům"
+ },
+ "361": {
+  "rozvaha_row": "C.II.6.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-6",
+  "category_label": "Závazky – ovládaná nebo ovládající osoba (krátkodobé)"
+ },
+ "362": {
+  "rozvaha_row": "C.II.7.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-7",
+  "category_label": "Závazky – podstatný vliv (krátkodobé)"
+ },
+ "364": {
+  "rozvaha_row": "C.II.8.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-8-1",
+  "category_label": "Závazky ke společníkům"
+ },
+ "365": {
+  "rozvaha_row": "C.II.8.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-8-1",
+  "category_label": "Závazky ke společníkům"
+ },
+ "366": {
+  "rozvaha_row": "C.II.8.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-8-1",
+  "category_label": "Závazky ke společníkům"
+ },
+ "367": {
+  "rozvaha_row": "C.II.8.7.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-8-7",
+  "category_label": "Jiné závazky"
+ },
+ "368": {
+  "rozvaha_row": "C.II.8.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-8-1",
+  "category_label": "Závazky ke společníkům"
+ },
+ "370": {
+  "rozvaha_row": "C.II.2.4.6.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-ii-2-4-6",
+  "category_label": "Jiné pohledávky"
+ },
+ "371": {
+  "rozvaha_row": "C.II.2.4.6.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-ii-2-4-6",
+  "category_label": "Jiné pohledávky"
+ },
+ "372": {
+  "rozvaha_row": "C.II.8.7.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-8-7",
+  "category_label": "Jiné závazky"
+ },
+ "373": {
+  "rozvaha_row": "C.II.2.4.6.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-ii-2-4-6",
+  "category_label": "Jiné pohledávky"
+ },
+ "374": {
+  "rozvaha_row": "C.II.2.4.6.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-ii-2-4-6",
+  "category_label": "Jiné pohledávky"
+ },
+ "375": {
+  "rozvaha_row": "C.II.2.4.6.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-ii-2-4-6",
+  "category_label": "Jiné pohledávky"
+ },
+ "376": {
+  "rozvaha_row": "C.III.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-iii-2",
+  "category_label": "Ostatní krátkodobý finanční majetek"
+ },
+ "377": {
+  "rozvaha_row": "C.II.8.7.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-8-7",
+  "category_label": "Jiné závazky"
+ },
+ "378": {
+  "rozvaha_row": "C.II.2.4.6.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-ii-2-4-6",
+  "category_label": "Jiné pohledávky"
+ },
+ "379": {
+  "rozvaha_row": "C.II.8.7.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-8-7",
+  "category_label": "Jiné závazky"
+ },
+ "380": {
+  "rozvaha_row": "D.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-d",
+  "category_label": "Časové rozlišení aktiv (souhrn)"
+ },
+ "381": {
+  "rozvaha_row": "D.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-d-1",
+  "category_label": "Náklady příštích období"
+ },
+ "382": {
+  "rozvaha_row": "D.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-d-2",
+  "category_label": "Komplexní náklady příštích období"
+ },
+ "383": {
+  "rozvaha_row": "D.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-d-1",
+  "category_label": "Výdaje příštích období"
+ },
+ "384": {
+  "rozvaha_row": "D.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-d-2",
+  "category_label": "Výnosy příštích období"
+ },
+ "385": {
+  "rozvaha_row": "D.3.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-d-3",
+  "category_label": "Příjmy příštích období"
+ },
+ "388": {
+  "rozvaha_row": "C.II.2.4.5.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-ii-2-4-5",
+  "category_label": "Dohadné účty aktivní"
+ },
+ "389": {
+  "rozvaha_row": "C.II.8.6.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-8-6",
+  "category_label": "Dohadné účty pasivní"
+ },
+ "390": {
+  "rozvaha_row": "C.II.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-ii",
+  "category_label": "Pohledávky (souhrn)"
+ },
+ "391": {
+  "rozvaha_row": "C.II.2.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-ii-2-1",
+  "category_label": "Pohledávky z obchodních vztahů (krátkodobé)"
+ },
+ "395": {
+  "rozvaha_row": null,
+  "vzz_row": null,
+  "category_code": "off-interni",
+  "category_label": "Vnitřní zúčtování / vnitropodnikové převodové účty – nevykazují se ve výkazech (nettují se na nulu)"
+ },
+ "398": {
+  "rozvaha_row": null,
+  "vzz_row": null,
+  "category_code": "off-interni",
+  "category_label": "Vnitřní zúčtování / vnitropodnikové převodové účty – nevykazují se ve výkazech (nettují se na nulu)"
+ },
+ "410": {
+  "rozvaha_row": "A.I.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-a-i-1",
+  "category_label": "Základní kapitál"
+ },
+ "411": {
+  "rozvaha_row": "A.I.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-a-i-1",
+  "category_label": "Základní kapitál"
+ },
+ "412": {
+  "rozvaha_row": "A.II.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-a-ii-1",
+  "category_label": "Ážio"
+ },
+ "413": {
+  "rozvaha_row": "A.II.2.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-a-ii-2-1",
+  "category_label": "Ostatní kapitálové fondy"
+ },
+ "414": {
+  "rozvaha_row": "A.II.2.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-a-ii-2-2",
+  "category_label": "Oceňovací rozdíly z přecenění majetku a závazků (+/-)"
+ },
+ "416": {
+  "rozvaha_row": "A.II.2.5.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-a-ii-2-5",
+  "category_label": "Rozdíly z ocenění při přeměnách obchodních korporací (+/-)"
+ },
+ "417": {
+  "rozvaha_row": "A.II.2.4.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-a-ii-2-4",
+  "category_label": "Rozdíly z přeměn obchodních korporací (+/-)"
+ },
+ "418": {
+  "rozvaha_row": "A.II.2.3.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-a-ii-2-3",
+  "category_label": "Oceňovací rozdíly z přecenění při přeměnách obchodních korporací (+/-)"
+ },
+ "419": {
+  "rozvaha_row": "A.I.3.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-a-i-3",
+  "category_label": "Změny základního kapitálu"
+ },
+ "420": {
+  "rozvaha_row": "A.III.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-a-iii-1",
+  "category_label": "Ostatní rezervní fondy"
+ },
+ "421": {
+  "rozvaha_row": "A.III.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-a-iii-1",
+  "category_label": "Ostatní rezervní fondy"
+ },
+ "422": {
+  "rozvaha_row": "A.III.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-a-iii-1",
+  "category_label": "Ostatní rezervní fondy"
+ },
+ "423": {
+  "rozvaha_row": "A.III.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-a-iii-2",
+  "category_label": "Statutární a ostatní fondy"
+ },
+ "426": {
+  "rozvaha_row": "A.IV.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-a-iv-2",
+  "category_label": "Jiný výsledek hospodaření minulých let (+/-)"
+ },
+ "427": {
+  "rozvaha_row": "A.III.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-a-iii-2",
+  "category_label": "Statutární a ostatní fondy"
+ },
+ "428": {
+  "rozvaha_row": "A.IV.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-a-iv-1",
+  "category_label": "Nerozdělený zisk nebo neuhrazená ztráta minulých let (+/-)"
+ },
+ "429": {
+  "rozvaha_row": "A.IV.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-a-iv-1",
+  "category_label": "Nerozdělený zisk nebo neuhrazená ztráta minulých let (+/-)"
+ },
+ "430": {
+  "rozvaha_row": "A.V.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-a-v",
+  "category_label": "Výsledek hospodaření běžného účetního období (+/-)"
+ },
+ "431": {
+  "rozvaha_row": "A.V.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-a-v",
+  "category_label": "Výsledek hospodaření běžného účetního období (+/-)"
+ },
+ "432": {
+  "rozvaha_row": "A.VI.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-a-vi",
+  "category_label": "Rozhodnuto o zálohové výplatě podílu na zisku (-)"
+ },
+ "450": {
+  "rozvaha_row": "B.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-b",
+  "category_label": "Rezervy (souhrn)"
+ },
+ "451": {
+  "rozvaha_row": "B.3.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-b-3",
+  "category_label": "Rezervy podle zvláštních právních předpisů"
+ },
+ "452": {
+  "rozvaha_row": "B.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-b-1",
+  "category_label": "Rezerva na důchody a podobné závazky"
+ },
+ "453": {
+  "rozvaha_row": "B.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-b-2",
+  "category_label": "Rezerva na daň z příjmů"
+ },
+ "459": {
+  "rozvaha_row": "B.4.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-b-4",
+  "category_label": "Ostatní rezervy"
+ },
+ "460": {
+  "rozvaha_row": "C.I.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-i-2",
+  "category_label": "Závazky k úvěrovým institucím (dlouhodobé)"
+ },
+ "461": {
+  "rozvaha_row": "C.I.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-i-2",
+  "category_label": "Závazky k úvěrovým institucím (dlouhodobé)"
+ },
+ "462": {
+  "rozvaha_row": "C.I.9.3.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-i-9-3",
+  "category_label": "Jiné závazky (dlouhodobé)"
+ },
+ "470": {
+  "rozvaha_row": "C.I.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-i",
+  "category_label": "Dlouhodobé závazky (souhrn)"
+ },
+ "471": {
+  "rozvaha_row": "C.I.6.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-i-6",
+  "category_label": "Závazky – ovládaná nebo ovládající osoba (dlouhodobé)"
+ },
+ "472": {
+  "rozvaha_row": "C.I.7.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-i-7",
+  "category_label": "Závazky – podstatný vliv (dlouhodobé)"
+ },
+ "473": {
+  "rozvaha_row": "C.I.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-i-1",
+  "category_label": "Vydané dluhopisy (dlouhodobé)"
+ },
+ "474": {
+  "rozvaha_row": "C.I.9.3.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-i-9-3",
+  "category_label": "Jiné závazky (dlouhodobé)"
+ },
+ "475": {
+  "rozvaha_row": "C.I.3.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-i-3",
+  "category_label": "Dlouhodobé přijaté zálohy"
+ },
+ "478": {
+  "rozvaha_row": "C.I.5.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-i-5",
+  "category_label": "Dlouhodobé směnky k úhradě"
+ },
+ "479": {
+  "rozvaha_row": "C.I.9.3.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-i-9-3",
+  "category_label": "Jiné závazky (dlouhodobé)"
+ },
+ "480": {
+  "rozvaha_row": "C.I.8.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-i-8",
+  "category_label": "Odložený daňový závazek"
+ },
+ "481": {
+  "rozvaha_row": "C.I.8.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-i-8",
+  "category_label": "Odložený daňový závazek"
+ },
+ "490": {
+  "rozvaha_row": "A.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-a",
+  "category_label": "Vlastní kapitál (souhrn)"
+ },
+ "491": {
+  "rozvaha_row": "A.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-a",
+  "category_label": "Vlastní kapitál (souhrn)"
+ },
+ "500": {
+  "rozvaha_row": null,
+  "vzz_row": "A.",
+  "category_code": "vzz-a",
+  "category_label": "Výkonová spotřeba (souhrn)"
+ },
+ "501": {
+  "rozvaha_row": null,
+  "vzz_row": "A.2.",
+  "category_code": "vzz-a-2",
+  "category_label": "Spotřeba materiálu a energie"
+ },
+ "502": {
+  "rozvaha_row": null,
+  "vzz_row": "A.2.",
+  "category_code": "vzz-a-2",
+  "category_label": "Spotřeba materiálu a energie"
+ },
+ "503": {
+  "rozvaha_row": null,
+  "vzz_row": "A.2.",
+  "category_code": "vzz-a-2",
+  "category_label": "Spotřeba materiálu a energie"
+ },
+ "504": {
+  "rozvaha_row": null,
+  "vzz_row": "A.1.",
+  "category_code": "vzz-a-1",
+  "category_label": "Náklady vynaložené na prodané zboží"
+ },
+ "510": {
+  "rozvaha_row": null,
+  "vzz_row": "A.3.",
+  "category_code": "vzz-a-3",
+  "category_label": "Služby"
+ },
+ "511": {
+  "rozvaha_row": null,
+  "vzz_row": "A.3.",
+  "category_code": "vzz-a-3",
+  "category_label": "Služby"
+ },
+ "512": {
+  "rozvaha_row": null,
+  "vzz_row": "A.3.",
+  "category_code": "vzz-a-3",
+  "category_label": "Služby"
+ },
+ "513": {
+  "rozvaha_row": null,
+  "vzz_row": "A.3.",
+  "category_code": "vzz-a-3",
+  "category_label": "Služby"
+ },
+ "518": {
+  "rozvaha_row": null,
+  "vzz_row": "A.3.",
+  "category_code": "vzz-a-3",
+  "category_label": "Služby"
+ },
+ "520": {
+  "rozvaha_row": null,
+  "vzz_row": "D.",
+  "category_code": "vzz-d",
+  "category_label": "Osobní náklady (souhrn)"
+ },
+ "521": {
+  "rozvaha_row": null,
+  "vzz_row": "D.1.",
+  "category_code": "vzz-d-1",
+  "category_label": "Mzdové náklady"
+ },
+ "522": {
+  "rozvaha_row": null,
+  "vzz_row": "D.1.",
+  "category_code": "vzz-d-1",
+  "category_label": "Mzdové náklady"
+ },
+ "523": {
+  "rozvaha_row": null,
+  "vzz_row": "D.1.",
+  "category_code": "vzz-d-1",
+  "category_label": "Mzdové náklady"
+ },
+ "524": {
+  "rozvaha_row": null,
+  "vzz_row": "D.2.1.",
+  "category_code": "vzz-d-2-1",
+  "category_label": "Náklady na sociální zabezpečení a zdravotní pojištění"
+ },
+ "525": {
+  "rozvaha_row": null,
+  "vzz_row": "D.2.1.",
+  "category_code": "vzz-d-2-1",
+  "category_label": "Náklady na sociální zabezpečení a zdravotní pojištění"
+ },
+ "526": {
+  "rozvaha_row": null,
+  "vzz_row": "D.2.1.",
+  "category_code": "vzz-d-2-1",
+  "category_label": "Náklady na sociální zabezpečení a zdravotní pojištění"
+ },
+ "527": {
+  "rozvaha_row": null,
+  "vzz_row": "D.2.2.",
+  "category_code": "vzz-d-2-2",
+  "category_label": "Ostatní náklady (osobní)"
+ },
+ "528": {
+  "rozvaha_row": null,
+  "vzz_row": "D.2.2.",
+  "category_code": "vzz-d-2-2",
+  "category_label": "Ostatní náklady (osobní)"
+ },
+ "530": {
+  "rozvaha_row": null,
+  "vzz_row": "F.3.",
+  "category_code": "vzz-f-3",
+  "category_label": "Daně a poplatky (v provozní oblasti)"
+ },
+ "531": {
+  "rozvaha_row": null,
+  "vzz_row": "F.3.",
+  "category_code": "vzz-f-3",
+  "category_label": "Daně a poplatky (v provozní oblasti)"
+ },
+ "532": {
+  "rozvaha_row": null,
+  "vzz_row": "F.3.",
+  "category_code": "vzz-f-3",
+  "category_label": "Daně a poplatky (v provozní oblasti)"
+ },
+ "538": {
+  "rozvaha_row": null,
+  "vzz_row": "F.3.",
+  "category_code": "vzz-f-3",
+  "category_label": "Daně a poplatky (v provozní oblasti)"
+ },
+ "540": {
+  "rozvaha_row": null,
+  "vzz_row": "F.5.",
+  "category_code": "vzz-f-5",
+  "category_label": "Jiné provozní náklady"
+ },
+ "541": {
+  "rozvaha_row": null,
+  "vzz_row": "F.1.",
+  "category_code": "vzz-f-1",
+  "category_label": "Zůstatková cena prodaného dlouhodobého majetku"
+ },
+ "542": {
+  "rozvaha_row": null,
+  "vzz_row": "F.2.",
+  "category_code": "vzz-f-2",
+  "category_label": "Prodaný materiál"
+ },
+ "543": {
+  "rozvaha_row": null,
+  "vzz_row": "F.5.",
+  "category_code": "vzz-f-5",
+  "category_label": "Jiné provozní náklady"
+ },
+ "544": {
+  "rozvaha_row": null,
+  "vzz_row": "F.5.",
+  "category_code": "vzz-f-5",
+  "category_label": "Jiné provozní náklady"
+ },
+ "545": {
+  "rozvaha_row": null,
+  "vzz_row": "F.5.",
+  "category_code": "vzz-f-5",
+  "category_label": "Jiné provozní náklady"
+ },
+ "546": {
+  "rozvaha_row": null,
+  "vzz_row": "F.5.",
+  "category_code": "vzz-f-5",
+  "category_label": "Jiné provozní náklady"
+ },
+ "547": {
+  "rozvaha_row": null,
+  "vzz_row": "F.5.",
+  "category_code": "vzz-f-5",
+  "category_label": "Jiné provozní náklady"
+ },
+ "548": {
+  "rozvaha_row": null,
+  "vzz_row": "F.5.",
+  "category_code": "vzz-f-5",
+  "category_label": "Jiné provozní náklady"
+ },
+ "549": {
+  "rozvaha_row": null,
+  "vzz_row": "F.5.",
+  "category_code": "vzz-f-5",
+  "category_label": "Jiné provozní náklady"
+ },
+ "550": {
+  "rozvaha_row": null,
+  "vzz_row": "E.1.1.",
+  "category_code": "vzz-e-1-1",
+  "category_label": "Úpravy hodnot dlouhodobého nehmotného a hmotného majetku – trvalé"
+ },
+ "551": {
+  "rozvaha_row": null,
+  "vzz_row": "E.1.1.",
+  "category_code": "vzz-e-1-1",
+  "category_label": "Úpravy hodnot dlouhodobého nehmotného a hmotného majetku – trvalé"
+ },
+ "552": {
+  "rozvaha_row": null,
+  "vzz_row": "F.4.",
+  "category_code": "vzz-f-4",
+  "category_label": "Rezervy v provozní oblasti a komplexní náklady příštích období"
+ },
+ "554": {
+  "rozvaha_row": null,
+  "vzz_row": "F.4.",
+  "category_code": "vzz-f-4",
+  "category_label": "Rezervy v provozní oblasti a komplexní náklady příštích období"
+ },
+ "555": {
+  "rozvaha_row": null,
+  "vzz_row": "F.4.",
+  "category_code": "vzz-f-4",
+  "category_label": "Rezervy v provozní oblasti a komplexní náklady příštích období"
+ },
+ "557": {
+  "rozvaha_row": null,
+  "vzz_row": "E.1.1.",
+  "category_code": "vzz-e-1-1",
+  "category_label": "Úpravy hodnot dlouhodobého nehmotného a hmotného majetku – trvalé"
+ },
+ "558": {
+  "rozvaha_row": null,
+  "vzz_row": "E.3.",
+  "category_code": "vzz-e-3",
+  "category_label": "Úpravy hodnot pohledávek"
+ },
+ "559": {
+  "rozvaha_row": null,
+  "vzz_row": "E.3.",
+  "category_code": "vzz-e-3",
+  "category_label": "Úpravy hodnot pohledávek"
+ },
+ "560": {
+  "rozvaha_row": null,
+  "vzz_row": "K.",
+  "category_code": "vzz-k",
+  "category_label": "Ostatní finanční náklady"
+ },
+ "561": {
+  "rozvaha_row": null,
+  "vzz_row": "K.",
+  "category_code": "vzz-k",
+  "category_label": "Ostatní finanční náklady"
+ },
+ "562": {
+  "rozvaha_row": null,
+  "vzz_row": "J.2.",
+  "category_code": "vzz-j-2",
+  "category_label": "Ostatní nákladové úroky a podobné náklady"
+ },
+ "563": {
+  "rozvaha_row": null,
+  "vzz_row": "K.",
+  "category_code": "vzz-k",
+  "category_label": "Ostatní finanční náklady"
+ },
+ "564": {
+  "rozvaha_row": null,
+  "vzz_row": "K.",
+  "category_code": "vzz-k",
+  "category_label": "Ostatní finanční náklady"
+ },
+ "565": {
+  "rozvaha_row": null,
+  "vzz_row": "K.",
+  "category_code": "vzz-k",
+  "category_label": "Ostatní finanční náklady"
+ },
+ "566": {
+  "rozvaha_row": null,
+  "vzz_row": "K.",
+  "category_code": "vzz-k",
+  "category_label": "Ostatní finanční náklady"
+ },
+ "567": {
+  "rozvaha_row": null,
+  "vzz_row": "K.",
+  "category_code": "vzz-k",
+  "category_label": "Ostatní finanční náklady"
+ },
+ "568": {
+  "rozvaha_row": null,
+  "vzz_row": "K.",
+  "category_code": "vzz-k",
+  "category_label": "Ostatní finanční náklady"
+ },
+ "569": {
+  "rozvaha_row": null,
+  "vzz_row": "K.",
+  "category_code": "vzz-k",
+  "category_label": "Ostatní finanční náklady"
+ },
+ "570": {
+  "rozvaha_row": null,
+  "vzz_row": "I.",
+  "category_code": "vzz-i-fin",
+  "category_label": "Úpravy hodnot a rezervy ve finanční oblasti"
+ },
+ "574": {
+  "rozvaha_row": null,
+  "vzz_row": "I.",
+  "category_code": "vzz-i-fin",
+  "category_label": "Úpravy hodnot a rezervy ve finanční oblasti"
+ },
+ "579": {
+  "rozvaha_row": null,
+  "vzz_row": "I.",
+  "category_code": "vzz-i-fin",
+  "category_label": "Úpravy hodnot a rezervy ve finanční oblasti"
+ },
+ "580": {
+  "rozvaha_row": null,
+  "vzz_row": "B.",
+  "category_code": "vzz-b",
+  "category_label": "Změna stavu zásob vlastní činnosti (+/-)"
+ },
+ "581": {
+  "rozvaha_row": null,
+  "vzz_row": "B.",
+  "category_code": "vzz-b",
+  "category_label": "Změna stavu zásob vlastní činnosti (+/-)"
+ },
+ "582": {
+  "rozvaha_row": null,
+  "vzz_row": "B.",
+  "category_code": "vzz-b",
+  "category_label": "Změna stavu zásob vlastní činnosti (+/-)"
+ },
+ "583": {
+  "rozvaha_row": null,
+  "vzz_row": "B.",
+  "category_code": "vzz-b",
+  "category_label": "Změna stavu zásob vlastní činnosti (+/-)"
+ },
+ "584": {
+  "rozvaha_row": null,
+  "vzz_row": "B.",
+  "category_code": "vzz-b",
+  "category_label": "Změna stavu zásob vlastní činnosti (+/-)"
+ },
+ "585": {
+  "rozvaha_row": null,
+  "vzz_row": "C.",
+  "category_code": "vzz-c",
+  "category_label": "Aktivace (-)"
+ },
+ "586": {
+  "rozvaha_row": null,
+  "vzz_row": "C.",
+  "category_code": "vzz-c",
+  "category_label": "Aktivace (-)"
+ },
+ "587": {
+  "rozvaha_row": null,
+  "vzz_row": "C.",
+  "category_code": "vzz-c",
+  "category_label": "Aktivace (-)"
+ },
+ "588": {
+  "rozvaha_row": null,
+  "vzz_row": "C.",
+  "category_code": "vzz-c",
+  "category_label": "Aktivace (-)"
+ },
+ "590": {
+  "rozvaha_row": null,
+  "vzz_row": "L.1.",
+  "category_code": "vzz-l-1",
+  "category_label": "Daň z příjmů splatná"
+ },
+ "591": {
+  "rozvaha_row": null,
+  "vzz_row": "L.1.",
+  "category_code": "vzz-l-1",
+  "category_label": "Daň z příjmů splatná"
+ },
+ "592": {
+  "rozvaha_row": null,
+  "vzz_row": "L.2.",
+  "category_code": "vzz-l-2",
+  "category_label": "Daň z příjmů odložená (+/-)"
+ },
+ "595": {
+  "rozvaha_row": null,
+  "vzz_row": "L.1.",
+  "category_code": "vzz-l-1",
+  "category_label": "Daň z příjmů splatná"
+ },
+ "596": {
+  "rozvaha_row": null,
+  "vzz_row": "M.",
+  "category_code": "vzz-m",
+  "category_label": "Převod podílu na výsledku hospodaření společníkům (+/-)"
+ },
+ "597": {
+  "rozvaha_row": null,
+  "vzz_row": null,
+  "category_code": "off-interni",
+  "category_label": "Vnitřní zúčtování / vnitropodnikové převodové účty – nevykazují se ve výkazech (nettují se na nulu)"
+ },
+ "598": {
+  "rozvaha_row": null,
+  "vzz_row": null,
+  "category_code": "off-interni",
+  "category_label": "Vnitřní zúčtování / vnitropodnikové převodové účty – nevykazují se ve výkazech (nettují se na nulu)"
+ },
+ "599": {
+  "rozvaha_row": null,
+  "vzz_row": "L.1.",
+  "category_code": "vzz-l-1",
+  "category_label": "Daň z příjmů splatná"
+ },
+ "600": {
+  "rozvaha_row": null,
+  "vzz_row": "I.",
+  "category_code": "vzz-i",
+  "category_label": "Tržby z prodeje výrobků a služeb"
+ },
+ "601": {
+  "rozvaha_row": null,
+  "vzz_row": "I.",
+  "category_code": "vzz-i",
+  "category_label": "Tržby z prodeje výrobků a služeb"
+ },
+ "602": {
+  "rozvaha_row": null,
+  "vzz_row": "I.",
+  "category_code": "vzz-i",
+  "category_label": "Tržby z prodeje výrobků a služeb"
+ },
+ "604": {
+  "rozvaha_row": null,
+  "vzz_row": "II.",
+  "category_code": "vzz-ii",
+  "category_label": "Tržby za prodej zboží"
+ },
+ "611": {
+  "rozvaha_row": null,
+  "vzz_row": "B.",
+  "category_code": "vzz-b",
+  "category_label": "Změna stavu zásob vlastní činnosti (+/-)"
+ },
+ "612": {
+  "rozvaha_row": null,
+  "vzz_row": "B.",
+  "category_code": "vzz-b",
+  "category_label": "Změna stavu zásob vlastní činnosti (+/-)"
+ },
+ "613": {
+  "rozvaha_row": null,
+  "vzz_row": "B.",
+  "category_code": "vzz-b",
+  "category_label": "Změna stavu zásob vlastní činnosti (+/-)"
+ },
+ "614": {
+  "rozvaha_row": null,
+  "vzz_row": "B.",
+  "category_code": "vzz-b",
+  "category_label": "Změna stavu zásob vlastní činnosti (+/-)"
+ },
+ "621": {
+  "rozvaha_row": null,
+  "vzz_row": "C.",
+  "category_code": "vzz-c",
+  "category_label": "Aktivace (-)"
+ },
+ "622": {
+  "rozvaha_row": null,
+  "vzz_row": "C.",
+  "category_code": "vzz-c",
+  "category_label": "Aktivace (-)"
+ },
+ "623": {
+  "rozvaha_row": null,
+  "vzz_row": "C.",
+  "category_code": "vzz-c",
+  "category_label": "Aktivace (-)"
+ },
+ "624": {
+  "rozvaha_row": null,
+  "vzz_row": "C.",
+  "category_code": "vzz-c",
+  "category_label": "Aktivace (-)"
+ },
+ "640": {
+  "rozvaha_row": null,
+  "vzz_row": "III.3.",
+  "category_code": "vzz-iii-3",
+  "category_label": "Jiné provozní výnosy"
+ },
+ "641": {
+  "rozvaha_row": null,
+  "vzz_row": "III.1.",
+  "category_code": "vzz-iii-1",
+  "category_label": "Tržby z prodaného dlouhodobého majetku"
+ },
+ "642": {
+  "rozvaha_row": null,
+  "vzz_row": "III.2.",
+  "category_code": "vzz-iii-2",
+  "category_label": "Tržby z prodaného materiálu"
+ },
+ "643": {
+  "rozvaha_row": null,
+  "vzz_row": "III.3.",
+  "category_code": "vzz-iii-3",
+  "category_label": "Jiné provozní výnosy"
+ },
+ "644": {
+  "rozvaha_row": null,
+  "vzz_row": "III.3.",
+  "category_code": "vzz-iii-3",
+  "category_label": "Jiné provozní výnosy"
+ },
+ "646": {
+  "rozvaha_row": null,
+  "vzz_row": "III.3.",
+  "category_code": "vzz-iii-3",
+  "category_label": "Jiné provozní výnosy"
+ },
+ "648": {
+  "rozvaha_row": null,
+  "vzz_row": "III.3.",
+  "category_code": "vzz-iii-3",
+  "category_label": "Jiné provozní výnosy"
+ },
+ "649": {
+  "rozvaha_row": null,
+  "vzz_row": "III.3.",
+  "category_code": "vzz-iii-3",
+  "category_label": "Jiné provozní výnosy"
+ },
+ "660": {
+  "rozvaha_row": null,
+  "vzz_row": "VII.",
+  "category_code": "vzz-vii",
+  "category_label": "Ostatní finanční výnosy"
+ },
+ "661": {
+  "rozvaha_row": null,
+  "vzz_row": "VII.",
+  "category_code": "vzz-vii",
+  "category_label": "Ostatní finanční výnosy"
+ },
+ "662": {
+  "rozvaha_row": null,
+  "vzz_row": "VI.2.",
+  "category_code": "vzz-vi-2",
+  "category_label": "Ostatní výnosové úroky a podobné výnosy"
+ },
+ "663": {
+  "rozvaha_row": null,
+  "vzz_row": "VII.",
+  "category_code": "vzz-vii",
+  "category_label": "Ostatní finanční výnosy"
+ },
+ "664": {
+  "rozvaha_row": null,
+  "vzz_row": "VII.",
+  "category_code": "vzz-vii",
+  "category_label": "Ostatní finanční výnosy"
+ },
+ "665": {
+  "rozvaha_row": null,
+  "vzz_row": "IV.2.",
+  "category_code": "vzz-iv-2",
+  "category_label": "Ostatní výnosy z podílů"
+ },
+ "666": {
+  "rozvaha_row": null,
+  "vzz_row": "VII.",
+  "category_code": "vzz-vii",
+  "category_label": "Ostatní finanční výnosy"
+ },
+ "667": {
+  "rozvaha_row": null,
+  "vzz_row": "VII.",
+  "category_code": "vzz-vii",
+  "category_label": "Ostatní finanční výnosy"
+ },
+ "668": {
+  "rozvaha_row": null,
+  "vzz_row": "VII.",
+  "category_code": "vzz-vii",
+  "category_label": "Ostatní finanční výnosy"
+ },
+ "669": {
+  "rozvaha_row": null,
+  "vzz_row": "VII.",
+  "category_code": "vzz-vii",
+  "category_label": "Ostatní finanční výnosy"
+ },
+ "690": {
+  "rozvaha_row": null,
+  "vzz_row": null,
+  "category_code": "off-interni",
+  "category_label": "Vnitřní zúčtování / vnitropodnikové převodové účty – nevykazují se ve výkazech (nettují se na nulu)"
+ },
+ "697": {
+  "rozvaha_row": null,
+  "vzz_row": null,
+  "category_code": "off-interni",
+  "category_label": "Vnitřní zúčtování / vnitropodnikové převodové účty – nevykazují se ve výkazech (nettují se na nulu)"
+ },
+ "698": {
+  "rozvaha_row": null,
+  "vzz_row": null,
+  "category_code": "off-interni",
+  "category_label": "Vnitřní zúčtování / vnitropodnikové převodové účty – nevykazují se ve výkazech (nettují se na nulu)"
+ },
+ "700": {
+  "rozvaha_row": null,
+  "vzz_row": null,
+  "category_code": "off-zaverkove",
+  "category_label": "Závěrkové účty (počáteční/konečný účet rozvažný, účet Z+Z) – nevykazují se ve výkazech"
+ },
+ "701": {
+  "rozvaha_row": null,
+  "vzz_row": null,
+  "category_code": "off-zaverkove",
+  "category_label": "Závěrkové účty (počáteční/konečný účet rozvažný, účet Z+Z) – nevykazují se ve výkazech"
+ },
+ "702": {
+  "rozvaha_row": null,
+  "vzz_row": null,
+  "category_code": "off-zaverkove",
+  "category_label": "Závěrkové účty (počáteční/konečný účet rozvažný, účet Z+Z) – nevykazují se ve výkazech"
+ },
+ "710": {
+  "rozvaha_row": null,
+  "vzz_row": null,
+  "category_code": "off-zaverkove",
+  "category_label": "Závěrkové účty (počáteční/konečný účet rozvažný, účet Z+Z) – nevykazují se ve výkazech"
+ },
+ "221001": {
+  "rozvaha_row": "C.IV.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-iv-2",
+  "category_label": "Peněžní prostředky na účtech"
+ },
+ "010": {
+  "rozvaha_row": "B.I.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-i",
+  "category_label": "Dlouhodobý nehmotný majetek (souhrn)"
+ },
+ "012": {
+  "rozvaha_row": "B.I.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-i-1",
+  "category_label": "Nehmotné výsledky vývoje"
+ },
+ "013": {
+  "rozvaha_row": "B.I.2.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-i-2-1",
+  "category_label": "Software"
+ },
+ "014": {
+  "rozvaha_row": "B.I.2.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-i-2-2",
+  "category_label": "Ostatní ocenitelná práva"
+ },
+ "015": {
+  "rozvaha_row": "B.I.3.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-i-3",
+  "category_label": "Goodwill"
+ },
+ "019": {
+  "rozvaha_row": "B.I.4.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-i-4",
+  "category_label": "Ostatní dlouhodobý nehmotný majetek"
+ },
+ "020": {
+  "rozvaha_row": "B.II.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-ii",
+  "category_label": "Dlouhodobý hmotný majetek (souhrn)"
+ },
+ "021": {
+  "rozvaha_row": "B.II.1.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-ii-1-2",
+  "category_label": "Stavby"
+ },
+ "022": {
+  "rozvaha_row": "B.II.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-ii-2",
+  "category_label": "Hmotné movité věci a jejich soubory"
+ },
+ "025": {
+  "rozvaha_row": "B.II.4.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-ii-4-1",
+  "category_label": "Pěstitelské celky trvalých porostů"
+ },
+ "026": {
+  "rozvaha_row": "B.II.4.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-ii-4-2",
+  "category_label": "Dospělá zvířata a jejich skupiny"
+ },
+ "029": {
+  "rozvaha_row": "B.II.4.3.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-ii-4-3",
+  "category_label": "Jiný dlouhodobý hmotný majetek"
+ },
+ "030": {
+  "rozvaha_row": "B.II.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-ii",
+  "category_label": "Dlouhodobý hmotný majetek (souhrn)"
+ },
+ "031": {
+  "rozvaha_row": "B.II.1.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-ii-1-1",
+  "category_label": "Pozemky"
+ },
+ "032": {
+  "rozvaha_row": "B.II.4.3.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-ii-4-3",
+  "category_label": "Jiný dlouhodobý hmotný majetek"
+ },
+ "040": {
+  "rozvaha_row": "B.II.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-ii",
+  "category_label": "Dlouhodobý hmotný majetek (souhrn)"
+ },
+ "041": {
+  "rozvaha_row": "B.I.5.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-i-5-2",
+  "category_label": "Nedokončený dlouhodobý nehmotný majetek"
+ },
+ "042": {
+  "rozvaha_row": "B.II.5.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-ii-5-2",
+  "category_label": "Nedokončený dlouhodobý hmotný majetek"
+ },
+ "043": {
+  "rozvaha_row": "B.III.7.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-iii-7-1",
+  "category_label": "Jiný dlouhodobý finanční majetek"
+ },
+ "050": {
+  "rozvaha_row": "B.II.5.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-ii-5-1",
+  "category_label": "Poskytnuté zálohy na dlouhodobý hmotný majetek"
+ },
+ "051": {
+  "rozvaha_row": "B.I.5.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-i-5-1",
+  "category_label": "Poskytnuté zálohy na dlouhodobý nehmotný majetek"
+ },
+ "052": {
+  "rozvaha_row": "B.II.5.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-ii-5-1",
+  "category_label": "Poskytnuté zálohy na dlouhodobý hmotný majetek"
+ },
+ "053": {
+  "rozvaha_row": "B.III.7.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-iii-7-2",
+  "category_label": "Poskytnuté zálohy na dlouhodobý finanční majetek"
+ },
+ "060": {
+  "rozvaha_row": "B.III.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-iii",
+  "category_label": "Dlouhodobý finanční majetek (souhrn)"
+ },
+ "061": {
+  "rozvaha_row": "B.III.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-iii-1",
+  "category_label": "Podíly – ovládaná nebo ovládající osoba"
+ },
+ "062": {
+  "rozvaha_row": "B.III.3.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-iii-3",
+  "category_label": "Podíly – podstatný vliv"
+ },
+ "063": {
+  "rozvaha_row": "B.III.5.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-iii-5",
+  "category_label": "Ostatní dlouhodobé cenné papíry a podíly"
+ },
+ "065": {
+  "rozvaha_row": "B.III.5.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-iii-5",
+  "category_label": "Ostatní dlouhodobé cenné papíry a podíly"
+ },
+ "066": {
+  "rozvaha_row": "B.III.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-iii-2",
+  "category_label": "Zápůjčky a úvěry – ovládaná nebo ovládající osoba"
+ },
+ "067": {
+  "rozvaha_row": "B.III.4.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-iii-4",
+  "category_label": "Zápůjčky a úvěry – podstatný vliv"
+ },
+ "068": {
+  "rozvaha_row": "B.III.6.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-iii-6",
+  "category_label": "Zápůjčky a úvěry – ostatní"
+ },
+ "069": {
+  "rozvaha_row": "B.III.7.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-iii-7-1",
+  "category_label": "Jiný dlouhodobý finanční majetek"
+ },
+ "070": {
+  "rozvaha_row": "B.I.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-i",
+  "category_label": "Dlouhodobý nehmotný majetek (souhrn)"
+ },
+ "072": {
+  "rozvaha_row": "B.I.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-i-1",
+  "category_label": "Nehmotné výsledky vývoje"
+ },
+ "073": {
+  "rozvaha_row": "B.I.2.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-i-2-1",
+  "category_label": "Software"
+ },
+ "074": {
+  "rozvaha_row": "B.I.2.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-i-2-2",
+  "category_label": "Ostatní ocenitelná práva"
+ },
+ "075": {
+  "rozvaha_row": "B.I.3.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-i-3",
+  "category_label": "Goodwill"
+ },
+ "079": {
+  "rozvaha_row": "B.I.4.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-i-4",
+  "category_label": "Ostatní dlouhodobý nehmotný majetek"
+ },
+ "080": {
+  "rozvaha_row": "B.II.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-ii",
+  "category_label": "Dlouhodobý hmotný majetek (souhrn)"
+ },
+ "081": {
+  "rozvaha_row": "B.II.1.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-ii-1-2",
+  "category_label": "Stavby"
+ },
+ "082": {
+  "rozvaha_row": "B.II.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-ii-2",
+  "category_label": "Hmotné movité věci a jejich soubory"
+ },
+ "085": {
+  "rozvaha_row": "B.II.4.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-ii-4-1",
+  "category_label": "Pěstitelské celky trvalých porostů"
+ },
+ "086": {
+  "rozvaha_row": "B.II.4.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-ii-4-2",
+  "category_label": "Dospělá zvířata a jejich skupiny"
+ },
+ "089": {
+  "rozvaha_row": "B.II.4.3.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-ii-4-3",
+  "category_label": "Jiný dlouhodobý hmotný majetek"
+ },
+ "090": {
+  "rozvaha_row": "B.II.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-ii",
+  "category_label": "Dlouhodobý hmotný majetek (souhrn)"
+ },
+ "091": {
+  "rozvaha_row": "B.I.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-i",
+  "category_label": "Dlouhodobý nehmotný majetek (souhrn)"
+ },
+ "092": {
+  "rozvaha_row": "B.II.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-ii",
+  "category_label": "Dlouhodobý hmotný majetek (souhrn)"
+ },
+ "093": {
+  "rozvaha_row": "B.I.5.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-i-5-2",
+  "category_label": "Nedokončený dlouhodobý nehmotný majetek"
+ },
+ "094": {
+  "rozvaha_row": "B.II.5.2.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-ii-5-2",
+  "category_label": "Nedokončený dlouhodobý hmotný majetek"
+ },
+ "095": {
+  "rozvaha_row": "B.II.5.1.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-ii-5-1",
+  "category_label": "Poskytnuté zálohy na dlouhodobý hmotný majetek"
+ },
+ "096": {
+  "rozvaha_row": "B.III.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-iii",
+  "category_label": "Dlouhodobý finanční majetek (souhrn)"
+ },
+ "097": {
+  "rozvaha_row": "B.II.3.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-ii-3",
+  "category_label": "Oceňovací rozdíl k nabytému majetku"
+ },
+ "098": {
+  "rozvaha_row": "B.II.3.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-b-ii-3",
+  "category_label": "Oceňovací rozdíl k nabytému majetku"
+ },
+ "343.100": {
+  "rozvaha_row": "C.II.2.4.3.",
+  "vzz_row": null,
+  "category_code": "rozvaha-aktiva-c-ii-2-4-3",
+  "category_label": "Stát – daňové pohledávky"
+ },
+ "343.200": {
+  "rozvaha_row": "C.II.8.5.",
+  "vzz_row": null,
+  "category_code": "rozvaha-pasiva-c-ii-8-5",
+  "category_label": "Stát – daňové závazky a dotace"
+ }
+}
