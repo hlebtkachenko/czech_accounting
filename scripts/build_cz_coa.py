@@ -91,6 +91,32 @@ tree = {label: {"root_type": rt, "is_group": 1} for rt, label in ROOT_LABELS.ite
 posting = [n for n in nodes if n["level"] in ("synthetic", "analytical")]
 # A synthetic that carries analytical children is a group, not a posting account.
 synth_with_children = {a.get("parent_number") for a in posting if a["level"] == "analytical"}
+
+
+def sibling_id(acc):
+    """The tree parent an account is placed under, so siblings can be compared for name clashes."""
+    n = acc["account_number"]
+    if acc["level"] == "analytical":
+        return (acc["root_type"], n[:2], acc.get("parent_number") or n[:3])
+    return (acc["root_type"], n[:2])
+
+
+# The source gives a few distinct synthetics the same Czech name (540/548 "Jiné provozní náklady",
+# 460/461, 640/648). Those siblings keep the number-prefixed name so they stay two accounts; every
+# other account uses the clean bare name.
+_sibling_names = {}
+for _acc in posting:
+    _sibling_names.setdefault(sibling_id(_acc), {}).setdefault(_acc["name_cs"], 0)
+    _sibling_names[sibling_id(_acc)][_acc["name_cs"]] += 1
+
+
+def key_of(acc):
+    base = acc["name_cs"]
+    if _sibling_names[sibling_id(acc)][base] > 1:
+        return f"{acc['account_number']} - {base}"
+    return base
+
+
 placed = 0
 for acc in sorted(posting, key=lambda n: n["account_number"]):
     num = acc["account_number"]
@@ -98,15 +124,17 @@ for acc in sorted(posting, key=lambda n: n["account_number"]):
     root = tree[ROOT_LABELS[rt]]  # an unexpected root_type fails loudly here with KeyError
 
     cls, grp, syn = num[0], num[:2], num[:3]
+    # Structural class/group nodes carry no account_number, so the class digit must stay in the
+    # name. Accounts that DO carry a number use the bare Czech name — otherwise ERPNext renders
+    # "{number} - {name}" and the number, already in the name, shows up twice (e.g. "548 - 548 -").
     cls_node = ensure_group(root, f"{cls} - {name_of(cls, 'Účtová třída ' + cls)}", rt)
     grp_node = ensure_group(cls_node, f"{grp} - {name_of(grp, 'Skupina ' + grp)}", rt)
-    key = f"{num} - {acc['name_cs']}"
+    key = key_of(acc)
 
     if acc["level"] == "analytical":
         parent_syn = acc.get("parent_number") or syn
-        syn_node = ensure_group(
-            grp_node, f"{parent_syn} - {name_of(parent_syn, parent_syn)}", rt, parent_syn
-        )
+        syn_key = key_of(by_num[parent_syn]) if parent_syn in by_num else name_of(parent_syn, parent_syn)
+        syn_node = ensure_group(grp_node, syn_key, rt, parent_syn)
         syn_node[key] = leaf_node(num, acc.get("account_type"))
     elif num in synth_with_children:
         ensure_group(grp_node, key, rt, num)  # synthetic with analytics -> group, not posting
