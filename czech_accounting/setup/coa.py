@@ -42,9 +42,9 @@ def load_cz_chart():
 def apply_czech_coa(company):
     """Build the Czech chart of accounts on a brand-new, un-configured company.
 
-    Destructive (deletes and rebuilds the company's accounts), so it is restricted to a System
-    Manager with write access to the company and refuses to run once the company has any
-    transactional documents.
+    Destructive (deletes and rebuilds the company's accounts), so it is restricted to an
+    Accounts Manager with write access to the company and refuses to run once the company has
+    any transactional documents.
     """
     frappe.only_for("Accounts Manager")
     if not isinstance(company, str) or not frappe.db.exists("Company", company):
@@ -66,3 +66,21 @@ def apply_czech_coa(company):
     frappe.db.commit()
 
     return {"company": company, "accounts": frappe.db.count("Account", {"company": company})}
+
+
+@frappe.whitelist()
+def provision_czech_company(company):
+    """Go-live in one call: build the Czech chart, then the Czech VAT setup.
+
+    Wraps apply_czech_coa (chart) and setup_company_vat (DPH/PDP templates, cash/bank payment
+    modes, and removal of ERPNext's seeded default VAT templates). Run once on a brand-new
+    company. The permission and no-transactions gate is enforced by apply_czech_coa.
+    """
+    from czech_accounting.setup.vat_templates import setup_company_vat
+
+    result = apply_czech_coa(company)
+    setup_company_vat(company)
+    result["sales_tax_templates"] = frappe.db.count(
+        "Sales Taxes and Charges Template", {"company": company}
+    )
+    return result

@@ -124,6 +124,57 @@ def _ensure_mode_of_payment(name, mop_type, company, account_number):
 	mop.save(ignore_permissions=True)
 
 
+def _references_unnumbered_account(doctype, name):
+	"""True if a tax template posts to an Account with no account number.
+
+	This is how ERPNext's seeded country-default templates are told apart from the Czech
+	ones: ours post to the numbered analytical 343 leaves, the defaults post to bare
+	"VAT nn %" accounts that carry no number.
+	"""
+	if doctype == "Item Tax Template":
+		child, field = "Item Tax Template Detail", "tax_type"
+	else:
+		child, field = doctype.replace(" Template", ""), "account_head"
+	for account in frappe.get_all(child, filters={"parent": name}, pluck=field):
+		if account and not frappe.db.get_value("Account", account, "account_number"):
+			return True
+	return False
+
+
+def purge_default_tax_setup(company):
+	"""Remove ERPNext's seeded country-default VAT setup, identified by its unnumbered accounts.
+
+	ERPNext seeds every new Czech company with "Czech Republic VAT 21 %/15 %" tax templates
+	and bare, unnumbered "VAT nn %" tax accounts (the 15 % rate has been abolished since 2024).
+	They shadow the Czech DPH/PDP templates and leave posting accounts outside the statement
+	mapping. Deleted here — matched by their unnumbered tax accounts, so the Czech templates
+	(which post to the numbered 343 leaves) are never touched. Idempotent: nothing is left to
+	purge on a second run.
+	"""
+	for doctype in (
+		"Sales Taxes and Charges Template",
+		"Purchase Taxes and Charges Template",
+		"Item Tax Template",
+	):
+		for name in frappe.get_all(doctype, filters={"company": company}, pluck="name"):
+			if _references_unnumbered_account(doctype, name):
+				frappe.delete_doc(doctype, name, force=1, ignore_permissions=True)
+
+	orphans = frappe.get_all(
+		"Account",
+		filters={"company": company, "is_group": 0, "account_type": "Tax", "account_number": ["in", ["", None]]},
+		pluck="name",
+	)
+	for account in orphans:
+		frappe.delete_doc("Account", account, force=1, ignore_permissions=True)
+
+	group = frappe.db.get_value(
+		"Account", {"company": company, "account_name": "Duties and Taxes", "is_group": 1}, "name"
+	)
+	if group and not frappe.db.count("Account", {"parent_account": group}):
+		frappe.delete_doc("Account", group, force=1, ignore_permissions=True)
+
+
 def setup_company_vat(company):
 	"""Create the Czech tax templates and cash/bank modes for one company.
 
@@ -131,6 +182,7 @@ def setup_company_vat(company):
 	" - {abbr}" to build the record name, so do NOT add the abbr here or the name
 	ends up double-suffixed.
 	"""
+	purge_default_tax_setup(company)
 	input_vat = get_account(company, INPUT_VAT_ACCOUNT)
 	output_vat = get_account(company, OUTPUT_VAT_ACCOUNT)
 	rates = VAT_RATES_2024_01_01
