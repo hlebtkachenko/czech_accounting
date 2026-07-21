@@ -14,8 +14,11 @@ from czech_accounting.setup.vat_templates import (
 	sales_tax_rows,
 )
 
-INPUT = "343.100 - DPH na vstupu - TC"
-OUTPUT = "343.200 - DPH na výstupu - TC"
+# Distinct sample account names so the tests prove the builder wires the Add row
+# to the output arg and the Deduct row to the input arg. Production passes the
+# single synthetic 343 for both.
+INPUT = "input-vat-account"
+OUTPUT = "output-vat-account"
 
 
 def _signed_amount(row, base):
@@ -45,7 +48,7 @@ class TestVATTaxRows(unittest.TestCase):
 			total = sum(_signed_amount(r, base) for r in rows)
 			self.assertAlmostEqual(total, 0.0, places=6)
 
-	def test_reverse_charge_hits_both_343_subaccounts(self):
+	def test_reverse_charge_wires_add_to_output_deduct_to_input(self):
 		rows = reverse_charge_rows(21.0, INPUT, OUTPUT)
 		add = next(r for r in rows if r.get("add_deduct_tax") == "Add")
 		deduct = next(r for r in rows if r.get("add_deduct_tax") == "Deduct")

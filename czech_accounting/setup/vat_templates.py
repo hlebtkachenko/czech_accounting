@@ -7,6 +7,11 @@ one-site / many-companies deployment, so we materialise the config by looking up
 accounts by their frozen account number. Everything here is idempotent and safe
 to re-run.
 
+Accounts are synthetic-only (3-digit): input and output VAT both post to the
+single synthetic 343; bank is 221, cash 211. No analytical sub-accounts
+(343.100/.200, 221001). The input/output split for DPH/KH is carried by the tax
+rows themselves, not by separate accounts.
+
 Rates are effective-dated. Since 2024-01-01 (Act 349/2023) the Czech rates are
 21 % standard and 12 % reduced; the former 15 % rate is abolished. There is no
 statutory 0 % rate, so the "0 %" template stands for osvobozeno s nárokem na
@@ -22,11 +27,10 @@ import frappe
 # Effective-dated VAT rates (Act 349/2023, in force since 2024-01-01).
 VAT_RATES_2024_01_01 = {"standard": 21.0, "reduced": 12.0, "zero": 0.0}
 
-# Frozen account anchors from the shared contract (docs/plans/00-master.md).
-INPUT_VAT_ACCOUNT = "343.100"   # DPH na vstupu (input VAT)
-OUTPUT_VAT_ACCOUNT = "343.200"  # DPH na výstupu (output VAT)
-CASH_ACCOUNT = "211"            # Pokladna (cash)
-BANK_ACCOUNT = "221001"         # Bankovní účet, CZK
+# Synthetic-only account anchors (no analytical sub-accounts).
+VAT_ACCOUNT = "343"    # DPH (single synthetic; input and output both post here)
+CASH_ACCOUNT = "211"   # Pokladna (cash)
+BANK_ACCOUNT = "221"   # Bankovní účty (bank)
 
 
 def get_account(company, account_number):
@@ -41,7 +45,7 @@ def get_account(company, account_number):
 # --- Pure tax-row builders (no DB; unit-tested) -----------------------------
 
 def sales_tax_rows(rate, output_account):
-	"""Standard output-VAT row on 343.200."""
+	"""Standard output-VAT row on the synthetic 343."""
 	return [
 		{
 			"charge_type": "On Net Total",
@@ -53,7 +57,7 @@ def sales_tax_rows(rate, output_account):
 
 
 def purchase_tax_rows(rate, input_account):
-	"""Standard input-VAT (deductible) row on 343.100."""
+	"""Standard input-VAT (deductible) row on the synthetic 343."""
 	return [
 		{
 			"charge_type": "On Net Total",
@@ -67,10 +71,10 @@ def purchase_tax_rows(rate, input_account):
 def reverse_charge_rows(rate, input_account, output_account):
 	"""Přenesená daňová povinnost (§ 92) self-assessment — nets to zero.
 
-	The buyer self-assesses output VAT (credit 343.200) and claims the matching
-	input VAT (debit 343.100) at the same base and rate. The two rows cancel in
-	the invoice grand total, so only the net is paid to the supplier, while both
-	VAT events land on their 343 sub-accounts. Covers §92e construction PDP.
+	The buyer self-assesses output VAT (credit) and claims the matching input VAT
+	(debit) at the same base and rate, both on the synthetic 343. The two rows
+	cancel in the invoice grand total, so only the net is paid to the supplier,
+	and 343 nets to zero. Covers §92e construction PDP.
 	"""
 	return [
 		{
@@ -122,8 +126,7 @@ def _ensure_mode_of_payment(name, mop_type, company, account_number):
 
 def setup_company_vat(company):
 	"""Create the Czech tax templates and cash/bank modes for one company."""
-	input_vat = get_account(company, INPUT_VAT_ACCOUNT)
-	output_vat = get_account(company, OUTPUT_VAT_ACCOUNT)
+	vat = get_account(company, VAT_ACCOUNT)
 	abbr = frappe.get_cached_value("Company", company, "abbr")
 	rates = VAT_RATES_2024_01_01
 
@@ -131,16 +134,16 @@ def setup_company_vat(company):
 		return f"{base} - {abbr}"
 
 	sales = "Sales Taxes and Charges Template"
-	_upsert_template(sales, company, title("DPH 21 %"), sales_tax_rows(rates["standard"], output_vat))
-	_upsert_template(sales, company, title("DPH 12 %"), sales_tax_rows(rates["reduced"], output_vat))
-	_upsert_template(sales, company, title("DPH 0 % (osvobozeno / vývoz)"), sales_tax_rows(rates["zero"], output_vat))
+	_upsert_template(sales, company, title("DPH 21 %"), sales_tax_rows(rates["standard"], vat))
+	_upsert_template(sales, company, title("DPH 12 %"), sales_tax_rows(rates["reduced"], vat))
+	_upsert_template(sales, company, title("DPH 0 % (osvobozeno / vývoz)"), sales_tax_rows(rates["zero"], vat))
 
 	purchase = "Purchase Taxes and Charges Template"
-	_upsert_template(purchase, company, title("DPH 21 %"), purchase_tax_rows(rates["standard"], input_vat))
-	_upsert_template(purchase, company, title("DPH 12 %"), purchase_tax_rows(rates["reduced"], input_vat))
-	_upsert_template(purchase, company, title("DPH 0 % (osvobozeno / dovoz)"), purchase_tax_rows(rates["zero"], input_vat))
-	_upsert_template(purchase, company, title("PDP 21 % (přenesená daňová povinnost)"), reverse_charge_rows(rates["standard"], input_vat, output_vat))
-	_upsert_template(purchase, company, title("PDP 12 % (přenesená daňová povinnost)"), reverse_charge_rows(rates["reduced"], input_vat, output_vat))
+	_upsert_template(purchase, company, title("DPH 21 %"), purchase_tax_rows(rates["standard"], vat))
+	_upsert_template(purchase, company, title("DPH 12 %"), purchase_tax_rows(rates["reduced"], vat))
+	_upsert_template(purchase, company, title("DPH 0 % (osvobozeno / dovoz)"), purchase_tax_rows(rates["zero"], vat))
+	_upsert_template(purchase, company, title("PDP 21 % (přenesená daňová povinnost)"), reverse_charge_rows(rates["standard"], vat, vat))
+	_upsert_template(purchase, company, title("PDP 12 % (přenesená daňová povinnost)"), reverse_charge_rows(rates["reduced"], vat, vat))
 
 	_ensure_mode_of_payment("Cash", "Cash", company, CASH_ACCOUNT)
 	_ensure_mode_of_payment("Bank", "Bank", company, BANK_ACCOUNT)
@@ -149,7 +152,7 @@ def setup_company_vat(company):
 
 
 def setup_all_companies():
-	"""Run the VAT setup for every company that already has the 343 accounts."""
+	"""Run the VAT setup for every company that already has the 343 account."""
 	for company in frappe.get_all("Company", pluck="name"):
-		if frappe.db.exists("Account", {"company": company, "account_number": INPUT_VAT_ACCOUNT}):
+		if frappe.db.exists("Account", {"company": company, "account_number": VAT_ACCOUNT}):
 			setup_company_vat(company)
