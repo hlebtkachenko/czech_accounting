@@ -63,6 +63,11 @@ ACCOUNTS = [
 EXPECTED_BALANCE = 1_721_000.0
 EXPECTED_RESULT = 295_000.0
 
+# Tag on every JE this test posts, so the scenario can be cancelled deterministically.
+# This site runs with immutable ledger + auto-commit on submit, so per-test transaction
+# rollback does not undo posted GL; the scenario is posted once and cancelled explicitly.
+TAG = "CZ-S3-TEST"
+
 
 class TestRozvaha(IntegrationTestCase):
     @classmethod
@@ -71,42 +76,51 @@ class TestRozvaha(IntegrationTestCase):
         cls.company = frappe.get_all("Company", limit=1, pluck="name")[0]
         cls.abbr = frappe.get_cached_value("Company", cls.company, "abbr")
         cls.cost_center = frappe.get_cached_value("Company", cls.company, "cost_center")
+        cls.date = nowdate()
         _ensure_categories()
         cls.acc = _ensure_accounts(cls.company, cls.abbr)
         cls.project = _ensure_project(cls.company)
+        _cancel_scenario(cls.company)          # clear any residue from a prior run
+        cls._post_scenario()
+        frappe.db.commit()  # noqa: this test manages its own data across the commit boundary
 
-    def setUp(self):
-        self.date = nowdate()
-        self._post_scenario()
+    @classmethod
+    def tearDownClass(cls):
+        _cancel_scenario(cls.company)
+        frappe.db.commit()  # noqa
+        super().tearDownClass()
 
-    def _je(self, lines):
+    @classmethod
+    def _je(cls, lines):
         je = frappe.new_doc("Journal Entry")
         je.voucher_type = "Journal Entry"
-        je.company = self.company
-        je.posting_date = self.date
+        je.company = cls.company
+        je.posting_date = cls.date
+        je.user_remark = TAG
         for account, debit, credit in lines:
             je.append("accounts", {
-                "account": self.acc[account],
+                "account": cls.acc[account],
                 "debit_in_account_currency": debit,
                 "credit_in_account_currency": credit,
-                "cost_center": self.cost_center,
-                "project": self.project,
+                "cost_center": cls.cost_center,
+                "project": cls.project,
             })
         je.insert()
         je.submit()
         return je
 
-    def _post_scenario(self):
-        self._je([("221", 1_000_000, 0), ("411", 0, 1_000_000)])            # capital
-        self._je([("022", 300_000, 0), ("221", 0, 300_000)])                # buy car
-        self._je([("501", 400_000, 0), ("321", 0, 400_000)])                # material -> cost
-        self._je([("518", 100_000, 0), ("321", 0, 100_000)])                # services -> cost
-        self._je([("121", 500_000, 0), ("611", 0, 500_000)])                # change-in-state MD121/D611
-        self._je([("551", 5_000, 0), ("082", 0, 5_000)])                    # depreciation
-        self._je([("311", 600_000, 0), ("604", 0, 600_000)])                # unit sale revenue
-        self._je([("611", 300_000, 0), ("121", 0, 300_000)])                # derecognize sold unit cost
-        self._je([("311", 126_000, 0), ("343", 0, 126_000)])                # output VAT
-        self._je([("321", 200_000, 0), ("221", 0, 200_000)])                # pay supplier
+    @classmethod
+    def _post_scenario(cls):
+        cls._je([("221", 1_000_000, 0), ("411", 0, 1_000_000)])            # capital
+        cls._je([("022", 300_000, 0), ("221", 0, 300_000)])                # buy car
+        cls._je([("501", 400_000, 0), ("321", 0, 400_000)])                # material -> cost
+        cls._je([("518", 100_000, 0), ("321", 0, 100_000)])                # services -> cost
+        cls._je([("121", 500_000, 0), ("611", 0, 500_000)])                # change-in-state MD121/D611
+        cls._je([("551", 5_000, 0), ("082", 0, 5_000)])                    # depreciation
+        cls._je([("311", 600_000, 0), ("604", 0, 600_000)])                # unit sale revenue
+        cls._je([("611", 300_000, 0), ("121", 0, 300_000)])                # derecognize sold unit cost
+        cls._je([("311", 126_000, 0), ("343", 0, 126_000)])                # output VAT
+        cls._je([("321", 200_000, 0), ("221", 0, 200_000)])                # pay supplier
 
     def _rozvaha(self):
         _cols, rows = rozvaha.execute({"company": self.company, "to_date": self.date, "show_zero_rows": 1})
@@ -152,6 +166,16 @@ class TestRozvaha(IntegrationTestCase):
         self.assertAlmostEqual(totals["debit"], totals["credit"], places=2)
 
 
+def _cancel_scenario(company):
+    names = frappe.get_all(
+        "Journal Entry",
+        filters={"company": company, "user_remark": TAG, "docstatus": 1},
+        pluck="name",
+    )
+    for n in names:
+        frappe.get_doc("Journal Entry", n).cancel()
+
+
 def _ensure_categories():
     for name, root_type, desc in CATEGORIES:
         if not frappe.db.exists("Account Category", name):
@@ -164,10 +188,13 @@ def _ensure_categories():
 
 
 def _ensure_project(company):
-    name = "CZ Test Development"
-    if not frappe.db.exists("Project", name):
-        frappe.get_doc({"doctype": "Project", "project_name": name, "company": company}).insert(ignore_permissions=True)
-    return name
+    project_name = "CZ Test Development"
+    existing = frappe.db.get_value("Project", {"project_name": project_name}, "name")
+    if existing:
+        return existing
+    doc = frappe.get_doc({"doctype": "Project", "project_name": project_name, "company": company})
+    doc.insert(ignore_permissions=True)
+    return doc.name
 
 
 def _group_parent(company, abbr, root_type):
