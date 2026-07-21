@@ -1,0 +1,35 @@
+[
+ {
+  "doctype": "Custom Field",
+  "name": "Company-cz_ico",
+  "dt": "Company",
+  "module": "Czech Accounting",
+  "fieldname": "cz_ico",
+  "label": "IČO",
+  "fieldtype": "Data",
+  "insert_after": "tax_id",
+  "translatable": 0
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Customer-cz_ico",
+  "dt": "Customer",
+  "module": "Czech Accounting",
+  "fieldname": "cz_ico",
+  "label": "IČO",
+  "fieldtype": "Data",
+  "insert_after": "tax_id",
+  "translatable": 0
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Supplier-cz_ico",
+  "dt": "Supplier",
+  "module": "Czech Accounting",
+  "fieldname": "cz_ico",
+  "label": "IČO",
+  "fieldtype": "Data",
+  "insert_after": "tax_id",
+  "translatable": 0
+ }
+]

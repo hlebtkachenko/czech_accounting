@@ -9,10 +9,17 @@ app_license = "mit"
 # never be installed on a site that does not have ERPNext.
 required_apps = ["erpnext"]
 
-# Fixtures (Custom Fields, Property Setters) owned by this app's module are
-# exported to source with: bench --site <site> export-fixtures --app czech_accounting
-# Uncomment and extend once the first custom fields exist.
-# fixtures = [
-#     {"dt": "Custom Field", "filters": [["module", "=", "Czech Accounting"]]},
-#     {"dt": "Property Setter", "filters": [["module", "=", "Czech Accounting"]]},
-# ]
+# Fixtures owned by this app. Export with:
+#   bench --site <site> export-fixtures --app czech_accounting
+# Stream 1 pre-declares the doctypes all three streams use so Streams 2 and 3 only drop
+# fixture JSON files and never edit this list. Module-scoped doctypes filter by module;
+# module-less ERPNext doctypes filter by a "CZ-" name prefix (use that prefix for Czech records).
+fixtures = [
+    {"dt": "Custom Field", "filters": [["module", "=", "Czech Accounting"]]},
+    {"dt": "Property Setter", "filters": [["module", "=", "Czech Accounting"]]},
+    {"dt": "Print Format", "filters": [["module", "=", "Czech Accounting"]]},
+    {"dt": "Account Category", "filters": [["name", "like", "CZ-%"]]},
+    {"dt": "Financial Report Template", "filters": [["name", "like", "CZ-%"]]},
+    {"dt": "Asset Category", "filters": [["name", "like", "CZ-%"]]},
+    {"dt": "Finance Book", "filters": [["name", "like", "CZ-%"]]},
+]

@@ -436,7 +436,8 @@
      },
      "221 - Peněžní prostředky na účtech": {
       "account_number": "221",
-      "account_type": "Bank",
+      "is_group": 1,
+      "root_type": "Asset",
       "221001 - Bankovní účet CZK": {
        "account_number": "221001",
        "account_type": "Bank"
@@ -781,7 +782,16 @@
      },
      "343 - Daň z přidané hodnoty": {
       "account_number": "343",
-      "account_type": "Tax"
+      "is_group": 1,
+      "root_type": "Liability",
+      "343.100 - DPH na vstupu": {
+       "account_number": "343.100",
+       "account_type": "Tax"
+      },
+      "343.200 - DPH na výstupu": {
+       "account_number": "343.200",
+       "account_type": "Tax"
+      }
      },
      "345 - Ostatní daně a poplatky": {
       "account_number": "345",
@@ -1139,6 +1149,48 @@
      },
      "604 - Tržby za zboží": {
       "account_number": "604",
+      "account_type": null
+     }
+    },
+    "61 - Změna stavu zásob vlastní činnosti": {
+     "account_number": "61",
+     "is_group": 1,
+     "root_type": "Income",
+     "611 - Změna stavu nedokončené výroby": {
+      "account_number": "611",
+      "account_type": null
+     },
+     "612 - Změna stavu polotovarů vlastní výroby": {
+      "account_number": "612",
+      "account_type": null
+     },
+     "613 - Změna stavu výrobků": {
+      "account_number": "613",
+      "account_type": null
+     },
+     "614 - Změna stavu zvířat": {
+      "account_number": "614",
+      "account_type": null
+     }
+    },
+    "62 - Aktivace": {
+     "account_number": "62",
+     "is_group": 1,
+     "root_type": "Income",
+     "621 - Aktivace materiálu a zboží": {
+      "account_number": "621",
+      "account_type": null
+     },
+     "622 - Aktivace vnitropodnikových služeb": {
+      "account_number": "622",
+      "account_type": null
+     },
+     "623 - Aktivace dlouhodobého nehmotného majetku": {
+      "account_number": "623",
+      "account_type": null
+     },
+     "624 - Aktivace dlouhodobého hmotného majetku": {
+      "account_number": "624",
       "account_type": null
      }
     },

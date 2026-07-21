@@ -14,7 +14,7 @@ import json
 import os
 
 SRC = "docs/plans/research/coa-normalized.json"
-OUT = "czech_accounting/czech_accounting/chart_of_accounts/cz_coa.json"
+OUT = "czech_accounting/chart_of_accounts/cz_coa.json"
 
 ROOT_LABELS = {
     "Asset": "Aktiva",
@@ -25,11 +25,35 @@ ROOT_LABELS = {
 }
 CHART_NAME = "Czech Republic - Účtová osnova (podnikatelé)"
 
+# Standard accounts the client's exported chart omits but a build-to-sell developer needs,
+# plus DPH direction analytics. 61x change-in-state and 62x aktivace are Income (výnosové).
+NAME_OVERRIDES = {"61": "Změna stavu zásob vlastní činnosti", "62": "Aktivace"}
+AUGMENT = [
+    # number, name_cs, root_type, account_type, level, parent_number
+    ("611", "Změna stavu nedokončené výroby", "Income", None, "synthetic", None),
+    ("612", "Změna stavu polotovarů vlastní výroby", "Income", None, "synthetic", None),
+    ("613", "Změna stavu výrobků", "Income", None, "synthetic", None),
+    ("614", "Změna stavu zvířat", "Income", None, "synthetic", None),
+    ("621", "Aktivace materiálu a zboží", "Income", None, "synthetic", None),
+    ("622", "Aktivace vnitropodnikových služeb", "Income", None, "synthetic", None),
+    ("623", "Aktivace dlouhodobého nehmotného majetku", "Income", None, "synthetic", None),
+    ("624", "Aktivace dlouhodobého hmotného majetku", "Income", None, "synthetic", None),
+    ("343.100", "DPH na vstupu", "Liability", "Tax", "analytical", "343"),
+    ("343.200", "DPH na výstupu", "Liability", "Tax", "analytical", "343"),
+]
+
 nodes = json.load(open(SRC))
+for _num, _name, _rt, _at, _lvl, _parent in AUGMENT:
+    nodes.append({
+        "account_number": _num, "name_cs": _name, "root_type": _rt,
+        "account_type": _at, "level": _lvl, "parent_number": _parent, "is_group": False,
+    })
 by_num = {n["account_number"]: n for n in nodes if n.get("account_number")}
 
 
 def name_of(num, fallback):
+    if num in NAME_OVERRIDES:
+        return NAME_OVERRIDES[num]
     n = by_num.get(num)
     return n["name_cs"] if n and n.get("name_cs") else fallback
 
@@ -44,6 +68,8 @@ def ensure_group(parent, key, number, root_type):
 tree = {label: {"root_type": rt, "is_group": 1} for rt, label in ROOT_LABELS.items()}
 
 posting = [n for n in nodes if n["level"] in ("synthetic", "analytical")]
+# A synthetic that carries analytical children is a group, not a posting account.
+synth_with_children = {a.get("parent_number") for a in posting if a["level"] == "analytical"}
 placed = 0
 for acc in sorted(posting, key=lambda n: n["account_number"]):
     num = acc["account_number"]
@@ -55,20 +81,18 @@ for acc in sorted(posting, key=lambda n: n["account_number"]):
     cls, grp, syn = num[0], num[:2], num[:3]
     cls_node = ensure_group(root, f"{cls} - {name_of(cls, 'Účtová třída ' + cls)}", cls, rt)
     grp_node = ensure_group(cls_node, f"{grp} - {name_of(grp, 'Skupina ' + grp)}", grp, rt)
-
-    leaf = {
-        "account_number": num,
-        "account_type": acc.get("account_type") or None,
-    }
     key = f"{num} - {acc['name_cs']}"
+
     if acc["level"] == "analytical":
         parent_syn = acc.get("parent_number") or syn
         syn_node = ensure_group(
             grp_node, f"{parent_syn} - {name_of(parent_syn, parent_syn)}", parent_syn, rt
         )
-        syn_node[key] = leaf
+        syn_node[key] = {"account_number": num, "account_type": acc.get("account_type") or None}
+    elif num in synth_with_children:
+        ensure_group(grp_node, key, num, rt)  # synthetic with analytics -> group, not posting
     else:
-        grp_node[key] = leaf
+        grp_node[key] = {"account_number": num, "account_type": acc.get("account_type") or None}
     placed += 1
 
 chart = {"name": CHART_NAME, "country_code": "cz", "tree": tree}
