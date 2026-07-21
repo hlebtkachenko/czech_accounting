@@ -17,6 +17,11 @@ from erpnext.accounts.doctype.chart_of_accounts_importer.chart_of_accounts_impor
 
 CHART_FILE = ("chart_of_accounts", "cz_coa.json")
 
+# 548 Jiné provozní náklady — the Czech home for invoice rounding (zaokrouhlení na celé koruny).
+# ERPNext needs a Round Off Account before it can post that rounding line, and its
+# set_default_accounts cannot map one because the Czech chart has no account named "Round Off".
+ROUND_OFF_ACCOUNT_NUMBER = "548"
+
 # apply_czech_coa deletes and rebuilds the company's accounts, so it must only run on a company
 # with no bookkeeping yet: not merely no posted GL entries, but no transactional documents at
 # all, since drafts (docstatus=0) reference accounts without creating GL entries.
@@ -63,9 +68,29 @@ def apply_czech_coa(company):
     unset_existing_data(company)
     create_charts(company, custom_chart=load_cz_chart()["tree"])
     set_default_accounts(company)
+    set_round_off_account(company)
     frappe.db.commit()
 
     return {"company": company, "accounts": frappe.db.count("Account", {"company": company})}
+
+
+def set_round_off_account(company):
+    """Point the company's Round Off Account (and cost center) at 548 so rounded invoices post."""
+    account = frappe.db.get_value(
+        "Account",
+        {"company": company, "account_number": ROUND_OFF_ACCOUNT_NUMBER, "is_group": 0},
+        "name",
+    )
+    if not account:
+        return
+    frappe.db.set_value(
+        "Company",
+        company,
+        {
+            "round_off_account": account,
+            "round_off_cost_center": frappe.get_cached_value("Company", company, "cost_center"),
+        },
+    )
 
 
 @frappe.whitelist()
