@@ -12,6 +12,7 @@ Run from the repo root:  python3 scripts/build_cz_coa.py
 """
 import json
 import os
+from collections import Counter
 
 SRC = "docs/plans/research/coa-normalized.json"
 OUT = "czech_accounting/chart_of_accounts/cz_coa.json"
@@ -106,8 +107,7 @@ def sibling_id(acc):
 # other account uses the clean bare name.
 _sibling_names = {}
 for _acc in posting:
-    _sibling_names.setdefault(sibling_id(_acc), {}).setdefault(_acc["name_cs"], 0)
-    _sibling_names[sibling_id(_acc)][_acc["name_cs"]] += 1
+    _sibling_names.setdefault(sibling_id(_acc), Counter())[_acc["name_cs"]] += 1
 
 
 def key_of(acc):

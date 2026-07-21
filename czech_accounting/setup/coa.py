@@ -105,7 +105,4 @@ def provision_czech_company(company):
 
     result = apply_czech_coa(company)
     setup_company_vat(company)
-    result["sales_tax_templates"] = frappe.db.count(
-        "Sales Taxes and Charges Template", {"company": company}
-    )
     return result
