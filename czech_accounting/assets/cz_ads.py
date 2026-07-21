@@ -18,10 +18,15 @@ METHOD_BY_LABEL = {"Rovnoměrné (§ 31)": "linear", "Zrychlené (§ 32)": "acce
 
 
 def apply_after_submit(asset, method=None):
-    """Asset on_submit hook: apply the tax schedule after commit, once ERPNext has finalised
-    the asset's depreciation schedules."""
-    asset_name = asset.name
-    frappe.db.after_commit.add(lambda: apply_czech_tax_depreciation(asset_name))
+    """Asset on_submit hook: apply the tax schedule in a background job after the transaction
+    commits, so it runs against the finalised, committed schedule (ERPNext rebuilds the schedule
+    up to and during commit; a fresh post-commit transaction is the only stable point)."""
+    frappe.enqueue(
+        "czech_accounting.assets.cz_ads.apply_czech_tax_depreciation",
+        asset_name=asset.name,
+        enqueue_after_commit=True,
+        queue="short",
+    )
 
 
 @frappe.whitelist()

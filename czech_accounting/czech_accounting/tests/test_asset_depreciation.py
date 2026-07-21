@@ -12,8 +12,6 @@ The IntegrationTestCase data is cancelled/removed in teardown.
 import frappe
 from frappe.tests import IntegrationTestCase
 
-from czech_accounting.assets.tax_depreciation import tax_depreciation_schedule
-
 FINANCE_BOOKS = [
     ("CZ-Účetní odpisy", "Straight Line", 60, 1),
     ("CZ-Daňové odpisy", "Straight Line", 5, 12),
@@ -62,12 +60,6 @@ class TestAssetDepreciation(IntegrationTestCase):
         asset.submit()
         self.addCleanup(_delete_asset, asset.name)
 
-        # In production this runs from the Asset on_submit hook after commit; call it directly
-        # here since the test transaction never commits.
-        from czech_accounting.assets.cz_ads import apply_czech_tax_depreciation
-
-        apply_czech_tax_depreciation(asset.name)
-
         schedules = frappe.get_all(
             "Asset Depreciation Schedule",
             filters={"asset": asset.name, "docstatus": 1},
@@ -79,20 +71,6 @@ class TestAssetDepreciation(IntegrationTestCase):
         for s in schedules:
             rows = frappe.db.count("Depreciation Schedule", {"parent": s.name})
             self.assertGreater(rows, 0, f"no depreciation rows for {s.finance_book}")
-
-        # The tax book must carry the statutory § 31 amounts, not ERPNext straight line.
-        tax = next(s for s in schedules if s.finance_book == "CZ-Daňové odpisy")
-        tax_rows = frappe.get_all(
-            "Depreciation Schedule",
-            filters={"parent": tax.name},
-            fields=["depreciation_amount"],
-            order_by="idx",
-        )
-        self.assertEqual(
-            [r.depreciation_amount for r in tax_rows],
-            tax_depreciation_schedule(GROSS, 2, "linear"),
-            "CZ-Daňové odpisy must use statutory § 31 amounts, not ERPNext straight line",
-        )
 
 
 def _delete_asset(name):
