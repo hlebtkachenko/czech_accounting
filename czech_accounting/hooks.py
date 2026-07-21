@@ -23,3 +23,10 @@ fixtures = [
     {"dt": "Asset Category", "filters": [["name", "like", "CZ-%"]]},
     {"dt": "Finance Book", "filters": [["name", "like", "CZ-%"]]},
 ]
+
+# Stream 2 — boundary validation on the invoice agendas (require DUZP on VAT
+# documents; warn on reverse-charge / supply-type mismatch).
+doc_events = {
+    "Sales Invoice": {"validate": "czech_accounting.doc_events.validate_sales_invoice"},
+    "Purchase Invoice": {"validate": "czech_accounting.doc_events.validate_purchase_invoice"},
+}
