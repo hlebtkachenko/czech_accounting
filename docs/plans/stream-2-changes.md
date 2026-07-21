@@ -12,6 +12,9 @@ of what Stream 2 adds, so Streams 1 and 3 can see the seam without reading the d
 | `czech_accounting/setup/vat_templates.py` | Idempotent per-company VAT tax templates + cash/bank Mode of Payment (company-scoped, so not a fixture). |
 | `czech_accounting/setup/test_vat_templates.py` | Unit tests: reverse-charge rows net to zero; no 15 %. |
 | `czech_accounting/setup/README.md` | Předkontace per agenda + run instructions. |
+| `czech_accounting/doc_events.py` | Boundary validators: require DUZP on VAT docs; warn on reverse-charge/supply-type mismatch. Needs a Stream 1 `doc_events` hook. |
+| `czech_accounting/test_doc_events.py` | Unit tests for the two validators. |
+| `czech_accounting/czech_accounting/print_format/czech_tax_invoice/` | Standard Jinja print format "Czech Tax Invoice" (Sales Invoice daňový doklad): IČ/DIČ, DUZP, VS, PDP "Daň odvede zákazník", CZK VAT on FX invoices. |
 
 No edits to `hooks.py`, `chart_of_accounts/`, `report/`, or any Stream 1/3 file.
 
@@ -50,11 +53,19 @@ fixtures = [
     {"dt": "Property Setter", "filters": [["module", "=", "Czech Accounting"]]},
     # ... your own entries
 ]
+
+doc_events = {
+    "Sales Invoice": {"validate": "czech_accounting.doc_events.validate_sales_invoice"},
+    "Purchase Invoice": {"validate": "czech_accounting.doc_events.validate_purchase_invoice"},
+}
 ```
 
 The `Property Setter` entry is the one to double-check — it carries Stream 2's
 naming series. Import on `bench migrate` works via the fixtures glob regardless;
-the entries matter for `bench export-fixtures`.
+the entries matter for `bench export-fixtures`. The `doc_events` block wires the
+Stream 2 boundary validators (`doc_events.py`) — without it the invoices still
+work, just unvalidated. The print format syncs automatically from its module
+folder on `bench migrate` (no hooks entry needed).
 
 ## ⚠ Account decision — synthetic-only (supersedes contract anchors)
 
@@ -87,4 +98,6 @@ bench --site <site> execute czech_accounting.setup.vat_templates.setup_all_compa
 
 ## Deferred (out of Stream 2 acceptance)
 
-Czech print format (daňový doklad layout) and DPH/KH XML export — later phases.
+DPH/KH/SH XML export and the normalized VAT-event ledger — later phase (fields
+only now). Purchase-side print format (FP is received, not issued). GPC/ABO bank
+import format.
